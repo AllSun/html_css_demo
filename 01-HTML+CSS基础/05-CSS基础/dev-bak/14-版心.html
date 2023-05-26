@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .head {
+        height: 400px;
+        background-color: #333;
+      }
+      .main {
+        height: 300px;
+        background-color: pink;
+      }
+      .footer {
+        height: 500px;
+        background-color: gray;
+      }
+      .w {
+        width: 1226px;
+        height: 100%;
+        margin: 0 auto;
+        /* background-color: #fff; */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 为了避免 出现横向滚动条 ,pc端页面 一般都会有一个版心 (1000-1280之间) -->
+    <!-- 会把网站的主要内容 都写在版心里边 -->
+    <!-- 能够保证 小屏幕 也可以将网页内容浏览完整 -->
+
+    <div class="head">
+      <div class="head-c w"></div>
+    </div>
+    <div class="main">
+      <div class="main-c w"></div>
+    </div>
+    <div class="footer">
+      <div class="footer-c w"></div>
+    </div>
+    <!-- 这样的写 可以 能够设置版心之外的 留白 的背景色  -->
+  </body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>小米闪购</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      a {
+        text-emphasis: none;
+      }
+
+      .flash {
+        width: 1226px;
+        height: 340px;
+        margin: 0 auto;
+      }
+
+      .hd {
+        height: 40px;
+        line-height: 40px;
+      }
+
+      .title {
+        float: left;
+        font-size: 32px;
+      }
+
+      .arr {
+        float: right;
+        color: #333;
+      }
+
+      .arr span:hover {
+        color: orange;
+      }
+
+      .arr span.disabled {
+        color: #eee;
+      }
+
+      .row {
+        width: 1226px;
+        height: 100%;
+        /* margin-left: -14px; */
+      }
+
+      .countdown {
+        width: 234px;
+        height: 100%;
+        float: left;
+      }
+
+      .flash-list {
+        width: 992px;
+        height: 100%;
+        float: left;
+        overflow: hidden;
+      }
+
+      .list {
+        width: calc(248px * 14);
+        height: 100%;
+        transition: all 0.8s;
+      }
+
+      .item {
+        width: 234px;
+        height: 100%;
+        float: left;
+        margin-left: 14px;
+        background-color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="flash">
+      <div class="hd">
+        <div class="title">小米闪购</div>
+        <div class="arr">
+          <span class="prev disabled">&lt;</span>
+          <span class="next">&gt;</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="countdown"></div>
+        <div class="flash-list">
+          <ul class="list">
+            <!-- <li class="item">
+							<a href=""></a>
+                        </li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // 14张产品
+      // disArr  [-0, -992, -1984, -2480]
+      // 提前准备好 目标位置
+      var disArr = [0, -992, -1984, -2480];
+      // 保存了每次的目标位置
+      // 生成 产品列表
+      var ul = document.querySelector(".list");
+      var str = ``;
+      for (var i = 0; i < 14; i++) {
+        str = str + `<li class="item"><a href=""></a></li>`;
+      }
+      ul.innerHTML = str;
+
+      var count = 0; // 计数器
+
+      var len = disArr.length;
+      var next = document.querySelector(".arr .next");
+      var prev = document.querySelector(".arr .prev");
+
+      next.onclick = function () {
+        if (count == len - 1) {
+          return;
+        }
+        count++;
+        // 计算目标位置
+        var target = disArr[count];
+        ul.style.transform = `translateX(${target}px)`;
+        if (count == len - 1) {
+          next.classList.add("disabled");
+        }
+        prev.classList.remove("disabled");
+      };
+      prev.onclick = function () {
+        if (count == 0) {
+          return;
+        }
+        count--;
+        var target = disArr[count];
+        ul.style.transform = `translateX(${target}px)`;
+        // 移动完之后判断 此时 count的值,来决定按钮是否需要禁用
+        if (count == 0) {
+          prev.classList.add("disabled");
+        }
+        next.classList.remove("disabled");
+      };
+    </script>
+  </body>
+</html>

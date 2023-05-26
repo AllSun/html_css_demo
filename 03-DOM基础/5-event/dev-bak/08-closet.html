@@ -1,0 +1,54 @@
+<!DOCTYspanE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta httspan-equiv="X-UA-Comspanatible" content="IE=edge" />
+    <meta name="viewspanort" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul class="list">
+      <li>
+        <span>1</span>
+      </li>
+      <li>
+        <span>2</span>
+      </li>
+      <li>
+        <span>3</span>
+      </li>
+      <li>
+        <span>4</span>
+      </li>
+      <li>
+        <span>5</span>
+      </li>
+      <li>
+        <span>6</span>
+      </li>
+    </ul>
+
+    <script>
+      // element.closest() 方法用来获取：匹配特定选择器且离当前元素最近的父类元素（也可以是当前元素本身）。如果匹配不到，则返回 null。
+      // li点击时背景色变蓝
+
+      // 如果点击的是 span.怎么让 li 背景变蓝
+
+      var list = document.querySelector(".list");
+
+      list.onclick = function (event) {
+        // console.log(1);
+        // event.target 可以告诉我们 谁是引发事件的元素
+
+        // 不管点击这一行的哪个内部元素,就是设法找到这一行的 li
+        var el = event.target.closest("li"); // 理解这句代码  会匹配到哪个元素
+        // 匹配离自己最近的(符合括号里边选择器规则的)祖先元素,(向上查找时,也会检查自己本身)
+
+        // 如果匹配到了符合要求的
+        if (el) {
+          el.style.backgroundColor = "blue";
+        }
+      };
+    </script>
+  </body>
+</html>

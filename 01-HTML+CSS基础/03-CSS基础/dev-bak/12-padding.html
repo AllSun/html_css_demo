@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 80px;
+        /* 设置 padding  内边距 */
+        /* 第一种利用 padding样式 同时 指定四个方向的padding */
+        /* 上下左右四个方向 都有20px 的内边距 */
+        /* padding: 20px; */
+        /* 两个值:  上下/左右 */
+        /* padding: 10px 20px; */
+
+        /* 三个值 上/左右/下 */
+        /* padding: 10px 20px 30px; */
+
+        /* 四个值 上右下左*/
+        /* padding: 10px 20px 30px 40px; */
+
+        background-color: red;
+        /* 背景色 默认 会填充到 padding区域 */
+
+        /* 想实现  只有上边 有内边距 */
+        /* padding: 20px 0 0 0; */
+      }
+
+      /* 利用 padding-top  padding-bottom padding-left padding-right  去单独的设置某一个 方向上的 padding  */
+      .d1 {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        padding-top: 50px;
+        padding-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">不凡</div>
+    <div class="d1">hello</div>
+  </body>
+</html>

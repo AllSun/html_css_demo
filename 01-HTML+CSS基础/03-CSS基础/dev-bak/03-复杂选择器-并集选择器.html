@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /* 假如说 想实现 同时 选中很多个 标签 设置共同的样式? */
+      /* 并集选择器 */
+      /* 特征 就是 ,  合并 */
+      /* 每个逗号   之间 都是一个 独立的选择器 */
+
+      p,
+      h2,
+      a,
+      .box .inner {
+        /* 合并在一起 设置样式  */
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <p>不凡学院</p>
+    <h2>二级标题</h2>
+    <a href="">百度</a>
+    <div class="box">
+      <div class="inner">内部盒子</div>
+    </div>
+  </body>
+</html>

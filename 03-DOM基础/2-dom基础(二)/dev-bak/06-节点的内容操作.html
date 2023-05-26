@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hello
+      <div class="inner">不凡学院</div>
+    </div>
+    <div class="box1">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hello
+      <div class="inner">不凡学院</div>
+    </div>
+    <script>
+      // 加入我们想获取 dom对象 里边的内容时 可以使用 innerHTML 和 innerText 两个属性
+
+      // 获取
+      var box = document.querySelector(".box");
+      console.log(box.innerText); // 只能获取到 里边的文本内容 的字符串
+      console.log(box.innerHTML); // 获取的是 内部完整结构 的 字符串
+
+      // 设置
+      // 设置时 ,会把 box 之前的内容 重写(覆盖掉)
+      // box.innerText = "hi";
+      box.innerText = "<p>我是一个p标签</p>"; // 标签字符串
+      // 使用innerText  只会 当做文本处理
+
+      var box1 = document.querySelector(".box1");
+      // box1.innerHTML = "hi";
+      box1.innerHTML = "<p>我是一个p标签</p>"; // 标签字符串
+      // 使用innerHTML 会把标签字符串 当做 标签解析
+    </script>
+  </body>
+</html>

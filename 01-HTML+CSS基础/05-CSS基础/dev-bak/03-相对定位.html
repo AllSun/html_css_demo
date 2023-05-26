@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        /* 开启相对定位  */
+        /* 相对定位的参照物: 自身原来的位置 */
+        /* 相对定位 元素 没有脱离文档流 依然占据着原来的位置 */
+        /* 开启定位之后,元素的层级得到了提升,比文档流当中的元素层级要高 */
+
+        /* 注意 相对定位 如果不设置 left top 这些方位描述,那么 还处于自身原来的位置 */
+        position: relative;
+        left: 30px;
+        top: 50px;
+        width: 200px;
+        height: 200px;
+        background-color: red;
+      }
+      .text {
+        background-color: green;
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <div class="text">不凡学院</div>
+  </body>
+</html>

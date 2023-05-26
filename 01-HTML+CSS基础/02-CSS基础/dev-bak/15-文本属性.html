@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .d1 {
+        width: 200px;
+        line-height: 40px;
+        /* 行高 控制 行间距 */
+        background-color: pink;
+        /* 两端对齐 */
+        /* text-align: justify; */
+
+        /* 首行缩进 */
+        /* text-indent: 24px; */
+        text-indent: 2em;
+      }
+
+      /* 行高的使用技巧  */
+      .btn {
+        width: 100px;
+        height: 40px;
+        /* 设置行高 等于 盒子 的高度,可以使 单行文本 上下居中 */
+        line-height: 40px;
+        background-color: orange;
+        color: #fff;
+        font-size: 18px;
+        /* ,不设置高度时,行高可以决定 这行文本的高度  */
+      }
+
+      /* 文本修饰线 */
+      .text {
+        font-size: 24px;
+        text-decoration: overline;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      /* 文本对齐 */
+      .btn {
+        /* 默认 left  左对齐 */
+        /* center  居中 */
+        /* right: 右对齐; */
+        text-align: center;
+      }
+
+      /* `letter-spacing` 用来设置字符之间的间距。 */
+      /* `word-spacing` 用来设置单词之间的间距。 */
+      .d2 {
+        /* 数值越大 间距越大 */
+        letter-spacing: 10px;
+        /* 空格 区分两个单词的标志 */
+        /* word-spacing: 20px; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="d1">
+      不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院
+      不凡学院不凡学院不凡学院不凡学院 不凡学院不凡学院不凡学院不凡学院
+    </div>
+    <div class="btn">百度一下</div>
+
+    <div class="text">hello</div>
+    <a href="">新浪</a>
+    <div class="d2">
+      不 凡学院不凡学院不凡学院不凡学院不凡学院不凡学院hello world
+    </div>
+  </body>
+</html>

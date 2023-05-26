@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .box {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle at 10% 20%, yellow, red, green);
+
+        border-radius: 50%;
+      }
+      /* 球体的 阴影 可以 用 伪元素 模拟  */
+      .box::after {
+        content: "";
+        position: absolute;
+        left: 200px;
+        bottom: -70px;
+        width: 600px;
+        height: 100px;
+        background-color: gray;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+</html>

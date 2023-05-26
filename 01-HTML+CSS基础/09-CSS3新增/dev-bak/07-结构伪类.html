@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /* 结构伪类 */
+      /* 只选中  3号 li   */
+      /* E:nth-child(n) */
+      /* n 表示 第几个 孩子  从1开始 */
+
+      /* ()里边支持一些简单的表达式 */
+      .item:nth-child(3) {
+        color: red;
+      }
+      .item:nth-child(6) {
+        color: red;
+      }
+
+      /* 偶数行 */
+      .item:nth-child(2n) {
+        color: yellow;
+      }
+
+      /* 3的倍数  */
+      .item:nth-child(3n) {
+        background-color: orange;
+      }
+
+      .item:first-child {
+        color: blue;
+      }
+      .item:last-child {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- emmet  快捷语法   -->
+    <!-- ul.list>li.item{这是$号li}*6 -->
+    <!-- ul.list>li.item{$}*6 -->
+
+    <ul class="list">
+      <li class="item">1</li>
+      <li class="item">2</li>
+      <li class="item">3</li>
+      <li class="item">4</li>
+      <li class="item">5</li>
+      <li class="item">6</li>
+    </ul>
+  </body>
+</html>

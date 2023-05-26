@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box"></div>
+
+    <ul>
+      <li data-color="red">red</li>
+      <li data-color="blue">blue</li>
+      <li data-color="yellow">yellow</li>
+      <li data-color="pink">pink</li>
+      <li data-color="orange">orange</li>
+
+      <!-- 相当于每一个标签 携带了 自己要设置的颜色信息 -->
+    </ul>
+
+    <!-- html 当中的标签 有很多的属性 ,是固有的,咱们没有办法 去 随意的给标签添加属性 -->
+
+    <!-- 自定义属性  可以帮助我们 去为标签添加一些属性 data-*  -->
+    <!-- 设置自定义属性.可以 将一些必要信息 保存进去,以便我们是用 -->
+
+    <!-- 自定义属性 最主要的作用 就是 用来 携带信息  -->
+
+    <script>
+      // js实现 为每一个li  设置 其 指定的颜色
+      var lis = document.querySelectorAll("li");
+      for (var i = 0; i < lis.length; i++) {
+        // 取出对应的颜色信息
+        // 获取自定义属性data-* 保存的值
+        // `Node.dataset['info']`
+        var colorInfo = lis[i].dataset["color"];
+        // var colorInfo = lis[i].dataset.color;
+        lis[i].style.color = colorInfo;
+      }
+    </script>
+  </body>
+</html>

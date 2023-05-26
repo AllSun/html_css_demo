@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box1 {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        z-index: 999;
+      }
+
+      .box2 {
+        position: absolute;
+        left: 50px;
+        top: 50px;
+        width: 200px;
+        height: 200px;
+        background-color: orange;
+        /* z-index: 1; */
+      }
+
+      .box3 {
+        position: absolute;
+        left: 80px;
+        top: 80px;
+        width: 200px;
+        height: 200px;
+        background-color: black;
+      }
+
+      .inner-box {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        background-color: blue;
+        z-index: 9999;
+        /* 层级很高,但是受限于父类元素的层级  */
+
+        /* 父元素如果设置了z-index属性,那么 子元素的层级无法突破父元素的限制 */
+        /* 父元素如果没有设置z-index属性,那么子元素的 z-index 就会和 外界的元素进行比较 */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 定位元素 可以使用 z-index   用来控制定位元素的层级高低  -->
+    <!-- 数值越大,层级越高(会在上边展示) -->
+
+    <div class="box1"></div>
+    <div class="box2">
+      <div class="inner-box"></div>
+    </div>
+    <div class="box3"></div>
+  </body>
+</html>

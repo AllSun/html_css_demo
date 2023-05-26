@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        padding: 20px;
+        background-color: orange;
+        /* 注意 背景色也会默认填充到边框下边(设置成虚线时,可知),,但是一般情况边框有自己的颜色 会把背景色盖上 */
+
+        /* border 同时设置 四个方向上的边框 */
+        /* border: 边框厚度/(宽度) 边框样式 边框颜色; */
+        /* 边框样式 border-style:  solid dashed double .... */
+        /* border: 10px dashed black; */
+
+        /* 单独的设置某一个方向上的边框  */
+        /* border-top / border-bottom /border-right /border-left */
+        border-top: 5px solid red;
+
+        /* 注意 设置边框 时   一定要有 厚度 样式 颜色 */
+      }
+
+      .d1 {
+        width: 400px;
+        height: 400px;
+        background-color: pink;
+        /* border是一个  缩写属性  */
+        /* border-width: 10px;
+        border-style: solid;
+        border-color: red; */
+
+        /* 此时和padding 的规则 一致 */
+        border-width: 10px 20px;
+        border-style: solid dashed;
+        border-color: red blue green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">不凡</div>
+    <div class="d1">hello</div>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            margin: 100px;
+        }
+        .ellipse-1 {
+        border-radius: 50%;
+        }
+        .ellipse-2 {
+        border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+        }
+        .ellipse-3 {
+        border-radius: 100% 0 0 0 / 100% 0 0 0;
+        }
+        .ellipse-4 {
+        border-radius: 50% 0 50% 0 / 100% 0 100% 0;
+        }
+
+        /* 如果是四个值:  代表 左上,右上,右下,左下 */
+        /* 两个值: 代表 第一个值:左上和右下  第二个值:右上和左下 */
+
+        /* 如果有斜杠, 斜杠前边表示水平方向,后边表示垂直方向 */
+    </style>
+</head>
+<body>
+    <div class="ellipse-1">
+
+    </div>
+    <div class="ellipse-2">
+        
+    </div>
+    <div class="ellipse-3">
+        
+    </div>
+    <div class="ellipse-4">
+        
+    </div>
+</body>
+</html>

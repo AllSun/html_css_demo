@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../reset.css" />
+    <style>
+      .welfare {
+        width: 1200px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      .left {
+        float: left;
+        width: 516px;
+      }
+      .right {
+        float: left;
+        width: 516px;
+      }
+      .line {
+        float: left;
+        width: 1px;
+        height: 808px;
+        background-color: gray;
+        margin: 0 83.5px;
+      }
+      .welfare .box {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        background-position: center;
+        background-size: 100% 100%;
+        margin: 44px 0;
+        box-sizing: border-box;
+        border: 2px solid transparent;
+      }
+      .welfare .box.r1 {
+        margin-top: 224px;
+      }
+      .welfare .box .info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 50px;
+        width: 100%;
+        background-color: #212121;
+        color: #bcbcbc;
+        line-height: 50px;
+      }
+      .welfare .box .info .s1 {
+        margin: 0 130px 0 19px;
+      }
+      .welfare .dot {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border: 2px solid #333;
+        /* 上下居中 */
+        top: 50%;
+        margin-top: -7px;
+        border-radius: 50%;
+      }
+      .welfare .left .dot {
+        /* 左右 */
+        right: -93px;
+      }
+      .welfare .right .dot {
+        left: -93px;
+      }
+      .welfare .box:hover {
+        border-color: red;
+      }
+      .welfare .box:hover .dot {
+        border-color: red;
+      }
+      .welfare .box:hover .info {
+        background-color: red;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="welfare">
+      <div class="left">
+        <div
+          class="box"
+          style="
+            background-image: url(http://www.bufantec.com/site/jingjie/static/img/active_1.jpg);
+          "
+        >
+          <div class="info">
+            <span class="s1">国庆特惠</span>
+            <span>7288元/套</span>
+          </div>
+          <div class="dot"></div>
+        </div>
+        <div
+          class="box"
+          style="
+            background-image: url(http://www.bufantec.com/site/jingjie/static/img/active_3.jpg);
+          "
+        >
+          <div class="info">
+            <span class="s1">国庆特惠</span>
+            <span>7288元/套</span>
+          </div>
+          <div class="dot"></div>
+        </div>
+      </div>
+      <div class="line"></div>
+      <div class="right">
+        <div
+          class="box r1"
+          style="
+            background-image: url(http://www.bufantec.com/site/jingjie/static/img/active_2.jpg);
+          "
+        >
+          <div class="info">
+            <span class="s1">国庆特惠</span>
+            <span>7288元/套</span>
+          </div>
+          <div class="dot"></div>
+        </div>
+        <div
+          class="box"
+          style="
+            background-image: url(http://www.bufantec.com/site/jingjie/static/img/active_4.jpg);
+          "
+        >
+          <div class="info">
+            <span class="s1">国庆特惠</span>
+            <span>7288元/套</span>
+          </div>
+          <div class="dot"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

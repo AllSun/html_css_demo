@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" />
+    <p></p>
+    <script>
+      var input = document.querySelector("input");
+      var p = document.querySelector("p");
+      // 键盘 按下时 触发
+      input.onkeydown = function (event) {
+        console.log(event);
+        // 帮助识别 按得 是 哪个键
+        console.log(event.key); // 按键内容
+        console.log(event.code); // 按键内容
+        console.log(event.keyCode); // 按键对应的编码  enter键13  空格键32
+        console.log(event.altKey);
+        if (event.keyCode === 13) {
+          p.innerText = input.value;
+        }
+      };
+
+      // 输入框填写内容,填好之后,敲回车 p标签里边显示 输入的内容
+    </script>
+  </body>
+</html>

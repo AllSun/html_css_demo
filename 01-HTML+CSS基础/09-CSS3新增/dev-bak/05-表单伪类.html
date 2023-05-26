@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .text:focus + span {
+        color: red;
+      }
+
+      /* checked 选中时  */
+      .like:checked + label {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <input class="text" type="text" />
+      <span>不凡</span>
+    </div>
+
+    <div class="box">
+      <input type="checkbox" class="like" />
+      <label for="">篮球</label>
+    </div>
+    <div class="box">
+      <input type="checkbox" class="like" />
+      <label for="">足球</label>
+    </div>
+  </body>
+</html>

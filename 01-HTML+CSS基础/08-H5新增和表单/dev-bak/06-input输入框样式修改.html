@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .search {
+        width: 198px;
+        height: 48px;
+        border: 1px solid #f5f5f5;
+      }
+      input {
+        float: left;
+        width: 150px;
+        height: 48px;
+        border: none;
+        outline: none;
+        text-indent: 12px;
+      }
+      .icon {
+        float: left;
+        width: 47px;
+        height: 48px;
+        border-left: 1px solid #f5f5f5;
+      }
+      .search:hover {
+        border-color: #333;
+      }
+      .search:hover .icon {
+        border-left-color: #333;
+      }
+
+      /* 输入框获取焦点时 */
+      input:focus {
+        color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="search">
+      <input type="text" />
+      <div class="icon"></div>
+    </div>
+  </body>
+</html>

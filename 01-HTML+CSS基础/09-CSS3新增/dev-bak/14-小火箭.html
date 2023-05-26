@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      html {
+        height: 100%;
+      }
+      body {
+        height: 100%;
+        background-color: orange;
+      }
+      .box {
+        position: absolute;
+        left: -300px;
+        top: 800px;
+        width: 200px;
+        height: 200px;
+        transform: rotate(45deg);
+        transition: 0.8s;
+      }
+      body:hover .box {
+        left: 500px;
+        top: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <img src="../素材/rocket.png" alt="" />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- dom对象属性 如何 获取 和 设置  -->
+    <!-- obj.属性名;
+    obj.属性名= 属性值; -->
+
+    <img class="item" src="img/a.jpg" alt="sorry" title="hello" />
+    <script>
+      var img = document.querySelector("img");
+
+      // 第一种处理方式  就是当做 普通对象 对待就行   对象.属性名
+      // 获取属性值
+      console.log(img.src);
+      console.log(img.title);
+      // 如何设置 重新赋值
+      // 如何新增属性
+      img.age = 24; // 标签 没有age 属性  也是允许添加的
+      console.log(img.age);
+      console.log(img.className);
+
+      // 第二种 属性操作方式  利用 dom对象专门的方法
+      // el.getAttribute() 属性的获取
+      // el.setAttribute()  属性的设置
+      // el.removeAttribute()  属性的删除
+
+      console.log(img.getAttribute("src")); // img/a.jpg
+      console.log(img.getAttribute("title")); // hello
+      console.log(img.getAttribute("class")); //
+
+      img.setAttribute("title", "不凡学院");
+
+      img.removeAttribute("alt");
+
+      // 两种操作的区别
+      // obj.属性名:  是属性就能操作
+      // get/set/removeAttribute()  只能操作 标签的固有属性(标签本身有的属性)
+      console.log(img.getAttribute("age")); // null
+      // age属性 是 通过对象的 .语法 随意添加的 ,不是标签的固有属性 ,所以获取不到
+    </script>
+  </body>
+</html>

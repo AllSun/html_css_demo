@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul class="list">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+    </ul>
+    <button>新增一条li</button>
+    <script>
+      // 给每一个li 绑定点击事件 点击时背景色变蓝
+      var list = document.querySelector(".list");
+      // var lis = document.querySelectorAll(".list li");
+      // for (var i = 0; i < lis.length; i++) {
+      //   lis[i].onclick = function () {
+      //     this.style.backgroundColor = "blue";
+      //   };
+      // }
+      var count = 6;
+      var btn = document.querySelector("button");
+      btn.onclick = function () {
+        count++;
+        var li = document.createElement("li");
+        li.innerText = count;
+        // 插入进去
+        list.appendChild(li);
+      };
+
+      // 思考解决 如何让新添加的li 也具备点击事件
+      // 如果想让新增元素 依然有事件,可以使用事件委托的形式
+
+      // 不再给li 绑事件,而是将事件委托(绑定)给 父元素 ul 来管理
+
+      list.onclick = function (event) {
+        // console.log(1);
+        // event.target 可以告诉我们 谁是引发事件的元素
+        if (event.target.tagName == "LI") {
+          event.target.style.backgroundColor = "blue";
+        }
+      };
+    </script>
+  </body>
+</html>

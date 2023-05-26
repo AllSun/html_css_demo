@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style>
+    .ct {
+      width: 280px;
+      height: 300px;
+      margin: 100px;
+      border: 1px solid black;
+    }
+    .box {
+      float: left;
+      width: 100px;
+      height: 100px;
+      background: red;
+      color: #fff;
+    }
+    .box1 {
+      width: 140px;
+      height: 120px;
+      background: blue;
+    }
+    .box2 {
+      background: pink;
+    }
+    /* 1.当元素 浮动之后  会脱离文档流,(不在文档流中占据位置),下方的元素会上移 */
+    /* 2. 文字不会和浮动元素产生交集,(如果发生重重叠)会环绕在浮动元素周围 (文字环绕) */
+  </style>
+</head>
+<body>
+  <div class="ct">
+    <div class="box box1">1</div>
+    <p>当box1浮动之后,不再占据文档流,下方元素会上移,和浮动元素产生交集.
+    因为文字不和浮动元素重叠,所以文字会环绕在浮动元素周围</p>
+    <div class="box box2">2</div>
+    <div class="box box3">3</div>
+  </div>
+</body>
+</html>

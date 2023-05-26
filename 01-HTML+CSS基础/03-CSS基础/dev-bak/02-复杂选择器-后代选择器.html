@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 后代选择器  特征 空格 隔开 */
+      /* box 里边 的 inner  */
+      /* 就好像  */
+      /* 中国 河南 郑州 */
+      /* 中国 郑州 */
+      .box .inner {
+        background-color: red;
+      }
+      /* .nav a  */
+      /* ul .nav-item a */
+      /* nav 里边的 nav-item 里边的 a 标签 */
+      .nav .nav-item a {
+        color: orange;
+      }
+      /* 后代选择器 一般 2到3个即可 */
+      /* 使用选择器 遵循的原则 就是:  选到你想选的元素,但是不影响其他元素 */
+    </style>
+  </head>
+  <body>
+    <!-- 复杂选择器也叫作 组合选择器 (简单选择器 组合而成) -->
+
+    <!-- 后代选择器 -->
+
+    <div class="box">
+      <div class="inner">内部盒子</div>
+    </div>
+    <div class="inner">外部盒子</div>
+
+    <ul class="nav">
+      <!-- <a href=""></a> -->
+      <li class="nav-item">
+        <a href="">首页</a>
+      </li>
+      <li class="nav-item">
+        <a href="">关于</a>
+      </li>
+      <li class="nav-item">
+        <a href="">加入</a>
+      </li>
+      <li class="nav-item">
+        <a href="">新闻</a>
+      </li>
+    </ul>
+  </body>
+</html>

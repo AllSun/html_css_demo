@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .wrap {
+        width: 800px;
+        height: 400px;
+        margin: 0 auto;
+      }
+
+      table {
+        margin: 20px auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <table cellspacing="20">
+        <tr>
+          <th><input type="checkbox" value="全选" id="all" /></th>
+          <th>产品</th>
+          <th>价钱</th>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="check" /></td>
+          <td>iphone</td>
+          <td>5000</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="check" /></td>
+          <td>iwatch</td>
+          <td>2000</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="check" /></td>
+          <td>ipad</td>
+          <td>3000</td>
+        </tr>
+      </table>
+      <input type="button" class="inverse" value="反选" />
+    </div>
+
+    <script>
+      var btnAll = document.querySelector("#all"); // 全选按钮
+      var checkArr = document.querySelectorAll(".check"); // 商品按钮组
+      var inverse = document.querySelector(".inverse");
+
+      // 全选按钮
+      btnAll.onclick = function () {
+        // 商品全部选中/全部取消
+        // 根据全选按钮此时的状态 设置 商品按钮的状态
+        var status = this.checked;
+        for (var i = 0; i < checkArr.length; i++) {
+          checkArr[i].checked = status;
+        }
+      };
+
+      // 反选按钮
+      inverse.onclick = function () {
+        // 商品按钮 取反
+        for (var i = 0; i < checkArr.length; i++) {
+          checkArr[i].checked = !checkArr[i].checked;
+        }
+        checkAll();
+      };
+
+      // 商品按钮
+      for (var i = 0; i < checkArr.length; i++) {
+        checkArr[i].onclick = function () {
+          checkAll();
+        };
+      }
+
+      // 考虑 当商品按钮 都选中时,,全选按钮要跟着联动 ,同理,但能够有一件商品没选中,全选按钮就不能选中
+      // 封装一个函数 ,专门用于 判断 此时 商品按钮 是否 都被选中,同时修改 全选按钮状态
+      // 思考检测的动作 什么时候触发 ?  每次商品按钮点击 都要触发
+      function checkAll() {
+        var flag = true;
+        for (var i = 0; i < checkArr.length; i++) {
+          if (checkArr[i].checked == false) {
+            flag = false;
+            break;
+          }
+        }
+        btnAll.checked = flag;
+      }
+    </script>
+  </body>
+</html>

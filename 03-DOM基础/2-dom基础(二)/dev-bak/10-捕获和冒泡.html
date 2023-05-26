@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrap">
+      wrap
+      <div class="w1">
+        w1
+        <div class="w2">
+          w2
+          <div class="w3">w3</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var wrap = document.querySelector(".wrap");
+      var w1 = document.querySelector(".w1");
+      var w2 = document.querySelector(".w2");
+      var w3 = document.querySelector(".w3");
+      // addEventListener 第三个参数  capture  控制事件触发阶段  true:代表捕获  false/不写: 冒泡
+
+      // 捕获阶段: 捕获目标的阶段 从外往里走
+      // 冒泡阶段: 从里往外走
+
+      // 给一个元素绑定事件的时候  可以决定 事件 绑在 捕获阶段 还是 冒泡阶段
+      // 事件机制 是 先进行捕获在进行 冒泡
+      wrap.addEventListener(
+        "click",
+        function () {
+          console.log("wrap...");
+        },
+        true
+      );
+
+      w1.addEventListener("click", function () {
+        console.log("w1...");
+      });
+      w2.addEventListener(
+        "click",
+        function () {
+          console.log("w2...");
+        },
+        true
+      );
+      w3.addEventListener("click", function () {
+        console.log("w3...");
+      });
+    </script>
+  </body>
+</html>

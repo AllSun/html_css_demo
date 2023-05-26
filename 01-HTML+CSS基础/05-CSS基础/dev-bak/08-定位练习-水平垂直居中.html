@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .card {
+        position: relative;
+        width: 275px;
+        height: 105px;
+        background-color: pink;
+        overflow: hidden;
+      }
+      .card .icon {
+        width: 48px;
+        height: 48px;
+        background-color: orange;
+
+        /* 第一种方式  父元素 和 自身 宽高已知 */
+        /* 利用margin   */
+        /* margin: 0 auto; */
+        /* (105-48)?2 */
+        /* margin-top: 28.5px; */
+
+        /* 第二种方式 定位实现 (父元素宽高未知,自身宽高已知)*/
+        position: absolute;
+        /* 元素的左边 距离 参照物的左边  有  50%(参照物宽度的50%) 远  */
+        left: 50%;
+        /* 元素的上边 距离 参照物的上边  有  50%(参照物高度的50%) 远  */
+        top: 50%;
+        /* 往左 移动自身宽度的一半 */
+        /* 往上移动自身高度的一半 */
+        margin-top: -24px;
+        margin-left: -24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="icon"></div>
+    </div>
+  </body>
+</html>

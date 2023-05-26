@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .box {
+        position: relative;
+        width: 200px;
+        height: 300px;
+        background-color: orange;
+      }
+      /* 块元素 水平垂直居中  */
+
+      /* 宽高已知  */
+
+      /* 自身宽高已知,父元素宽高未知 */
+      /* position:absolute;
+      left:50%;
+      margin-left:-自身宽度的一半 */
+
+      /* 宽高未知 时  */
+      .inner {
+        width: 60px;
+        background-color: red;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        /* 往左往上  分别移动自身宽高的一半 */
+        /* translate 里边的 百分数 是以 元素 自身 宽高 为 参照的 */
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="inner">不凡学院bufan</div>
+    </div>
+  </body>
+</html>

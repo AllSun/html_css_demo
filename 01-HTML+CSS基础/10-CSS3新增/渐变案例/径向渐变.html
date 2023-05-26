@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /*background: radial-gradient(center, shape size, start-color, ..., last-color);*/
+      /*radial-gradient径向渐变指从一个中心点开始沿着四周产生渐变效果*/
+      .box {
+        position: relative;
+        width: 400px;
+        height: 400px;
+
+        background: radial-gradient(circle at 10% 20%, yellow, red, green);
+
+        border-radius: 50%;
+      }
+      .box::after {
+        display: block;
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -70px;
+        width: 600px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+</html>

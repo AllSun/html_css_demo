@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        border: 50px solid yellow;
+      }
+      .box {
+        /* position: relative; */
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border: 10px solid #333;
+      }
+      .inner {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        margin-left: 20.9px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- offsetParent  offsetWidth  offsetHeight  offsetLeft  offsetTop -->
+
+    <div class="box">
+      <div class="inner"></div>
+    </div>
+
+    <!-- offsetParent 用于获取 离自己最近的具有定位属性的父元素 -->
+    <script>
+      var inner = document.querySelector(".inner");
+      // 如果一直找不到 就是 body
+      console.log(inner.offsetParent);
+
+      // offsetWidth  用于获取 元素的 实际 宽度
+      // offsetHeight  用于获取 元素的 实际 高度
+      // 1.  获取的是 数字类型  100px==>  100
+      // 2.  获取的是元素 实际的 宽高  (包含 border  和  padding)
+      // 3.  获取的 是 整数
+      // 4. offsetHeight/Width  只能用于获取  ,不能用于设置
+
+      console.log("inner的offsetWidth", inner.offsetWidth);
+      console.log("inner的offsetHeight", inner.offsetHeight);
+      console.log("----------------------");
+
+      inner.style.padding = "10px";
+      inner.style.border = "4px solid #333";
+
+      console.log("inner的offsetWidth", inner.offsetWidth);
+      console.log("inner的offsetHeight", inner.offsetHeight);
+      console.log("------------------");
+      inner.style.padding = "10.6px";
+      console.log("inner的offsetWidth", inner.offsetWidth);
+      console.log("inner的offsetHeight", inner.offsetHeight);
+
+      // 想更改  inner 的  宽和高 ?
+      // inner.style.width = "110px";
+
+      // inner.offsetWidth = 110; // 无效
+      console.log("----------------------");
+      // offsetLeft 和 offsetTop   用于获取  距离自己的 offsetParent元素的左上 边框的 距离 (不带边框)
+      // 如果 offsetparent  是 body   会带上 body 的边框
+
+      // 获取的 是 数字  而且是 整数 (四舍五入)
+      // 只能获取 不能设置
+      console.log("inner的offsetLeft", inner.offsetLeft);
+      console.log("inner的offsetTop", inner.offsetTop);
+    </script>
+  </body>
+</html>

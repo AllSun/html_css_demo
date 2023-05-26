@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .box {
+        position: relative;
+        width: 200px;
+        height: 400px;
+        background-color: red;
+        margin: 100px auto;
+        perspective: 600px;
+        transition: 1s;
+        /* 开启 3d 空间体系规则 */
+        transform-style: preserve-3d;
+
+        /* `backface-visibility：visible/ hidden` 设置元素背面是否可见 */
+        /* backface-visibility: hidden; */
+      }
+      .w {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: green;
+        transform: rotateX(45deg);
+      }
+      .box:hover {
+        transform: rotateY(360deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="w"></div>
+    </div>
+  </body>
+</html>

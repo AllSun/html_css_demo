@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 通过标签名 选中元素  */
+      /* 标签选择器  */
+      div {
+        color: pink;
+      }
+      /* id选择器   特征 #    通过id 选中元素  (不常用)*/
+      #d1 {
+        font-size: 24px;
+      }
+      /* class 选择器 标识符  .*/
+      /* 选中含有 red 这个类名的元素 */
+      .red {
+        color: red;
+      }
+      .green {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 选择器 可以帮助我们去 选中元素  -->
+    <div>hello</div>
+
+    <!-- id 属性  是标签的唯一标识,整个页面不能重复 -->
+    <div id="d1">world</div>
+
+    <!-- 类(class)选择器 -->
+    <!-- class 属性  (类/给标签分类) -->
+    <!-- 相同时选到某些元素 设置一些 相同的样式 -->
+    <!-- 就可以选择 选择给他们添加一个 相同的类名（class 名） -->
+    <!-- 通过这个 class名 同时选中 他们几个 -->
+
+    <!-- 类名设置是可以重复的 -->
+    <!-- 技能选中一个  ,又能选中多个 ,(自定义) -->
+    <div class="red">红色</div>
+    <div class="red">红色</div>
+    <div class="red">红色</div>
+    <div class="green">绿色</div>
+
+    <!-- class 起名 字母数字 _ - ,不要以数字开头 -->
+    <!-- 命名语义化 -->
+    <!-- 类名 反映出这个标签在网页中 充当的角色 (或者反映这个标签的某些功能) -->
+
+    <!-- 杜绝 a,bc ,x,yz, x1,x2 这种无意义的名字 -->
+  </body>
+</html>

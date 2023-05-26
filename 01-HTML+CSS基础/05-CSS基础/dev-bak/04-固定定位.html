@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .zx {
+        position: fixed;
+        /* 固定定位 */
+        right: 100px;
+        bottom: 150px;
+        /* 固定定位元素 会脱离文档流 ,层级提高 高于文档流中的元素*/
+        width: 240px;
+        height: 60px;
+        background-color: orange;
+        line-height: 60px;
+        text-align: center;
+      }
+      .head {
+        height: 500px;
+        background-color: red;
+      }
+      .main {
+        height: 2000px;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 固定定位 (相对浏览器定位) -->
+    <!-- 它的参照物 是 浏览器视口 -->
+    <!-- 特点: 网页滚动时,不会随着滚动  因为是 固定在视口上的 -->
+
+    <!-- 应用场景:  制作哪些 不随着 网页滚动的元素 ,永远固定在视口某个位置的元素 -->
+
+    <div class="zx">点击咨询</div>
+    <div class="head"></div>
+    <div class="main"></div>
+  </body>
+</html>

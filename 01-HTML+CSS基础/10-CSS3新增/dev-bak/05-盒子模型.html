@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        border: 10px solid #333;
+        background-color: blue;
+      }
+      .d1 {
+        width: 100px;
+        height: 100px;
+        /* 转换盒子模型 为 ie盒模型 */
+        box-sizing: border-box;
+        background-color: red;
+        padding: 10px;
+        border: 10px solid #333;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 盒子模型: content  padding border margin -->
+
+    <!-- 盒子大小的计算方式  -->
+
+    <!-- 标准盒子模型 -->
+    <!-- 盒子的大小== 设置的宽高(内容) + padding  + border  -->
+
+    <!-- 怪异盒模型(IE盒子模型) -->
+    <!-- 盒子的大小 == 设置的 宽高 -->
+    <!-- 如果添加padding 和 border  也不会影响盒子的大小,只会 挤压内容区 -->
+
+    <!-- box-sizing  用于 改变盒子模型  -->
+    <!-- content-box  默认 (标准盒模型) -->
+    <!-- border-box  ie盒模型 -->
+
+    <div class="box"></div>
+    <div class="d1"></div>
+  </body>
+</html>

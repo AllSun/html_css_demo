@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box">不凡学院</div>
+    <div class="box">哈哈哈</div>
+    <div class="head">
+      <div class="inner">你好</div>
+    </div>
+    <div class="inner">hello</div>
+
+    <ul class="nav">
+      <li class="nav-item">1</li>
+      <li class="nav-item">2</li>
+      <li class="nav-item">3</li>
+      <li class="nav-item">4</li>
+    </ul>
+    <script>
+      // querySelector(css选择器) 这个方法 只会 获取 一个dom元素,哪怕选择器匹配到了 多个,也只返回 第一个
+      // querySelectorAll(css选择器)  这个方法 获取的是一个伪数组形式,里边包含了所有匹配的dom元素
+
+      // 以上两个方法 都是 通过  css选择器 来 获取dom对象的
+      // 所有css选择器 都可以用
+      var box = document.querySelector(".box"); // 获取到的不再是 数组,,而是 真正的 dom对象
+      console.log(box);
+
+      var boxAll = document.querySelectorAll(".box"); // NodeList(2) [div.box, div.box]   伪数组形式
+      console.log(boxAll);
+
+      var inner = document.querySelector(".head .inner");
+      console.log(inner);
+
+      // 使用思路:  想获取 某些 dom对象时,先思考 如何 用css选择器 选中它,,把这个选择器 写进 query 这个方法里边即可
+      // 想获取单个元素 就用 querySelector()
+      // 想获取 多个  querySelectorAll()
+
+      // 获取 四个 导航 li 元素
+
+      var lis = document.querySelectorAll(".nav li"); // 伪数组 NodeList
+      // 通过querySelectorAll 获取的dom元素集合  可以使用 forEach
+      // 但是其他的数组方法用不了
+      lis.forEach(function (item, index) {
+        console.log(item, index);
+      });
+      // lis.pop(); lis.pop is not a function
+    </script>
+  </body>
+</html>

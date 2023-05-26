@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li class="item">1</li>
+      <li class="item">2</li>
+      <li class="item">3</li>
+      <li class="item">4</li>
+      <li class="item">5</li>
+      <li class="item">6</li>
+      <li class="item">7</li>
+      <li class="item">8</li>
+    </ul>
+
+    <script>
+      "use strict";
+      // 掌握 利用 for循环 遍历 dom元素
+
+      // js 为这些li  奇数行 设置背景 orange  偶数行 设置背景 pink
+      // 当鼠标进入某一个li时,该 li 背景高亮成红色
+      // 离开时还原
+
+      // 获取dom元素
+      var lis = document.querySelectorAll("li"); // 伪数组
+      var colorBefore; // 用于保存之前的颜色
+      // 循环 lis 这个 dom元素数组
+      for (var i = 0; i < lis.length; i++) {
+        if (i % 2 === 0) {
+          // 索引为偶数(奇数行)
+          lis[i].style.backgroundColor = "orange";
+        } else {
+          lis[i].style.backgroundColor = "pink";
+        }
+
+        // onmouseover 和 onmouseout  是一组 进入和离开
+        // 为 lis[i]绑定鼠标进入的事件
+        lis[i].onmouseover = function () {
+          // this 指向调用者
+          // 用户鼠标进入时 相当于执行了  元素.onmouseover()  // this指向调用者(元素)
+          // 此时this 值得就是 那个 鼠标进入的元素
+
+          // 提前获取原来的颜色
+          colorBefore = this.style.backgroundColor;
+          this.style.backgroundColor = "red";
+        };
+
+        // 鼠标离开事件
+        lis[i].onmouseout = function () {
+          // 赋值为原来的颜色, 原来的颜色 是什么颜色?
+          // 在修改为高亮颜色之前, 需要提前 保存好 原来的颜色
+          this.style.backgroundColor = colorBefore; // colorBefore is not defined
+        };
+      }
+    </script>
+  </body>
+</html>

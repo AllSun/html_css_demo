@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .red {
+        color: red;
+      }
+
+      /* 匹配到的兄弟  还需要 符合  +  或者 ~  后边选择器的规则 */
+      /* +  (紧邻)下一个兄弟 4*/
+      .red + .item {
+        color: green;
+      }
+      /* ~ 下边所有的兄弟  456*/
+      .red ~ .item {
+        background-color: orange;
+      }
+
+      /* 子代选择器 */
+
+      /* .box .inner  后代  */
+
+      /* box里边的  直接子元素(inner) */
+      .box > .inner {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 标签  class  id   -->
+
+    <!-- 并集  交集   后代 -->
+
+    <!-- 伪类选择器  :hover  :focus -->
+
+    <!-- 兄弟选择器 -->
+    <ul class="list">
+      <li class="item">1</li>
+      <li class="item">2</li>
+      <li class="item red">3</li>
+      <p>哈哈哈哈</p>
+      <li class="item">4</li>
+      <li class="item">5</li>
+      <li class="item">6</li>
+    </ul>
+
+    <div class="box">
+      <div class="inner">不凡</div>
+      <div class="d1">
+        <div class="inner">hello</div>
+      </div>
+    </div>
+  </body>
+</html>

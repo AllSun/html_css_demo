@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li class="li3">3</li>
+      <!-- 注释  -->
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+    </ul>
+
+    <script>
+      // nodeType 节点类型
+      // 1====元素标签节点
+      // 3=== 文本节点
+      // 8=== 注释节点
+      var ul = document.querySelector("ul");
+      var children = ul.childNodes;
+      console.log(children);
+    </script>
+  </body>
+</html>

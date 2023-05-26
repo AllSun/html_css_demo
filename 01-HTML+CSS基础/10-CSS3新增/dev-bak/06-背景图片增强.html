@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .banner {
+        width: 1200px;
+        height: 700px;
+        background-image: url(banner.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        margin: 0 auto;
+        border: 20px solid transparent;
+        padding: 50px;
+
+        /* 默认 背景图片 从 padding 区域 开始摆放  */
+
+        /* background-origin: 修改背景图片摆放的 起始位置 */
+        /* background-origin: padding-box;  从 padding 区  开始摆放  默认  */
+        /* background-origin: content-box; */
+        background-origin: border-box;
+
+        /* background-clip 剪裁背景   */
+        /* 只保留 内容区的背景 */
+        background-clip: content-box;
+        /* 只保留 内容区 + padding  的背景 */
+        /* background-clip: padding-box; */
+        /* 保留  内容区 + padding  +border  区域的背景 */
+        /* background-clip: border-box; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="banner"></div>
+  </body>
+</html>

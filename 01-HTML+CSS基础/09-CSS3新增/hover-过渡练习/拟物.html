@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="font/iconfont.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+            background-color: #ebfafc;
+        }
+        ul{
+            list-style: none;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+            margin-top: 100px;
+            border-radius: 10px;
+            background-color: #ebfafc;
+            box-shadow: -2px -2px 5px rgb(255,255,255),
+                        2px 2px 5px rgba(0,0,0,.1);
+        }
+        li{
+            position: relative;
+            float: left;
+            width: 40px;
+            height: 40px;
+            margin: 10px;
+        }
+        ul li input[type="checkbox"]{
+            /* position: absolute;
+            opacity: 0; */
+            display: none;
+        }
+        ul li label{
+            display: block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: #ebfafc;
+            border-radius: 6px;
+            box-shadow: -2px -2px 5px rgb(255,255,255),
+                        2px 2px 5px rgba(0,0,0,.1);
+        }
+        ul li input[type="checkbox"]:checked + label{
+            box-shadow: -2px -2px 5px rgb(255,255,255) inset,
+                        2px 2px 5px rgba(0,0,0,.1) inset;
+        }
+        ul li label .iconfont{
+            font-size: 30px;
+            color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <!-- 字体图标的使用
+    盒子阴影的使用
+    多选框和label 的使用
+    :checked 伪类的使用 -->
+    <ul>
+        <li>
+            <input id="check1" type="checkbox">
+            <label for="check1">
+                <span class="iconfont icon-view"></span>
+            </label>
+        </li>
+        <li>
+            <input id="check2" type="checkbox">
+            <label for="check2">
+                <span class="iconfont icon-view"></span>
+            </label>
+        </li>
+        <li>
+            <input id="check3" type="checkbox">
+            <label for="check3">
+                <span class="iconfont icon-view"></span>
+                
+            </label>
+        </li>
+        <li>
+            <input id="check4" type="checkbox">
+            <label for="check4">
+                <span class="iconfont icon-view"></span>
+                
+            </label>
+        </li>
+
+    </ul>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<!-- -   rowspan 单元格占几行 -->
+<!-- -   colspan 单元格占几列 -->
+  <table bgcolor="orange" cellspacing="20" cellpadding="10" border="5">
+    <!-- 表格标题 -->
+    <caption>
+      课程表
+    </caption>
+    <tr>
+      <th>周一</th>
+      <th>周二</th>
+      <th>周三</th>
+      <th>周四</th>
+    </tr>
+    <tr>
+      <td rowspan="2">语文</td>
+      <td colspan="2">数学</td>
+      <!-- <td>数学</td> -->
+      <td>体育</td>
+    </tr>
+    <tr>
+      <!-- <td>语文</td> -->
+      <td>数学</td>
+      <td>语文</td>
+      <td>体育</td>
+    </tr>
+  </table>
+</body>
+</html>

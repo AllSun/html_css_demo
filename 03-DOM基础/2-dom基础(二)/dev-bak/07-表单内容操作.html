@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box">
+      <div>用户名: <input type="text" class="user" /></div>
+      <div>
+        爱好: 足球:<input type="checkbox" name="like" class="like1" />
+        篮球:<input type="checkbox" name="like" class="like2" />
+      </div>
+      <div>
+        城市:
+        <select name="city" id="" class="city">
+          <option value="1">北京</option>
+          <option value="2">上海</option>
+          <option value="3">广州</option>
+          <option value="4">深圳</option>
+        </select>
+      </div>
+    </div>
+
+    <script>
+      // 对于 文本输入框 而言,利用js 更改其内容  就是 设置他的 value  属性
+      var user = document.querySelector(".user");
+      user.value = "hello";
+      // checked 和 selected
+      // 通过给 checked 设置为 true  来让单选框或者多选款被选中
+      var like1 = document.querySelector(".like1");
+      like1.checked = true;
+
+      var options = document.querySelectorAll("select option");
+      options[2].selected = true;
+
+      // 表单事件
+
+      // oninput事件 : 输入时触发
+      user.oninput = function () {
+        console.log("正在输入....");
+      };
+      // onchange事件  用户改变域的内容时 触发  比如 单选框的修改,下拉选择矿修改
+      var city = document.querySelector(".city");
+      city.onchange = function () {
+        console.log("改变了");
+      };
+
+      like1.onchange = function () {
+        console.log("足球改变了");
+      };
+    </script>
+  </body>
+</html>

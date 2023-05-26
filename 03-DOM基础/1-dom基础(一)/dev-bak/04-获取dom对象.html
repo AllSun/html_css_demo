@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box">box</div>
+    <p>不凡</p>
+    <a href="" id="logo">学院</a>
+    <script>
+      // 获取 dom对象(标签节点)
+      // Ele  是 element(元素) 的简写
+      var aEl = document.getElementById("logo"); // dom对象
+      console.log(aEl);
+      // 想要查看dom对象上的属性和方法 有哪些 ?
+      // 可以用  console.dir()
+      console.dir(aEl);
+
+      // 通过标签名获取
+      // 标签不唯一 所以放在 数组里边返回
+      var pArr = document.getElementsByTagName("p"); //获取的是一个 包含 dom元素的  伪数组 HTMLCollection
+      console.log(pArr);
+      // 想要修改 p标签的背景色 ,必须准确拿到 dom对象
+      pArr[0].style.color = "red";
+
+      // 类名不唯一
+      var divs = document.getElementsByClassName("box"); // 也是一个类数组
+      console.log(divs);
+      console.log(divs[0]);
+
+      // 以上 就是获取 dom对象 基本方法
+      // class 和 tagname  获取的 是  类数组形式  尤其注意
+      // 操作dom  必须 找到 都没对象 才行,,,对伪数组无法操作
+
+      // 伪数组有索引 ,有长度,能用for循环遍历但是不具备数组的方法
+
+      // divs.forEach is not a function
+      // divs.forEach(function (item, index) {
+      //   console.log(item, index);
+      // });
+    </script>
+  </body>
+</html>

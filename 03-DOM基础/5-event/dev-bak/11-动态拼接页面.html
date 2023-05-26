@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .talk {
+        width: 1160px;
+        margin: 0 auto;
+      }
+
+      .talk .title .c-title {
+        font-size: 22px;
+        font-weight: bold;
+        color: black;
+      }
+
+      .talk .title .e-title {
+        font-size: 12px;
+        color: #969696;
+        padding-left: 12px;
+        padding-top: 13px;
+        vertical-align: bottom;
+      }
+
+      .list {
+        padding-top: 20px;
+      }
+
+      .list-item {
+        font-size: 16px;
+        float: left;
+        margin-left: 20px;
+      }
+
+      .list-item.first {
+        margin-left: 0;
+      }
+
+      .list-item img {
+        width: 275px;
+        height: 105px;
+        border-radius: 5px;
+      }
+
+      .item-title {
+        font-size: 14px;
+        margin-top: 8px;
+        font-weight: bold;
+        color: #333333;
+      }
+
+      .item-data {
+        margin-top: 4px;
+      }
+
+      .item-data img {
+        width: 17px;
+        height: 17px;
+        vertical-align: -5px;
+      }
+
+      .item-data span {
+        font-size: 12px;
+        color: #999999;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="talk">
+      <div class="title">
+        <span class="c-title"> 不凡说 </span>
+        <span class="e-title"> TALK </span>
+      </div>
+      <ul class="list"></ul>
+    </div>
+
+    <script>
+      // innerHTML: 获取元素的 html结构字符串
+      // 也可以用来设置 元素的 内容... 如果替换的内容时标签结构字符串 ,会被当做标签解析
+
+      // 利用innerHTML  动态的拼接 我们的网页结构
+
+      // 数据驱动视图层的变化
+      // 可以用数据库里请求的 数据信息 拼接网页结构,,如果数据库 里边的数据信息变了,那么网页战士的信息也会跟着改变
+      // 一般都是需要通过 ajax 请求 来的
+
+      // 使用 talkList 这哥数据 拼接  不凡说的结构
+      var talkList = [
+        {
+          bg: "https://bufanweb3.oss-cn-beijing.aliyuncs.com/webdev/20200507144241.png",
+          title: "前端培训/转行，必看指南！",
+          date: "2020年03月17日",
+          icon: "http://www.bufanui.com/pages/front/img/talk-icon.png",
+        },
+        {
+          bg: "https://bufanweb3.oss-cn-beijing.aliyuncs.com/webdev/20200119150205.jpg",
+          title: "标题变了",
+          date: "2020年01月19日",
+          icon: "http://www.bufanui.com/pages/front/img/talk-icon.png",
+        },
+        {
+          bg: "https://bufanweb3.oss-cn-beijing.aliyuncs.com/webdev/20200119110601.jpg",
+          title: "JS 元素拖拽的那些事儿",
+          date: "2020年01月18日",
+          icon: "http://www.bufanui.com/pages/front/img/talk-icon.png",
+        },
+        {
+          bg: "https://bufanweb3.oss-cn-beijing.aliyuncs.com/websit/20200110145228.png",
+          title: "聊.....",
+          date: "2020年01月14日",
+          icon: "http://www.bufanui.com/pages/front/img/talk-icon.png",
+        },
+      ];
+
+      var ul = document.querySelector(".list");
+      // 利用for循环 拼接  四个 li  卡片 构成的结构字符串
+      var str = ``;
+      for (var i = 0; i < talkList.length; i++) {
+        str += `<li class="list-item ${i == 0 ? "first" : ""}">
+          <img
+            src="${talkList[i].bg}"
+            alt="加载失败"
+          />
+          <p class="item-title">${talkList[i].title}</p>
+          <p class="item-data">
+            <img
+              src="http://www.bufanui.com/pages/front/img/talk-icon.png"
+              alt=""
+            />
+            <span>${talkList[i].date}</span>
+          </p>
+        </li>`;
+      }
+      ul.innerHTML = str;
+    </script>
+  </body>
+</html>

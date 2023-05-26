@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .align {
+        text-align: center;
+      }
+      .red {
+        font-size: 30px;
+        height: 60px;
+        background-color: orange;
+        line-height: 60px;
+        width: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 类名控制样式的思想 -->
+    <p class="text">不凡学院</p>
+    <button>追加类名red</button>
+    <button>删除类名red</button>
+    <button>切换类名red</button>
+    <button>判断是否存在red这个类名</button>
+
+    <script>
+      var pEl = document.querySelector("p");
+      // 类名对应的属性 叫 className
+      // pEl.className = "box";
+      // 追加类名怎么办?
+      pEl.className += " box";
+      // 删除类名怎么办?
+
+      // HTML5 出现之后 新增了 类名的操作
+      // 因为类名的 追加 删除 很频繁
+
+      var btn = document.querySelectorAll("button");
+      // 追加类名
+      // el.classList.add("类名");
+      btn[0].onclick = function () {
+        pEl.classList.add("red", "green");
+        pEl.classList.add("align");
+
+        // pEl.style.backgroundColor = 'orange';
+        // ...
+      };
+      // 删除类名
+      btn[1].onclick = function () {
+        pEl.classList.remove("red");
+      };
+
+      // 切换类名
+      // 有则删除,无则添加
+      btn[2].onclick = function () {
+        pEl.classList.toggle("red");
+      };
+
+      // 判断类名是否存在
+      btn[3].onclick = function () {
+        // 判断 red 类名 是否存在  true/false
+        console.log(pEl.classList.contains("red"));
+      };
+    </script>
+  </body>
+</html>

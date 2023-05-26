@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        color: green;
+      }
+      p {
+        font-size: 24px;
+        font-weight: bolder;
+        color: blue;
+      }
+      .title {
+        color: red;
+        background-color: orange;
+      }
+      .info {
+        color: pink;
+      }
+
+      /* 如果样式冲突 怎么办?  */
+      /* 看选择器的优先级(权重),权重高的生效 */
+      /* 选择器权重高低 */
+
+      /* 行内样式(1000) > id选择器(100)> class选择器(10) > 标签选择器(1) > 通配符/继承属性(0) */
+      /* 复杂选择器的权重  简单的累加*/
+      /* .nav a {} */
+      /* .nav .nav-item a{} */
+
+      /* 权重相同时 ,后写的生效 */
+    </style>
+  </head>
+  <body>
+    <!-- 层叠性  -->
+    <!-- 一个元素展示的效果  是很多样式层叠在一起 功能共同生效的作用 -->
+
+    <p class="title info">不凡学院</p>
+  </body>
+</html>

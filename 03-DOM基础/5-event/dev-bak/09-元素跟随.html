@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 64px;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="http://doc.bufanui.com/uploads/beAdvance/images/m_e0b06035b88993be2db320bc7abef089_r.png"
+      alt=""
+    />
+
+    <script>
+      var imgEle = document.querySelector("img");
+
+      // 监听鼠标移动,实时获取鼠标位置,将元素定位到该位置
+      window.onmousemove = function (event) {
+        // 获取鼠标位置
+        var l = event.pageX;
+        var t = event.pageY;
+        console.log(l, t);
+
+        // 移动图片  调整图片中心点正好位于鼠标之下
+        imgEle.style.left = l - 30 + "px";
+        imgEle.style.top = t - 25 + "px";
+      };
+    </script>
+  </body>
+</html>

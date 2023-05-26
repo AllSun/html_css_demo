@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box">
+      <p>不凡学院</p>
+    </div>
+    <button>插入图片</button>
+    <button>insertBefore</button>
+    <button>删除p</button>
+
+    <script>
+      // 想实现 在网页当中   随意的用 js  删除元素 添加元素 复制元素
+      // 节点的增删改查
+
+      var btns = document.querySelectorAll("button");
+      // 节点的创建
+      var div = document.createElement("div"); // 创建了 一个 div 元素节点
+      console.dir(div);
+
+      btns[0].onclick = function () {
+        var imgEl = document.createElement("img");
+        imgEl.src = "img/a.jpg";
+        console.log(imgEl);
+        // 插入节点
+        // 父节点.appendChild(插入的节点)
+        // 插入到父元素的末尾  同push类似
+        var box = document.querySelector(".box");
+        box.appendChild(imgEl);
+      };
+      // 如果想实现 插入 父节点的任意位置  ?
+      btns[1].onclick = function () {
+        var imgEl = document.createElement("img");
+        imgEl.src = "img/hulk.jpg";
+        // 父节点.insertBefore(插入节点,参考节点) // 插入到参考节点之前
+        var box = document.querySelector(".box");
+        var p = document.querySelector(".box p");
+        box.insertBefore(imgEl, p);
+      };
+
+      // 插入节点时: 不能对同一个节点 执行 重复插入 (否则就是剪切的效果(之前的位置就会消失))
+
+      // 删除节点
+      btns[2].onclick = function () {
+        // 删除box里边的 p标签
+        // 父节点.removeChild(删除的节点)
+        var box = document.querySelector(".box");
+        var p = document.querySelector(".box p");
+        // box.removeChild(p);
+        // p.parentNode.removeChild(p);
+        p.remove();
+      };
+
+      // 克隆节点
+      var box = document.querySelector(".box");
+      var boxClone = box.cloneNode(true); // true:深克隆   false:浅克隆
+      console.log(boxClone);
+    </script>
+  </body>
+</html>

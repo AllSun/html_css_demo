@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <input type="text" />
+    <button>发送</button>
+
+    <script>
+      var btn = document.querySelector("button");
+      btn.onclick = function () {
+        var count = 5;
+        btn.innerText = count + "s";
+        // 禁用按钮
+        btn.disabled = true;
+        // 读秒
+        var timer = setInterval(function () {
+          if (count == 1) {
+            // 还原按钮
+            btn.innerText = "发送";
+            btn.disabled = false;
+            // 关闭定时器
+            clearInterval(timer);
+          } else {
+            count--;
+            btn.innerText = count + "s";
+          }
+          console.log("...");
+        }, 1000);
+      };
+    </script>
+  </body>
+</html>

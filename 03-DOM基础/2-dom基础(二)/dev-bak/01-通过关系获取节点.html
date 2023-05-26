@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <div class="inner">不凡学院</div>
+    </div>
+
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li class="li3">3</li>
+      <!-- 注释  -->
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+    </ul>
+    <script>
+      // 就好像
+      // var uer = {
+      //   name: "张三",
+      //   parentNode: "老张",
+      //   nextSibling: "张武",
+      //   previousSibling: "张毅",
+      //   child: "小张",
+      // };
+      // 获取节点(dom对象)的方式
+      // document.get.....
+      // document.query.....
+
+      // 通过关系获取节点
+      // 节点组成了 一个树形结构 包含关系(父子关系)  并列关系(兄弟关系)
+      var inner = document.querySelector(".inner");
+      // 想要获取inner的父元素  el.parentNode 属性  存着 el的 父节点
+      var parent = inner.parentNode;
+      console.log(parent);
+
+      // 兄弟关系
+      var li3 = document.querySelector(".li3");
+      // 遇到:  找 li3元素的 兄弟元素,,,就使用  el.nextElementSibling(下一个)  和  el.previousElementSibling(上一个)
+      console.log(li3.nextElementSibling); // 仅仅获取 li3 的下一个 标签(元素)节点
+      console.log(li3.previousElementSibling);
+      // 特殊的 和 elementSibling 的区别
+      console.log(li3.nextSibling); // 获取li3的下一个 节点(html中换行符也是节点,注释也是节点)
+      console.log(li3.previousSibling); // 获取li3的上一个 节点(html中换行符也是节点,注释也是节点)
+
+      // 注意兼容 ie8以下
+      // 因为 ie8以下  nextSibling 得到的就是 下一个元素节点,并没有nextElementSibling  属性
+      // 如果用 nextSibling  获下一个元素节点  ie8 可用,但是 高级浏览器不行
+      // 如果用 nextElementSibling  获取下一个元素节点   高级浏览器可用,但是ie8以下用不了
+      var next = li3.nextElementSibling || li3.nextSibling;
+      // previous 同理
+
+      // 查找子元素
+      // el.childNode;(el的所有子节点) 和 el.children;(el的所有标签子节点)
+      var ul = document.querySelector("ul");
+      console.log(ul.childNodes); // NodeList(15) [text, li, text, li, text, li.li3, text, comment, text, li, text, li, text, li, text]
+      console.log(ul.children); // HTMLCollection(6) [li, li, li.li3, li, li, li]
+
+      // 如果想获取 除了自己以外的所有兄弟怎么办?
+      // 获取自己后边的所有兄弟 / 获取前边所有的兄弟
+    </script>
+  </body>
+</html>

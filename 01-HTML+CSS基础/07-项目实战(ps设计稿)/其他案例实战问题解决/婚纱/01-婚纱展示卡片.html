@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../reset.css">
+    <title>Document</title>
+    <style>
+        .card{
+            position: relative;
+            width: 270px;
+            height: 360px;
+        }
+        .card .mask{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,.5);
+            opacity: 1;
+        }
+
+        .card .text{
+            position: absolute;
+            left: 0;
+            top: 0;
+            margin-top: 124px;
+            opacity: 0;
+            color:#fff;
+        }
+        .card .text h3{
+            margin-bottom:39px;
+        }
+
+        .card:hover .mask{
+            opacity: 0;
+        }
+        .card:hover .text{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="http://www.bufantec.com/site/hunsha/static/img/WeddingDress-1.jpg" alt="婚纱图片">
+        <div class="mask">
+            
+        </div>
+        <div class="text">
+            <h3>HER STYLE / 一字肩拖尾主纱</h3>
+            <p>$5389.00</p>
+            <p>白色 / M / VK2531</p>
+        </div>
+    </div>
+</body>
+</html>

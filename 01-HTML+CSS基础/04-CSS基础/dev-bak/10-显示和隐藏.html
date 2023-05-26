@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 300px;
+      height: 300px;
+      background-color: pink;
+      margin: 50px;
+
+    }
+    .inner{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      /* 元素隐藏消失 */
+      /* 从结构当中消失,不在占据位置.下方元素会上移 */
+      display: none;
+    }
+    /* box 被hover  时  ,设置inner 的样式 */
+    .box:hover .inner{
+      display: block;
+    }
+    .d1{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      /* 元素隐藏 */
+      /* 看不到了,但是依然占据位置 */
+      opacity:0;
+    }
+    .box:hover .d1{
+      opacity: 1;
+    }
+    .d2{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      /* 隐藏 */
+      /* 依然占据位置 */
+      visibility: hidden;
+    }
+    .box:hover .d2{
+      visibility: visible;
+    }
+
+    /* hover元素时,可以实现修改该元素的样式 ,也可以通过后代 修改 它内部元素的样式 */
+  </style>
+</head>
+<body>
+  <!-- 第一组:  display:none;(隐藏/消失)  display: block/inline/inline-block;(不是none)(显示) -->
+  <div class="box">
+    
+    <div class="inner">
+
+    </div>
+    <p>不凡学院</p>
+  </div>
+
+  <!-- 第二组透明度  -->
+  <div class="box">
+    
+    <div class="d1">
+
+    </div>
+    <p>不凡学院</p>
+  </div>
+
+  <!-- 第二组 visibility  -->
+  <div class="box">
+    
+    <div class="d2">
+
+    </div>
+    <p>不凡学院</p>
+  </div>
+</body>
+</html>

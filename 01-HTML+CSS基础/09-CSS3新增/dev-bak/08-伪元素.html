@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
+    <title>Document</title>
+    <style>
+      /* 伪元素 ::  */
+      p {
+        width: 100px;
+        height: 200px;
+      }
+      p::first-letter {
+        color: blue;
+        font-size: 32px;
+      }
+      p::first-line {
+        color: red;
+      }
+      /* 选中的文本 */
+      p::selection {
+        color: orange;
+        background-color: green;
+      }
+
+      /* 添加伪元素 */
+      /* 1. content 属性必须写 (可以填文本,也可以啥都不填) */
+      /* 2. 伪元素 是作为内部元素存在  before 会作为 box 的 最前边  after  永远位于 box  的 最后*/
+      /* 3.  伪元素 是行内元素  */
+      .box::before {
+        content: "";
+        display: block;
+        width: 17px;
+        height: 17px;
+        background-color: red;
+      }
+      .box::after {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 2px;
+        background-color: green;
+      }
+
+      /* 这两个伪元素 经常用于 制作 跟随线 , 文字前边的图标 , */
+
+      /* after伪元素 还经常 用于 清除 浮动的影响  */
+      .main {
+        width: 400px;
+        border: 1px solid #333;
+        /* overflow: hidden; */
+      }
+      .main .d1 {
+        float: left;
+        width: 200px;
+        height: 200px;
+        background-color: red;
+      }
+      /* .clr {
+        clear: both;
+      } */
+
+      .clr::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      /* 只需要给  需要 清除浮动影响的 元素 追加上 clr 这个类名即可  */
+      /* 因为 clr 这个类名 我们已经提前设置好样式了  */
+    </style>
+  </head>
+  <body>
+    <p>不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院不凡学院</p>
+
+    <!-- 最常用的伪元素  ::before  ::after  -->
+
+    <!-- 任何一个标签 都可以  在其 内部 添加上这两个伪元素 -->
+
+    <div class="box">
+      <!-- <span class="icon"></span> -->
+      不凡学院
+      <!-- <span class="line"></span> -->
+    </div>
+
+    <div class="main clr">
+      <div class="d1"></div>
+      <div class="d1"></div>
+      <div class="d1"></div>
+      <div class="d1"></div>
+      <div class="d1"></div>
+      <!-- 这个div  可以用 after  模拟 -->
+      <!-- <div class="clr"></div> -->
+    </div>
+  </body>
+</html>

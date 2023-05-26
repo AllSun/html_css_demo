@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .head {
+        height: 400px;
+        background-color: pink;
+      }
+      .main {
+        height: 1000px;
+        background-color: blue;
+      }
+      .footer {
+        height: 1600px;
+        background-color: orange;
+      }
+      div:target {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- http://127.0.0.1:5500/06-%E7%9B%AE%E6%A0%87%E4%BC%AA%E7%B1%BB.html#d2 -->
+
+    <!-- #d2 表示 当前页面的 锚点元素 是 main id 是 d2 -->
+
+    <!-- `E:target` 结合锚点进行使用，处于当前锚点的元素会被选中 -->
+    <a href="#d1">跳到 head</a>
+    <a href="#d2">跳到 main</a>
+    <a href="#d3">跳到 footer</a>
+
+    <div class="head" id="d1"></div>
+    <div class="main" id="d2"></div>
+    <div class="footer" id="d3"></div>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 浮动元素 会脱离文档流 -->
+  <!-- 浮动专门用于 解决块元素 同行展示的问题  -->
+  <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title></title>
+  <style>
+  .ct {
+      width: 280px;
+      height: 300px;
+      margin: 100px;
+      border: 1px solid black;
+    }
+    .box {
+      /* float 浮动 */
+      /* left 向左浮动 */
+      /* right向右浮动 */
+      /* none 不浮动 */
+
+      /* 空间不够时 换行  */
+      float: left;
+
+      /* 体验右浮动 */
+      /* float: right; */
+      width: 100px;
+      height: 100px;
+      background: red;
+      color: #fff;
+    }
+    .box1 {
+      background: blue;
+      /* 体验卡住的情况 */
+      height: 120px;
+    }
+    .box2 {
+      background: pink;
+    }
+  </style>
+</head>
+<body>
+  <div class="ct">
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <div class="box box3">3</div>
+  </div>
+</body>
+</html>
+</body>
+</html>

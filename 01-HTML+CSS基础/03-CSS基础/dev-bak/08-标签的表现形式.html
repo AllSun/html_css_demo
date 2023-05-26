@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .d1 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+      .d2 {
+        /* width: 100px; */
+        height: 100px;
+        background-color: green;
+      }
+      span {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+      }
+
+      input {
+        width: 300px;
+        height: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 不同的标签 表现形式 也不同 -->
+
+    <!-- 块级标签 div hn p ul li table dl ol form-->
+    <!-- 1. 独占一行,不会同行展示 -->
+    <!-- 2. 设置宽高有效 -->
+    <!-- 3. 不写宽度时,宽度默认是父元素宽度的100%-->
+
+    <!-- 行内标签 span label  a-->
+    <!-- 1. 同行展示 -->
+    <!-- 2. 设置宽高无效-->
+    <!-- 3. 宽度由内容撑开  -->
+
+    <!-- 行内块标签 input img button -->
+    <!-- 1. 同行展示 -->
+    <!-- 2. 设置宽高有效-->
+    <!-- 3. 不写宽度时,宽度由内容撑开  -->
+
+    <div class="d1">d1</div>
+    <div class="d2">d2</div>
+
+    <!-- 回车换行 是 一个空格 -->
+    <span>不凡</span>
+    <span>学院</span>
+
+    <input type="text" />
+    <input type="text" />
+    <button>普通按钮</button>
+  </body>
+</html>

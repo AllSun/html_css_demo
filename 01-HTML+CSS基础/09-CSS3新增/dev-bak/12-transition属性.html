@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        /* 指定参与过渡的属性  */
+        /* transition-property: width; */
+        transition-property: all;
+
+        /* 指定过渡的持续时间 */
+        transition-duration: 0.8s;
+
+        /* 指定 过渡的延迟时间  */
+        transition-delay: 0.4s;
+
+        /* 指定过渡的 运动函数(运动曲线)  指定速率的变化  */
+        /* 匀速 还是 变速  */
+        /* linear / ease / ease-in / ease-out/ease-in-out */
+        /* 还支持 贝塞尔曲线  */
+        /* https://cubic-bezier.com/#.17,.67,.83,.67 */
+        transition-timing-function: ease;
+
+        /* 缩写 */
+        /* 务必记住:  持续时间 在前,,延迟时间在后 */
+        /* transition: all ease 0.8s 0.4s; */
+      }
+
+      .box:hover {
+        width: 300px;
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+
+      button {
+        margin-top: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <button>开始</button>
+    <button>倒退</button>
+
+    <script>
+      var btn = document.querySelectorAll("button");
+      var box = document.querySelector(".box");
+      // 匀速动画的封装
+      // 创建函数
+      // 考虑参数(调用时的场景)
+      // 复制粘贴 逻辑  替换
+      // 考虑返回值
+
+      btn[0].onclick = function () {
+        move(box, 7, 200);
+      };
+      btn[1].onclick = function () {
+        move(box, 7, 0);
+      };
+      // step 步长 控制了速度  (整数)
+      // target 目标位置 (可以决定运动的方向)
+      // el 运动的元素(dom)
+      // move(el, step, target);
+      function move(el, step, target) {
+        // 把定时器 timer 作为属性 存到 el 的身上
+        // 清除el身上的其他定时器
+        if (el.timer) {
+          clearInterval(el.timer);
+        }
+        // 获取元素当前的位置
+        var leader = el.offsetLeft;
+        // 修正步长
+        if (target - leader > 0) {
+          step = Math.abs(step);
+        } else if (target - leader < 0) {
+          step = -1 * Math.abs(step);
+        } else {
+          // return 退出函数
+          return;
+        }
+        el.timer = setInterval(function () {
+          // 移动
+          el.style.left = el.offsetLeft + step + "px";
+          // 终点情况判断
+          if (Math.abs(target - el.offsetLeft) < Math.abs(step)) {
+            el.style.left = target + "px";
+            clearInterval(el.timer);
+            el.timer = null;
+          }
+          console.log("-----");
+        }, 16.7);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box">不凡学院</div>
+    <script>
+      function say() {
+        alert("hello");
+      }
+      window.say();
+
+      alert(window.innerHeight); // 浏览器窗口
+      document.body.style.backgroundColor = "red";
+
+      // DOM文档对象  能够把 网页当中的 所有 标签  都包装成对象
+
+      // 那么  这个 标签的样式 /类名/自带属性(href,src) 都会 作为这个对象的  属性存在
+      //  var obj =  {
+      //     tagName:'DIV',
+      //     className:'box',
+      //     innerText:'不凡学院'
+      //     ....
+
+      //   }
+
+      // 把标签包装成对象之后,就可以用  js 操作了
+    </script>
+  </body>
+</html>

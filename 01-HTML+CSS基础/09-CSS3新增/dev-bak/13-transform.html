@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      div {
+        margin: 100px;
+      }
+      .box {
+        /* position: absolute;
+        left: 0;
+        top: 0; */
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        transition: 0.4s;
+      }
+      .box:hover {
+        margin-left: 100px;
+        /* left: 100px; */
+        /* left: auto;
+        right: 0; */
+      }
+
+      .d1 {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        transition: 0.8s;
+      }
+      .d1:hover {
+        /* translate(x, y) x代表 水平 , y  代表上下 */
+        /* 正值 向右 /向下 */
+        transform: translate(100px, 50px);
+        /* 只需要水平移动 */
+        /* transform: translate(100px, 0); */
+        /* transform: translateX(100px); */
+        /* transform: translateY(50px); */
+      }
+      /* 旋转  transform:rotate() */
+
+      .d2 {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        transition: 0.8s;
+        /* 旋转中心 */
+        /* 水平/垂直  */
+        /* transform-origin: right center; */
+        /* transform-origin: 100% 50%; */
+      }
+      .d2:hover {
+        /* transform: rotate(350deg); */
+
+        /* 想同时 实现旋转和平移  */
+        transform: translate(50px, 50px) rotate(350deg);
+      }
+      .d3 {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        transition: 0.8s;
+      }
+      .d3:hover {
+        /* width/ height   缩放比例 */
+        /* scale(x,y) */
+        /* transform: scale(1.2, 2); */
+        /* transform: scaleX(1.2) */
+        /* transform: scale(1.2, 1); */
+        /* scaleY() */
+
+        /* transform: scale(1.2, 0.8); */
+        /* 只有一个值 表示 宽高缩放比例 一样 */
+        transform: scale(1.5);
+
+        /* 另外  缩放  位移  旋转 是可以同时使用的  */
+      }
+      .d4 {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        transition: 0.8s;
+      }
+      .d4:hover {
+        transform: skew(30deg);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- transform  可以帮助我们  实现元素的  移动  旋转 缩放 还有  倾斜 -->
+    <div class="box"></div>
+
+    <div class="d1"></div>
+    <div class="d2"></div>
+    <div class="d3"></div>
+    <div class="d4"></div>
+  </body>
+</html>

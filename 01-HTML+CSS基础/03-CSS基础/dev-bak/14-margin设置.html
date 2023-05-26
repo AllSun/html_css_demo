@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        /* 把所有标签的 默认  padding 和 margin  设置为  0  */
+        margin: 0;
+        padding: 0;
+      }
+      .d1 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        /* 同时指定四个方向的 外边距 */
+        /* margin: 30px; */
+
+        /* 上下/左右 */
+        /* margin: 30px 50px; */
+
+        /* 上/左右/下 */
+        /* margin: 30px 20px 10px; */
+
+        /* 上右下左 */
+        margin: 10px 20px 30px 40px;
+
+        /* 单独指定 某一个方向的 margin   */
+
+        /* margin-top  /margin-bottom  /margin-left /margin-right  */
+      }
+      .d2 {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 外边距  ,盒子与盒子之间的间距 -->
+    <div class="d1">不凡</div>
+    <div class="d2">hello</div>
+
+    <!-- 自带  margin  和 padding   布局时  需要清除 -->
+    <ul>
+      <li></li>
+      <li></li>
+    </ul>
+    <p></p>
+  </body>
+</html>

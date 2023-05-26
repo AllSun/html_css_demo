@@ -1,0 +1,137 @@
+/* 头部和底部的 公共样式 */
+.header{
+    height: 60px;
+    background-color: #fff;
+}
+/* 保证 填写的内容 在 header-c (版心)里边 */
+.header-c{
+    width: 1160px;
+    height: 100%;
+    margin: 0 auto;
+}
+.logo{
+    float: left;
+    width: 140px;
+    height: 100%;
+    background: url(http://www.bufanui.com/pages/front/img/LOGO.png) no-repeat center;
+    background-size: 140px auto;
+}
+.nav{
+    float: right;
+    height: 100%;
+}
+.nav a{
+    float: left;
+    width: 64px;
+    height: 100%;
+    text-align: center;
+    line-height: 60px;
+    margin: 0 20px;
+    color: #333;
+}
+.nav a .line{
+    display: none;
+    width: 100%;
+    height: 2px;
+    background-color: red;
+    margin-top: -2px;
+}
+.nav .active .line{
+    display: block;
+}
+.nav a:hover .line{
+    display: block;
+}
+.footer{
+    height: 275px;
+    background-color: #282c35;
+}
+.footer-c{
+    width: 1160px;
+    height: 100%;
+    margin: 0 auto;
+    /* background-color: pink; */
+}
+.address{
+    float: left;
+    width: 250px;
+    height: 100%;
+    /* background-color: gray; */
+    margin-right: 60px;
+}
+.concat{
+    float: left;
+    width: 250px;
+    height: 100%;
+    /* background-color: gray; */
+    margin-right: 30px;
+}
+.zx{
+    position: relative;
+    float: left;
+    width: 250px;
+    height: 100%;
+    /* background-color: gray; */
+    margin-right: 20px;
+}
+.qr{
+    float: left;
+    width: 250px;
+    height: 100%;
+    text-align: center;
+    /* background-color: gray; */
+}
+
+.footer .dz,
+.footer .wx{
+    height: 80px;
+    margin-top: 40px;
+}
+.footer .tel,
+.footer .qq{
+    margin-top: 30px;
+}
+.footer .tip{
+    font-size: 12px;
+    color: gray;
+}
+.footer .info{
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 12px;
+}
+.zx .btn{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -20px;
+    margin-left: -80px;
+    width: 160px;
+    height: 40px;
+    background-color: orange;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+}
+.qr img{
+    width:150px;
+    height: 150px;
+    margin-top: 60px;
+}
+.link{
+    height: 60px;
+    background-color: #333;
+    text-align: center;
+    line-height: 60px;
+    color: gray;
+    font-size: 12px;
+}
+.link a{
+    margin: 0 5px;
+    color: gray;
+}
+.link span{
+    margin-left: 20px;
+}

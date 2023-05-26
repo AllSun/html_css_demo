@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../reset.css" />
+    <title>Document</title>
+
+    <style>
+      .card {
+        width: 1200px;
+        height: 254px;
+        padding-top: 20px;
+        margin: 0 auto;
+      }
+
+      .card .img {
+        position: relative;
+        float: left;
+        width: 360px;
+        height: 254px;
+      }
+      .card .img img {
+        width: 100%;
+        height: 100%;
+      }
+      .card .mask {
+        position: absolute;
+        left: 20px;
+        top: -20px;
+        width: 356px;
+        height: 250px;
+        border: 2px solid #e7e7e7;
+      }
+      .card .info {
+        float: left;
+        margin-left: 20px;
+        width: 820px;
+        height: 167px;
+        margin-top: 43px;
+        text-align: center;
+        background-color: #fbfbfb;
+      }
+      .card .info h3 {
+        font-size: 22px;
+        margin-top: 38px;
+      }
+      .card .info p {
+        font-size: 14px;
+        color: #8b8b8c;
+        margin-top: 18px;
+      }
+      .card .info span {
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        margin: 0 3px 0 7px;
+        vertical-align: 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="img">
+        <img
+          src="http://www.bufantec.com/site/manlv/static/img/yunnan.jpg"
+          alt="图片"
+        />
+        <div class="mask"></div>
+      </div>
+      <div class="info">
+        <h3>苍山洱海旁，过一段慢时光</h3>
+        <p class="desc">云南风花雪月之旅 （6days）</p>
+        <p class="feature">
+          <span style="background-color: #f19ec2"></span>洱海骑行<span
+            style="background-color: #f29753"
+          ></span
+          >手作扎染<span style="background-color: #8c97cb"></span
+          >泸沽湖划船<span style="background-color: #7ecef4"></span>草海<span
+            style="background-color: #cce198"
+          ></span
+          >束河古镇<span style="background-color: #8bcfcc"></span>拉市海
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

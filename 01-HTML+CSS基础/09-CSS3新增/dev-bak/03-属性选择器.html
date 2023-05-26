@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* 选中所有 含有 title 属性的  p元素 */
+      p[title] {
+        color: red;
+      }
+      p[class] {
+        color: green;
+      }
+
+      /* 选中 含有title属性并且属性值是 'hello'  的  p元素 */
+      p[title="hello"] {
+        color: blue;
+      }
+
+      /* *= 含有某个字符  */
+      /* 选中   class 属性值里边 有 t 这个 字符的 p元素 */
+      p[class*="t"] {
+        color: orange;
+      }
+
+      /* $=  以 某个字符结尾  */
+      p[class$="d"] {
+        color: yellow;
+      }
+      /* ^=  以 某个字符 开头 */
+      p[class^="a"] {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <body>
+      <p title="hello">今天天气真好啊</p>
+      <p title="nice">今天天气真好啊</p>
+      <p class="word">今天天气真好啊</p>
+      <p class="text">今天天气真好啊</p>
+      <p class="texa">今天天气真好啊</p>
+      <p class="ao">今天天气真好啊</p>
+      <p data-name="today">今天天气真好啊</p>
+    </body>
+  </body>
+</html>

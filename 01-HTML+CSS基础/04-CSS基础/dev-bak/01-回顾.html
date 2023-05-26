@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  css 复杂选择器
+  后代 ul li{}  .nav .nav-item{}
+  交集选择器 .box.blue{}
+  并集选择器 .box,.nav,p{}
+  通配符 *{}
+
+
+  css的继承性 和  权重(优先级)
+  字体属性  和 文本属性 line-height  text-align 
+
+  样式冲突  行内样式>id > class >标签> 继承属性(*) 
+  复杂选择器权重 累加
+
+  标签的表现形式
+  块级元素  div ul li
+  1. 设置宽高有效
+  2. 独占一行
+  3. 不写宽度时,宽度是父元素 的100%
+
+  行内元素  span label a
+  1. 设置宽高无效
+  2. 通函展示
+  3. 宽度由内容撑开
+
+  行内块元素  img input 
+  1. 设置宽高有效
+  2. 同行展示
+  3. 不写宽度时,宽度有内容撑开
+
+  图文对齐
+  vertical-align   解决行内块元素 和文字同行展示时候的额  对齐方式
+
+
+  盒子模型
+  content   padding  border  margin (作用)
+  设置 
+  border: 1px solid #333;
+
+  行内元素  上下的padding  和 margin  不起作用
+
+  margin-top  嵌套崩塌 
+  1. 给父元素 添加 overflow:hidden
+  2.  给父元素 添加  padding-top:0.1px;
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+      .box.active {
+        /* 移动可以借助 transform 里边的 tanslate  */
+        left: 400px;
+        transition: 0.4s;
+      }
+
+      button {
+        margin-top: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- transition  配合 transform / left /top /width/height 实现过渡 动效 (css) -->
+    <div class="box"></div>
+    <button>开始</button>
+    <script>
+      var btn = document.querySelector("button");
+      var box = document.querySelector(".box");
+      // btn.onclick = function () {
+      //   box.classList.add("active");
+      // };
+
+      btn.onclick = function () {
+        // box.style.left = "400px";
+        // 为了实现 动画 有过程
+        // 可以让元素每隔一段时间 移动 一小点,直到 到达 目标位置
+        // 循环定时器
+        // 把 画面 连续播放
+        // 一般 而言  我们的屏幕 刷新率 60hz  (一秒刷新60次)
+        var timer = setInterval(function () {
+          // 获取元素当前的位置
+          var leader = box.offsetLeft;
+          box.style.left = leader + 20 + "px";
+
+          // 400像素的时候 停下来
+          if (box.offsetLeft == 400) {
+            clearInterval(timer);
+          }
+        }, 16.7);
+      };
+      // 想让 元素 移动的快一点  可以 把 10px  改  大一点 (  移动的步长)
+    </script>
+  </body>
+</html>

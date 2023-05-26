@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+
+      button {
+        margin-top: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <button>前进</button>
+    <button>后退</button>
+    <!-- 缓动动画 就是 变速动画 (步长是变化的) -->
+    <!-- 缓动动画有很多种  因为步长的变化 可以是多种多样的 -->
+
+    <!-- 咱们今天 制作一种  先快后慢 -->
+    <!-- leader 是当前位置,target 目标位置 -->
+    <!-- 步长会随着 逐渐减小 -->
+    <!-- 新位置 = leader + (target-leader)/10  -->
+    <script>
+      var btn = document.querySelectorAll("button");
+      var box = document.querySelector(".box");
+      btn[0].onclick = function () {
+        animate(box, 400);
+      };
+
+      btn[1].onclick = function () {
+        animate(box, 0);
+      };
+      function animate(el, target) {
+        if (el.timer) {
+          clearInterval(el.timer);
+        }
+
+        el.timer = setInterval(function () {
+          // 剩余距离
+          // el.offsetLeft 是会四舍五入的
+          var remain = target - el.offsetLeft;
+          // 计算步长
+          var step = remain / 10;
+          // 修正步长
+          // 避免出现小数的情况  (remain<10的时候就会出现小数)
+          // 在Math.abs(remain) < 10 之后,咱们就强行把 步长 设置为 1 ,一步步走到终点
+          if (Math.abs(remain) < 10) {
+            // <0  -1
+            // >0   1
+            // =0   0
+            step = step > 0 ? 1 : Math.floor(step);
+          }
+
+          // 移动
+          el.style.left = el.offsetLeft + step + "px";
+
+          // 终止条件
+          if (el.offsetLeft == target) {
+            clearInterval(el.timer);
+            el.timer = null;
+          }
+        }, 16.7);
+      }
+    </script>
+    <script></script>
+  </body>
+</html>

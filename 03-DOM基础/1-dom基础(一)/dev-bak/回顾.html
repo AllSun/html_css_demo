@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p onclick="foo()">不凡学院</p>
+    <script>
+      // window:  既是 js代码中的 全局对象  也是浏览器的窗口
+
+      // DOM 文档对象模型  浏览器提供的对象(作用就是为我们的html文档提供一种对象化的描述)
+      // 一遍我们的js  能够操作
+
+      // BOM 浏览器对象模型  提供了很多操作浏览器的 方法  userAgent location
+
+      // html 网页中 处处都是节点(dom对象 但是一般操作的 都是 元素(标签) 对象)
+
+      // 1. 如何获取 dom对象
+      document.getElementById(); // dom对象
+      document.getElementsByClassName(); // 类数组  HTMLCollection[]
+      document.getElementsByTagName(); // 类数组
+
+      document.querySelector("css选择器"); // 单个 dom对象
+      document.querySelectorAll("css选择器"); // 多个 类数组 Nodelist[]
+
+      // 注意 修改dom对象时,必须 从类数组当中通过索引取出 才行
+
+      // 2. 事件驱动 (绑定事件)(预先设置好交互逻辑)
+      // 1. 获取事件源
+      // 2. 绑定鼠标进入的事件
+      // 3. 事件处理程序 (业务逻辑)
+      // 一:  行内绑定
+      function foo() {}
+      // 二 el必须是一个 dom元素
+      el.onclick = function () {};
+
+      // 3.样式修改和获取
+
+      // el.style.样式名 = 样式值;
+      // 修改的是 行内样式 ,获取的也是行内样式
+
+      // getComputedStyle(el).样式名;
+      // 也可以帮助我们获取元素样式
+      // 获取的是 最终的元素样式(内部样式和行内样式还有外联样式共同作用的结果)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        position: fixed;
+        right: 50px;
+        bottom: 250px;
+        width: 80px;
+        height: 90px;
+        background-color: pink;
+      }
+      .box .icon {
+        width: 30px;
+        height: 30px;
+        background-color: orange;
+        margin: 18px auto 8px;
+      }
+      .box .text {
+        font-size: 14px;
+        line-height: 16px;
+        color: #757575;
+        text-align: center;
+      }
+      .box .mask {
+        position: absolute;
+        right: 90px;
+        top: 0;
+        padding: 14px;
+        background-color: gray;
+        display: none;
+      }
+      .box .mask img {
+        width: 100px;
+        height: 100px;
+      }
+      .box .mask .desc {
+        width: 82px;
+        margin: 14px auto 0;
+        line-height: 21px;
+      }
+      .box:hover .mask {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="icon"></div>
+      <div class="text">手机APP</div>
+      <div class="mask">
+        <img
+          src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/78c30d4f259ed43ab20e810a522a6249.png"
+          alt=""
+        />
+        <div class="desc">扫码领取新人礼包</div>
+      </div>
+    </div>
+  </body>
+</html>

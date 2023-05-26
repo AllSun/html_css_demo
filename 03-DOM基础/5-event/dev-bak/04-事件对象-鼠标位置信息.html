@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        margin-left: 20px;
+        overflow: hidden;
+        /* border: 10px solid #333; */
+      }
+      .footer {
+        height: 1200px;
+      }
+      span {
+        display: block;
+        width: 50px;
+        height: 50px;
+        background-color: green;
+        margin: 10px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <span> </span>
+    </div>
+    <div class="footer"></div>
+    <script>
+      // `e.pageX/Y`		获取鼠标点击的相对于页面(文档)的位置
+      // `e.clientX/Y`	获取鼠标点击的相对于可视区域的位置
+      // `e.screenX/Y`	获取鼠标点击的相对于屏幕的位置
+      // `e.offsetX/Y`	表示鼠标指针位置相对于触发事件的对象的位置
+
+      var box = document.querySelector(".box");
+      box.onclick = function (event) {
+        // 触发事件时:
+        // pageX 鼠标点击的位置 距离 文档左侧有多远,
+        // pageY 鼠标点击的位置 距离 文档顶部有多远,
+        console.log("event.pageX", event.pageX);
+        console.log("event.pageY", event.pageY);
+        console.log("--------------------");
+        // clientX 鼠标点击的位置 距离 浏览器可视区域左侧有多远,
+        // clientY 鼠标点击的位置 距离 浏览器可视区域顶部有多远,
+        console.log("event.clientX", event.clientX);
+        console.log("event.clientY", event.clientY);
+        console.log("-------");
+        // screenX 鼠标点击的位置 距离 电脑屏幕左侧有多远,
+        // screenY 鼠标点击的位置 距离 电脑屏幕顶部有多远,
+        console.log("event.screenX", event.screenX);
+        console.log("event.screenY", event.screenY);
+
+        console.log("--------");
+        // offsetX 鼠标点击的位置 距离 引发事件的元素(event.target) 左侧有多远,
+        // offsetY 鼠标点击的位置 距离 引发事件的元素 event.target 顶部有多远,
+        console.log("event.offsetX", event.offsetX);
+        console.log("event.offsetY", event.offsetY);
+      };
+    </script>
+  </body>
+</html>

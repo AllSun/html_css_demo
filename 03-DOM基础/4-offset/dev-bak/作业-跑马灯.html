@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>跑马灯</title>
+		<style>
+			.box{
+				position: relative;
+				width: 400px;
+				height: 100px;
+				margin: 50px auto;
+				color: red;
+				line-height: 100px;
+				border: 1px solid red;
+			}
+			span{
+				position: absolute;
+				left: 0;
+				width: 115px;
+			}
+			span:last-child{
+				left: 400px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="box">
+			<span>这是一个跑马灯</span>
+			<span>这是一个跑马灯</span>
+		</div>
+		
+		<script type="text/javascript">
+			var box = document.querySelector(".box");
+			var sArr = document.querySelectorAll("span");
+			
+			box.onclick = function (){
+				setInterval(function (){
+					// 因为两个span的运动距离一样,取其中一个的起始位置
+					var start = sArr[0].offsetLeft;
+					
+					if(start === -box.offsetWidth){
+						start = 0;
+					}
+					
+					// 假定步长为 1
+					// a++  a;a=a+1  ++a a=+1;
+					sArr[0].style.left = --start + "px";
+					sArr[1].style.left = --start + 400 + "px";
+					
+					// 一闪一闪 两个状态切换 true/false 奇/偶
+					// 减缓  放大
+					if(start % 40 === 0){
+						sArr[0].style.color = "red";
+						sArr[1].style.color = "red";
+					}else if(start % 20 === 0){
+						sArr[0].style.color = "blue";
+						sArr[1].style.color = "blue";
+					}
+				}, 1000/60)
+			}
+		</script>
+	</body>
+</html>

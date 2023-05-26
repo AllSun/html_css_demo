@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        background-color: gray;
+      }
+      .box {
+        color: red;
+        font-size: 32px;
+        /* 文本阴影 (文本的影子) */
+        /* `text-shadow: h-shadow(x) v-shadow(y) blur(模糊半径) color(颜色)` */
+        /* 水平偏移  垂直偏移  模糊度  阴影颜色 */
+        /* 正值: 右  / 下 */
+        /* 模糊度:  数值越大 越模糊 */
+        text-shadow: 10px 10px 5px blue, -10px -10px 5px orange;
+      }
+
+      .d1 {
+        font-size: 80px;
+
+        text-shadow: -1px -1px 1px #000, 1px 1px 1px #fff;
+      }
+      .d2 {
+        font-size: 80px;
+        text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
+      }
+
+      .d3 {
+        text-shadow: 0 0 50px red;
+      }
+
+      .d4 {
+        font-size: 80px;
+        -webkit-text-stroke: 1px pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">bufan学院</div>
+
+    <div class="d1">不凡学院</div>
+    <div class="d2">不凡学院</div>
+
+    <div class="d3">不凡学院</div>
+
+    <div class="d4">不凡学院</div>
+  </body>
+</html>

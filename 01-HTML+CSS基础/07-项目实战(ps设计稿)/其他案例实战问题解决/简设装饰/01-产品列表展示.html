@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
+
+    <style>
+      .nav-item {
+        /* float: left; */
+        position: relative;
+        width: 360px;
+        height: 360px;
+        margin-right: 60px;
+      }
+
+      .nav-item img {
+        display: block;
+        width: 303px;
+        height: 303px;
+        margin-left: 28.5px;
+        margin-top: 20px;
+      }
+
+      .nav-item .mask {
+        position: absolute;
+        display: none;
+        left: 0;
+        top: 0;
+        width: 360px;
+        height: 320px;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .nav-item .mask span {
+        display: block;
+        width: 80px;
+        height: 1px;
+        background-color: #ffffff;
+      }
+
+      .nav-item .mask .text {
+        color: #f8f8f8;
+      }
+
+      .nav-item .mask .text .top {
+        font-size: 30px;
+        height: 23px;
+        width: 25px;
+        line-height: 25px;
+        margin-top: 131px;
+        margin-left: 84px;
+      }
+
+      .nav-item .mask .text .center {
+        font-size: 16px;
+        width: 221px;
+        margin-bottom: 10px;
+      }
+
+      .nav-item .mask .text .bottom {
+        font-size: 14px;
+        line-height: 14px;
+      }
+
+      .nav-item .mask .text-bottom {
+        margin-left: 69px;
+        margin-top: 16px;
+      }
+
+      .nav-item .letter {
+        width: 154px;
+        height: 40px;
+        color: #767676;
+        margin: 0 auto;
+      }
+
+      .nav-item .letter .top {
+        font-size: 16px;
+      }
+
+      .nav-item .letter .bottom {
+        font-size: 14px;
+      }
+
+      .nav-item:hover .mask {
+        display: block;
+      }
+
+      .nav-item:hover .letter {
+        display: none;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="nav-item">
+      <img src="p1.png" alt="图片" />
+      <!-- 遮罩层 -->
+      <div class="mask">
+        <div class="text">
+          <p class="top">01</p>
+          <span></span>
+          <div class="text-bottom">
+            <p class="center">PEMBERLY ROW</p>
+            <p class="bottom">软垫加州特大号床板ZUMA PUMICE</p>
+          </div>
+        </div>
+      </div>
+      <!-- 下方的文字 -->
+      <div class="letter">
+        <p class="top">SOLOMAN</p>
+        <p class="bottom">中世纪浅米色面料平台床</p>
+      </div>
+    </div>
+  </body>
+</html>

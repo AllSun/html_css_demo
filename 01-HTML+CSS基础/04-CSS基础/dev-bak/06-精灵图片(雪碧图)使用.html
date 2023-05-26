@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .icon{
+      display:block;
+      width: 19px;
+      height: 18px;
+      background: url('images/qq-wx.png') no-repeat;
+      /* 展示微信图标  */
+      background-position: -20px 0;
+
+      /* 通过调整 bgp 的位置 ,使 不同的图标出现在视口范围内 */
+    }
+
+    .user{
+      width: 38px;
+      height: 38px;
+      background: url('images/pwd-icons-new.png') no-repeat;
+      background-position: -48px -48px;
+    }
+    .user:hover{
+      background-position: -48px -96px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 雪碧图: 是我们前端 整合图片的技术 (配合 bgp  使用) -->
+
+  <!-- qq-wx  -->
+  <span class="icon"></span>
+
+  <div class="user">
+
+  </div>
+</body>
+</html>

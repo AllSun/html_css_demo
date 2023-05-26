@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      margin: 50px;
+    }
+
+    /* 垂直方向上的 margin 有可能 会出现重叠 */
+    /* 大的生效 */
+
+    /* 左右方向上的margin  是 会 累加的 */
+    .d1{
+      margin-bottom: 80px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box d1">box1</div>
+  <div class="box">box2</div>
+</body>
+</html>

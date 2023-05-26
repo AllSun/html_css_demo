@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        /* 盒子阴影 */
+        /* `box-shadow: h-shadow(x) v-shadow(y) blur(模糊半径) spread(扩展范围) color(颜色) inset(是否内嵌,可省略)` */
+        /* 扩展范围 (扩展半径)  阴影四周 添加多少像素  */
+        box-shadow: 10px 20px 10px 0px gray;
+        /* box-shadow: 10px 20px 10px 0px gray inset; */
+
+        /* 阴影也是可以设置 多个 的  ,逗号隔开即可  */
+      }
+
+      .d1 {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        margin-top: 100px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <div class="d1"></div>
+  </body>
+</html>

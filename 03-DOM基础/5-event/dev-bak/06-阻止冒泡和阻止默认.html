@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+      .inner {
+        width: 50px;
+        height: 50px;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="link" href="">不凡学院</a>
+    <!-- <a href="javascript:;">不凡学院</a> -->
+
+    <div class="box">
+      <div class="inner"></div>
+    </div>
+    <script>
+      var link = document.querySelector(".link");
+      // 想要 让 a a 标签 执行我们绑定的事件 ，就需要把 a 标签的默认事件 取消
+      link.onclick = function (event) {
+        event.preventDefault(); // 取消元素的默认事件
+        event.returnValue = false; // ie低版本  取消
+        console.log("hello");
+      };
+
+      // 阻止冒泡
+      var box = document.querySelector(".box");
+      var inner = document.querySelector(".inner");
+      box.onclick = function () {
+        console.log("box");
+      };
+      inner.onclick = function (event) {
+        // 正常点击,由于冒泡机制,父元素的点击事件也会触发
+        // 如果想实现 不触发父元素(祖先元素)的点击事件
+        event.stopPropagation(); // 阻止事件冒泡
+        event.cancelBubble = true; // ie低版本 阻止冒泡
+        console.log("inner");
+      };
+    </script>
+  </body>
+</html>

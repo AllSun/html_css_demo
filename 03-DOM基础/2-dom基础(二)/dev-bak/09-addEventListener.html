@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box">不凡学院</div>
+    <button>remove</button>
+    <script>
+      var box = document.querySelector(".box");
+      // box.onclick = function () {
+      //   console.log(1);
+      // };
+      // 能否重复的绑定事件
+      // onclick 无法绑定多次? 覆盖之前
+      // box.onclick = function () {
+      //   console.log(2);
+      // };
+      // box.onclick = null; 移除事件
+
+      // 事件监听器 addEventListener  可以为一个元素绑定多个相同事件
+      // el.addEventListener(type,fn)
+      // el.ontype = fn;
+      box.addEventListener("click", function () {
+        console.log("listener");
+      });
+      box.addEventListener("click", function () {
+        console.log("1...");
+      });
+      box.addEventListener("click", foo);
+      function foo() {
+        console.log("hello");
+      }
+
+      // 移除事件 removeEventListener(type,fn)
+      var btn = document.querySelector("button");
+      btn.onclick = function () {
+        // 移除事件监听器
+        // 和绑定时候的参数 一一对应
+        // box.removeEventListener("click", foo);
+        // 以下方式无法 移除  ,因为  绑定时候和 移除时候的  fn 不一样
+        // box.removeEventListener("click", function () {
+        //   console.log("1...");
+        // });
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box">不凡学院</div>
+    <p onclick="foo(event)">hello</p>
+    <span>hi</span>
+    <script>
+      // 事件对象 是事件触发时,浏览器提供给我们的一个对象,这个对象包含了一些 信息(跟事件相关的)
+      // 学会在 不同的事件绑定方式下 ,获取到时间对象
+
+      // 通常 事件对象 用 e 或者 event 来代表
+
+      // 属性绑定
+      var box = document.querySelector(".box");
+      box.onclick = function (event) {
+        console.log("不凡学院");
+        // 声明形参event ,函数里就可以使用 event事件对象
+        console.log("....", event);
+
+        // 在ie 里边 需要使用 window.event 获取事件对象
+        // 兼容写法
+        // event = event || window.event;
+      };
+
+      // 行内绑定
+      // 需要在绑定时  onclick="foo(event)"   将 事件对象event传递
+      function foo(event) {
+        console.log("hello");
+        console.log(event);
+      }
+
+      // 注册事件监听器
+      var span = document.querySelector("span");
+      span.addEventListener("click", function (event) {
+        console.log("hi");
+        console.log(event);
+      });
+
+      // 总结 :  高级浏览器当中 只要 声明形参 e 或者 event ,在事件处理程序当中,二者就代表的是 事件对象
+      // ie 当中 只能通过 window.event 获取事件对象
+    </script>
+  </body>
+</html>

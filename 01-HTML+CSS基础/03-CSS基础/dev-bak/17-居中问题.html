@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width:1200px;
+      height: 100px;
+      background-color: orange;
+      text-align: center;
+      /* 实现 行内元素和 行内块元素的水平居中 */
+    }
+
+    .main{
+      width:1200px;
+      height: 200px;
+      background-color: pink;
+      margin-top: 50px;
+
+    }
+    .w{
+      width: 100px;
+      height: 50px;
+      background-color: orange;
+      /* 技巧 */
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- 1. 考虑 你是让哪些元素居中的? -->
+  <!-- 2. 判断要居中的这些元素 是 什么表现形式 ? 块?行内?行内块? -->
+  <!-- 结论:  如果是行内和行内块,就可以对他们的父元素 设置 text-align:center -->
+
+  <!-- 如果是块元素 就直接对这个块元素 设置 margin:0 auto -->
+  <div class="box">
+    <span>不凡学院</span>
+    hello
+    <input type="text">
+  </div>
+
+
+  <div class="main">
+    <div class="w">不凡</div>
+  </div>
+</body>
+</html>

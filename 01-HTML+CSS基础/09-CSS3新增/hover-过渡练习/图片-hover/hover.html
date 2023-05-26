@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .header {
+            font-size: 24px;
+            text-align: center;
+
+        }
+
+        .content {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            background-color: #fefefe;
+        }
+
+        .wrapper {
+            width: 40%;
+            height: 300px;
+            padding: 30px 0;
+        }
+
+        .box {
+            position: relative;
+            height: 100%;
+            border-radius: 4px;
+            overflow: hidden;
+            color: #fff;
+            text-align: center;
+            box-shadow: 0 1.4px 1.7px rgba(0, 0, 0, 0.017),
+                0 3.3px 4px rgba(0, 0, 0, 0.024),
+                0 6.3px 7.5px rgba(0, 0, 0, 0.03),
+                0 11.2px 13.4px rgba(0, 0, 0, 0.036),
+                0 20.9px 25.1px rgba(0, 0, 0, 0.043),
+                0 50px 60px rgba(0, 0, 0, 0.06);
+            ;
+        }
+
+        img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: all ease-in-out .3s;
+        }
+
+        h2 {
+            font-size: 22px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+
+        h2,
+        p {
+            position: absolute;
+            width: 100%;
+            transition: all ease-in-out .3s;
+            z-index: 3;
+        }
+
+        .frame {
+            position: absolute;
+            border: 1px solid transparent;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .vintage h2 {
+            top: 50%;
+            transform: translate3d(0, 60px, 0);
+        }
+
+        .vintage p {
+            opacity: 0;
+            bottom: 0;
+            transform: translate3d(0, -10px, 0);
+        }
+
+        .vintage::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(72, 76, 97, 0) 0%, rgba(72, 76, 97, 0.6) 60%);
+            z-index: 2;
+            bottom: -100%;
+            left: 0;
+            transition: all ease-in-out .2s;
+        }
+
+        .vintage:hover h2 {
+            bottom: 40px;
+            transform: translate3d(0, 20px, 0);
+        }
+
+        .vintage:hover p {
+            transform: translate3d(0, -40px, 0);
+            opacity: 1;
+        }
+
+        .vintage:hover::before {
+            bottom: 0;
+        }
+
+        .w-content .frame {
+
+            width: calc(100% - 100px);
+            height: calc(100% - 100px);
+
+        }
+
+        .w-content h2 {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .w-content:hover .frame {
+            transition: all ease-in-out .3s;
+            width: calc(100% - 40px);
+            height: calc(100% - 40px);
+            border-color: #fff;
+        }
+
+        .w-content:hover {
+            opacity: 0.8;
+        }
+
+        .postcard h2 {
+            top: 50%;
+            text-align: left;
+            transform: translate3d(50px, 20px, 0);
+        }
+
+        .postcard p {
+            opacity: 0;
+            transform: translate3d(60px, 0, 0);
+            font-size: 24px;
+        }
+
+        .postcard:hover h2 {
+            transform: translate3d(20px, 20px, 0);
+        }
+
+        .postcard:hover p {
+            opacity: 1;
+            transform: translate3d(40px, 0, 0);
+        }
+
+        .postcard:hover img {
+
+            filter: opacity(0.7);
+            transform: translate3d(-30px, 0, 0);
+
+        }
+
+        .zoom-in h2 {
+            top: 50%;
+            transform: translatey(-50%);
+        }
+
+        .zoom-in p {
+            top: calc(50% + 40px);
+            transform: scale(1.8);
+            opacity: 0;
+        }
+
+        .zoom-in:hover p {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .zoom-in:hover img {
+            transform: scale(1.2);
+            filter: grayscale(100%);
+        }
+
+        .blury-card .frame {
+            width: calc(100% - 40px);
+            height: calc(100% - 40px);
+            opacity: 0;
+            transition: all .3s ease-in-out;
+            z-index: 3;
+        }
+
+        .blury-card h2,
+        .blury-card p {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .blury-card p {
+            transform: translateY(30px);
+        }
+        .blury-card img{
+            z-index: 2;
+        }
+        .blury-card::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #008E6B;
+            z-index: 1;
+            left: 0;
+            opacity: 0;
+            transition: all .3s ease-in-out;
+        }
+
+        .blury-card:hover .frame {
+            width: calc(100% - 120px);
+            height: calc(100% - 120px);
+            border-color: #fff;
+            opacity: 1;
+
+        }
+        .blury-card:hover::before{
+            opacity: 1;
+        }
+        .blury-card:hover img{
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="wrapper">
+                <div class="box vintage">
+                    <img src="1.jpg" alt="EMMYLOU">
+                    <h2>EMMYLOU</h2>
+                    <p>I'll be your Emmylou and I'll be your June</p>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="box w-content">
+                    <img src="2.jpg" alt="Jenny of Oldstones">
+                    <div class="frame">
+                        <h2>Jenny of Oldstones</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="box postcard">
+                    <img src="3.jpg" alt="BOX">
+                    <h2>The Pursuit of <p class="hide">HAPPINESS</p>
+                    </h2>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="box zoom-in">
+                    <img src="4.jpg" alt="Postcards From Italy">
+                    <h2>Postcards From Italy</h2>
+                    <p>And I will love to see that day</p>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="box blury-card">
+                    <img src="5.jpg" alt="Blue Ridge Mountains">
+                    <div class="frame">
+                        <h2>Blue Ridge</h2>
+                        <p>MOUNTAINS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box">不凡学院</div>
+    <script>
+      // 样式修改 .动画制作 ....
+
+      // 点击不凡学院 更改样式
+
+      var box = document.querySelector(".box");
+      box.onclick = function () {
+        // 样式修改
+        // 样式需要通过 dom对象上的 style 属性 修改
+        // style属性里边 {}  包含了所有的css样式
+        box.style.color = "rgb(255,0,0)";
+        // font-size js当中的属性名 时不能使用 '-'
+        // 带连字符的样式 转换成成 驼峰命名
+        box.style.fontSize = "24px";
+        box.style.backgroundColor = "pink";
+
+        // 样式获取
+        console.log(box.style.backgroundColor); // 'pink'
+        console.log(box.style.fontSize); //'24px'
+
+        // 注意事项:
+        // 通过style 设置的样式 都是行内样式(权重比较高)
+        // 通过style 获取的也仅仅是行内样式
+        // box.style.height = "50px";
+        console.log(box.style.height); // ''  因为行内样式当中 没有 设置 height
+
+        // **要读取所有 `CSS ` 应用在元素上的最终值: **
+        // 也就是这个元素 综合作用之后的 样式
+        console.log(getComputedStyle(box).height);
+        console.log(getComputedStyle(box).fontWeight);
+        // 注意 只能用于 获取 ,不能设置
+      };
+    </script>
+  </body>
+</html>

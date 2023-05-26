@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+      .box:hover {
+        width: 200px;
+        height: 200px;
+        background-color: green;
+        transition: 0.4s;
+      }
+
+      /* 1. transition  状态变换的润滑剂  */
+      /* 2. 哪些属性 可以参与过渡  和数值相关的都可以  还有 transform*/
+      /* 3. transition 加到hover  之前 还是 之后?  */
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+</html>

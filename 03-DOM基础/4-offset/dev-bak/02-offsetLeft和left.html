@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .box {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border: 10px solid #333;
+      }
+      .inner {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="inner"></div>
+    </div>
+
+    <script>
+      var inner = document.querySelector(".inner");
+      inner.style.position = "absolute";
+      inner.style.left = "10px";
+      inner.style.top = "20px";
+      console.log("left和top----------------");
+      console.log("inner的left值", inner.style.left);
+      console.log("inner的top值", inner.style.top);
+
+      console.log("offsetLeft  /  offsetTop");
+      console.log("inner offsetLeft", inner.offsetLeft);
+      console.log("inner offsetTop", inner.offsetTop);
+
+      console.log("加了 margin----------");
+      inner.style.margin = "15px";
+      console.log("inner的left值", inner.style.left);
+      console.log("inner的top值", inner.style.top);
+      console.log("inner offsetLeft", inner.offsetLeft);
+      console.log("inner offsetTop", inner.offsetTop);
+
+      // style.left  获取的使我们 为他 设置的行内样式
+      // offsetLeft 获取的是 元素在页面当中 距离 目标的 实际 距离
+    </script>
+  </body>
+</html>

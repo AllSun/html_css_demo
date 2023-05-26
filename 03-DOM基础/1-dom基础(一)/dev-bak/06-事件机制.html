@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box">不凡学院</div>
+
+    <p onclick="foo()">hello</p>
+    <script>
+      // **`JS`是一门以事件驱动为核心的语言。**
+
+      // 一些变化 需要由  某个 事件触发 才能发生
+
+      // 灯的打开和关闭
+      // 灯亮了 这个变化 是需要 按下 开关 这个动作 来触发
+
+      // js当中网页的交互还有变化 , 通常是由 用户的一些操作(鼠标点击/双击/滑入/滑出/键盘按下/松开) 引发的
+
+      // 咱们(前端工程师)需要 提前 把 要发生的变化 设置好,,,等待用户 触发
+
+      // name 如何 提前设置好呢
+
+      // 事件三要素: 事件源:(引发事件的元素)   事件:(鼠标点击或者双击)   事件处理程序:(发生的变化)
+      // 灯的开关按钮(事件源)   按下(事件)   灯亮了(处理程序)
+
+      // 需求:  用户点击 不凡学院时,文字变成红色
+      // 事件源: box元素(里边有不凡学院四个字)
+      // 事件: 鼠标点击
+      // 事件处理程序: 文字变红
+
+      // 埋机关
+      // 流程记清楚
+      // 第一步获取事件源 dom对象
+      var box = document.querySelector(".box");
+      // 第二步 绑定事件 (为事件源 添加事件)
+      // onclick 就是鼠标点击事件
+      // 当用户只要一点击 box ,就会触发   box身上的 onclick方法,就好像执行了 ( box.onclick();)
+      box.onclick = function () {
+        // alert("hello");
+        // 第三步:书写事件处理程序
+        box.style.color = "red";
+      };
+
+      // 移除事件
+      // box.onclick = null;
+      console.dir(box);
+
+      // 第二种绑定事件的方式  行内绑定
+
+      // 点击p标签时 ,背景色 变蓝
+      // 事件源:p标签
+      // 事件: 点击
+      // 处理程序: 背景变蓝
+      function foo() {
+        var pEl = document.querySelector("p");
+        pEl.style.backgroundColor = "blue";
+      }
+    </script>
+  </body>
+</html>

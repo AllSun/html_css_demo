@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      .banner {
+        width: 1226px;
+        height: 460px;
+        margin: 0 auto;
+      }
+      ul {
+        overflow: hidden;
+        width: fit-content;
+        margin: 10px auto;
+      }
+      ul li {
+        width: 150px;
+        height: 50px;
+        float: left;
+      }
+      ul li img {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+      }
+      ul li img.active {
+        /* 控制高亮样式 */
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 主图 -->
+    <div class="banner">
+      <img src="img/m1.jpg" alt="" />
+    </div>
+    <!-- 缩略图 -->
+    <ul>
+      <li>
+        <img src="img/m1.jpg" alt="" />
+      </li>
+      <li>
+        <img src="img/m2.jpg" alt="" />
+      </li>
+      <li>
+        <img src="img/m3.jpg" alt="" />
+      </li>
+      <li>
+        <img src="img/m4.jpg" alt="" />
+      </li>
+      <li>
+        <img src="img/m5.jpg" alt="" />
+      </li>
+    </ul>
+
+    <script>
+      // 循环绑定事件
+      // 排他思想要学会
+      // 类名控制样式
+      var imgArr = document.querySelectorAll("ul li img");
+      var banner = document.querySelector(".banner img");
+      for (var i = 0; i < imgArr.length; i++) {
+        imgArr[i].onclick = function () {
+          // 取出点击图片的地址
+          // img标签中的src属性 对应 dom对象中的src属性
+          var url = this.src;
+          // 为什么不用 imgArr[i].src ?
+          // var url = imgArr[i].src; // Cannot read property 'src' of undefined
+          // console.log(imgArr[i]); // undefined
+          console.log(i); // 5 因为此时这句代码执行时,外层的for循环 早都已经结束了(结束时是i是5)
+          // for循环绑定事件时 慎用 i
+          banner.src = url;
+          // 给点击的图片 设置高亮样式
+          // 未点击的是一般样式
+          // 排他思想
+          // 设置高亮样式之前 ,循环一遍所有缩略图,把边框统统取消
+          // 然后再给点击的元素加上
+          for (var j = 0; j < imgArr.length; j++) {
+            imgArr[j].classList.remove("active");
+          }
+          this.classList.add("active");
+        };
+      }
+    </script>
+  </body>
+</html>

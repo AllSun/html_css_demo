@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* display: block 块元素 */
+      /* inline 行内元素 */
+      /* inline-block 行内块元素 */
+      a {
+        display: block;
+        width: 100px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        background-color: orange;
+      }
+      * {
+        /* 标签自带的间距  清除掉 */
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+        /* 清除列表前边的项目符号 */
+      }
+      .list {
+        width: 400px;
+        height: 100px;
+        font-size: 0;
+      }
+      .list .item {
+        /* 纪要设置宽高 又要 同行展示 */
+        display: inline-block;
+        /* 行内块之间的空隙  是由 结构里边的换行符 引起的   */
+        /* 解决方式 */
+        /* 1.  去掉换行符 */
+        /* 2.  利用 font-size：0.。。让空格消失*/
+        font-size: 16px;
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="">百度</a>
+    <ul class="list">
+      <li class="item">1</li>
+      <li class="item">2</li>
+      <li class="item">3</li>
+      <li class="item">4</li>
+    </ul>
+  </body>
+</html>

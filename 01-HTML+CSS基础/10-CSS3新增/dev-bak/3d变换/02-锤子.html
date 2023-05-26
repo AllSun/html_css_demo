@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 800px;
+        height: 400px;
+        margin: 100px auto;
+        border: 1px solid #333;
+        perspective: 200px;
+        /* 视野 方位(小眼睛的位置 ) */
+        perspective-origin: 50% 100%;
+      }
+      .box img {
+        transition: 0.8s;
+        transform-origin: right;
+      }
+      .box:hover img {
+        transform: rotateY(180deg);
+        /* transform: translateZ(100px); */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <img src="t.jpg" alt="" />
+    </div>
+  </body>
+</html>

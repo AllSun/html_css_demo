@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .logo{
+      width: 400px;
+      height: 200px;
+      background:pink url('images/logo.png') no-repeat 0 0;
+      /* 调整背景图片的大小 */
+      /* 第一个值: 宽度 */
+      /* 第二个值 :高度  */
+      /* background-size: 400px 200px; */
+      /* background-size: 100% 100%; */
+
+      /* 防止图片形变 */
+      /* auto 按照图片比例 自适应 */
+      /* background-size: 400px auto; */
+      /* background-size: auto 200px; */
+
+
+      /* 盒子和 图片比例 不一致时 */
+      
+      /* 两个关键词  cover /contain  也可以保证图片不形变 */
+      /* contain 保证图片不形变,盒子会有留白(占不满盒子) */
+      /* background-size: contain; */
+
+      /* cover 保证图片不形变,填充满盒子,但是图片 看不完整(图片有超出) */
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">
+
+  </div>
+</body>
+</html>

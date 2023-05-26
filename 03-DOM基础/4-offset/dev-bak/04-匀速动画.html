@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+
+      button {
+        margin-top: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <button>开始</button>
+    <button>倒退</button>
+
+    <script>
+      // 1. 最后一步的处理
+      // 2. 步长是负数的处理
+      // 3. 最好 一个元素 身上 同一时刻 是有一个动画 (解决,开启新命令(定时器)的时候 ,把之前的命令(定时器)取消)
+      var btn = document.querySelectorAll("button");
+      var box = document.querySelector(".box");
+      var timer; // 让box移动的 定时器
+      btn[0].onclick = function () {
+        // 清除box身上的其他定时器
+        clearInterval(timer);
+        timer = setInterval(function () {
+          // 获取元素当前的位置
+          var leader = box.offsetLeft;
+          box.style.left = leader + 17 + "px";
+
+          // 400像素的时候 停下来
+          // 17
+          // 如果说最后一步 距离 小于 步长 ,就可以直接定到  目标位置
+          if (400 - box.offsetLeft < 17) {
+            box.style.left = "400px";
+            clearInterval(timer);
+          }
+          console.log("-----");
+        }, 16.7);
+      };
+      btn[1].onclick = function () {
+        clearInterval(timer);
+        timer = setInterval(function () {
+          // 获取元素当前的位置
+          var leader = box.offsetLeft;
+          box.style.left = leader - 17 + "px";
+
+          // 400像素的时候 停下来
+          // 17
+          // 如果说最后一步 距离 小于 步长 ,就可以直接定到  目标位置
+          if (0 - box.offsetLeft > -17) {
+            box.style.left = "0px";
+            clearInterval(timer);
+          }
+        }, 16.7);
+      };
+    </script>
+  </body>
+</html>

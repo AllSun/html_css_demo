@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_2180783_goxh831w6j.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .box {
+            width: 1226px;
+            height: 398px;
+            margin: 200px auto;
+        }
+
+        .box-hd {
+            height: 58px;
+
+        }
+
+        .box-hd h2 {
+            line-height: 58px;
+            font-weight: 200;
+            font-size: 22px;
+            color: #333;
+            float: left;
+        }
+
+        .arr {
+
+            float: right;
+            color: #333;
+
+
+        }
+
+        .arr span {
+            border: solid 1px #e0e0e0;
+            margin-top: 28px;
+            width: 30px;
+            height: 20px;
+            display: block;
+            float: left;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .arr .next {
+            border-left: none;
+        }
+
+        .arr span:hover {
+            color: orange;
+        }
+
+        .icon-arrow-right-bold,
+        .icon-arrow-left-bold {
+            line-height: 20px;
+            color: #b0b0b0;
+            font-weight: bolder;
+        }
+
+        .arr span.disabled {
+            color: #e0e0e0;
+            cursor: default;
+
+        }
+
+        .flashsale {
+            width: 234px;
+            height: 300px;
+            border-top: solid 1px #e53935;
+            background-color: #f1eded;
+            text-align: center;
+            padding-top: 39px;
+            float: left;
+
+        }
+
+        .flashsale .round {
+            font-size: 21px;
+            color: #ef3a3b;
+            padding-top: 15pxv;
+        }
+
+        .flashsale img {
+            margin: 25px auto;
+        }
+
+        .flashsale p {
+            color: rgba(0, 0, 0, .54);
+            font-size: 15px;
+        }
+
+        .countdown {
+            width: 168px;
+            height: 340px;
+            margin: 28px auto 0;
+
+
+        }
+
+        .countdown span {
+            width: 46px;
+            height: 46px;
+            background: #605751;
+            color: #fff;
+            font-size: 24px;
+            line-height: 46px;
+            float: left;
+        }
+
+        .countdown i {
+            width: 15px;
+            float: left;
+            height: 46px;
+            line-height: 46px;
+            color: #605751;
+            font-size: 28px;
+            font-style: normal;
+        }
+
+        .flash-list {
+            width: 992px;
+            height: 340px;
+            float: left;
+            overflow: hidden;
+        }
+
+        .list {
+            /* width: calc(248px * 47); */
+            height: 100%;
+            transition: all 0.8s;
+        }
+
+        .item {
+            width: 234px;
+            height: 100%;
+            float: left;
+            margin-left: 14px;
+            background-color: #fff;
+            text-align: center;
+            border-top: 1px solid;
+
+        }
+
+        .item a {
+            text-decoration: none;
+
+
+        }
+
+        .item img {
+            width: 100%;
+        }
+
+        .item-title {
+            margin: 0 20px 3px;
+            font-size: 14px;
+            font-weight: 400;
+            text-overflow: ellipsis;
+            color: #212121;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .item-desc {
+            color: #b0b0b0;
+            height: 18px;
+            margin: 0 20px 12px;
+            font-size: 12px;
+            text-overflow: ellipsis;
+            color: #b0b0b0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .item .price {
+            color: #ff6709;
+            font-size: 14px;
+        }
+
+        .item .price del {
+            color: #b0b0b0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box-hd">
+            <h2>小米闪购</h2>
+
+            <div class="arr">
+                <span class="prev disabled iconfont icon-arrow-left-bold"></span>
+                <span class="next iconfont icon-arrow-right-bold"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="flashsale">
+                <div class="round"> 14:00场</div>
+                <img src="img/flash.png" alt="">
+                <p>距离结束还有</p>
+                <div class="countdown">
+                    <span class="hour">00</span>
+                    <i>:</i>
+                    <span class="min">00</span>
+                    <i>:</i>
+                    <span class="seconds">00</span>
+                </div>
+            </div>
+            <div class="flash-list">
+                <ul class="list">
+                    <li class="item">
+                        <a href=""></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 倒计时 -->
+    <script>
+        var round = document.querySelector('.round')
+        var hour = document.querySelector('.hour');
+        var min = document.querySelector('.min');
+        var seconds = document.querySelector('.seconds');
+
+        var endTime = new Date('2021/11/11');
+        setInterval(function () {
+            var nowTime = new Date();
+            var stamp = (endTime - nowTime) / 1000;
+
+            var h = parseInt(stamp / 60 / 60 % 24 ) //计算小时
+            h = h < 10 ? '0' + h : h;
+            var m = parseInt(stamp / 60 % 60) //计算分钟
+            m = m < 10 ? '0' + m : m;
+            var s = parseInt(stamp % 60) //计算秒数
+            s = s < 10 ? '0' + s : s;
+            console.log(h, m, s);
+            hour.innerText = h;
+            min.innerText = m;
+            seconds.innerText = s;
+           
+        }, 1000)
+    </script>
+    <!-- 闪购轮播 -->
+    <script src="flash.js"></script>
+
+    <script>
+        var len = flashList.length;
+        var liw = 248;
+        var temp = [];
+        var int = parseInt(len / 4);
+        var yu = len % 4; //求出来最后剩余几个
+        for (var i = 0; i < int; i++) {
+            temp.push(-1 * liw * i * 4);
+        }
+        temp.push(temp[int - 1] - (liw * yu));
+        var disArr = temp;
+
+
+        // 保存了每次的目标位置
+        // 生成 产品列表
+        var ul = document.querySelector(".list");
+        ul.style.width = 248 * flashList.length+'px';//求出list的总宽度
+        var str = ``;
+        for (var i = 0; i < flashList.length; i++) {
+            str = str +
+                `<li class="item">
+            <a href="">
+            <img src="${flashList[i].img}" alt="加载失败" />
+            <p class="item-title">${flashList[i].goods_name}</p>
+            <p class="item-desc">${flashList[i].desc}</p>
+            <p class= "price">${flashList[i].seckill_Price}元 <del>${flashList[i].goods_price}元</del></p>
+            </a>
+            </li>`
+
+        }
+        ul.innerHTML = str;
+        var count = 0; // 计数器
+
+        var len = disArr.length;
+        var next = document.querySelector(".arr .next");
+        var prev = document.querySelector(".arr .prev");
+
+        next.onclick = function () {
+            if (count == len - 1) {
+
+                return;
+            }
+            count++;
+            var target = disArr[count];
+            ul.style.transform = `translateX(${target}px)`;
+            if (count == len - 1) {
+                next.classList.add('disabled')
+            }
+            prev.classList.remove('disabled');
+        };
+        prev.onclick = function () {
+            if (count == 0) {
+                return;
+            }
+            count--;
+            var target = disArr[count];
+            ul.style.transform = `translateX(${target}px)`;
+            // 移动完之后判断 此时 count的值,来决定按钮是否需要禁用
+            if (count == 0) {
+                prev.classList.add('disabled');
+            }
+            next.classList.remove('disabled');
+        };
+    </script>
+    <script>
+        //上边框的随机颜色
+        var items = document.querySelectorAll('.item')
+
+        for (var i = 0; i < items.length; i++) {
+            var res = '#';
+            var n = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];
+
+            function getRandColor(n) {
+                for (var j = 0; j < 6; j++) {
+                    var idx = Math.floor(Math.random() * 16);
+                    res += n[idx];
+                }
+                return res
+            }
+            items[i].style.borderColor = getRandColor(n);
+            // console.log(getRandColor(n));
+        }
+    </script>
+</body>
+
+</html>

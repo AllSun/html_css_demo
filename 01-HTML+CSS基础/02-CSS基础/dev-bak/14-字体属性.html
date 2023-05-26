@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /* 颜色  大小  字重(粗细)  是否斜体  宋体/楷体/黑体 */
+
+      p {
+        color: red;
+        font-size: 24px;
+        /* 字重(粗细程度) */
+        font-weight: 900;
+        /* 斜体 */
+        font-style: italic;
+        /* 字体族 */
+        /* 默认 微软雅黑 */
+        font-family: "黑体";
+        /* 可以同时指定多个字体 */
+        /* font-family: "PingFang SC", "微软雅黑"; */
+      }
+
+      /* 缩写 */
+      .d1 {
+        /* 可以同时指定 字体的多个样式 */
+        /* font: 是否斜体  字重 字号  家族; */
+        /* 可以省略 */
+        font: italic bolder 32px "楷体";
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 无衬线体:  黑体 微软雅黑 -->
+    <!-- 衬线体:  宋体  楷体 -->
+    <p>不凡学院</p>
+
+    <div class="d1">hello</div>
+  </body>
+</html>

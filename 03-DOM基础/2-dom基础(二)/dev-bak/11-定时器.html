@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="img/m1.jpg" alt="" />
+    <button>关闭setTimeOut</button>
+    <button>关闭setInterval</button>
+
+    <script>
+      var imgEl = document.querySelector("img");
+
+      // setTimeout(fn,delay(ms))
+      var timer1 = setTimeout(function () {
+        console.log(1);
+        imgEl.style.display = "none";
+      }, 1000);
+
+      // 定时器 是异步的
+      console.log("hello");
+
+      // 循环定时器
+
+      // setInterval(fn,间隔时间)
+      var timer2 = setInterval(function () {
+        console.log("2.....");
+      }, 1000);
+      // 每隔 1000ms  就打印一次  2....
+
+      // 关闭 /移除 定时器
+
+      // clearTimeout()  用于关闭 setTimeout
+      // clearInterval() 用于关闭 setInterval
+      // 括号里传递 该定时器的 名字/id
+      // 需要咱们 给每隔定时器  起名字
+
+      var btn = document.querySelectorAll("button");
+      btn[0].onclick = function () {
+        clearTimeout(timer1);
+      };
+      btn[1].onclick = function () {
+        clearInterval(timer2);
+      };
+    </script>
+  </body>
+</html>

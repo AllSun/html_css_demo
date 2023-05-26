@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <audio src="小手拍拍.mp3" autoplay controls muted></audio>
+    <!-- autoplay  自动播放(音频无效) -->
+    <!-- muted 静音 -->
+    <!-- controls  播放控件 -->
+
+    <video src="小手拍拍.mp4" controls autoplay muted></video>
+    <!-- autoplay  配合静音 实现自动播放 -->
+
+    <!-- 多浏览器支持  -->
+    <audio>
+      <source src="素材/小手拍拍.mp3" />
+      <source src="素材/小手拍拍.wav" />
+      <source src="素材/小手拍拍.ogg" />
+    </audio>
+
+    <video controls>
+      <source src="素材/movie.ogg" />
+      <source src="素材/movie.mp4" />
+      <source src="素材/movie.webm" />
+      您的浏览器不支持
+    </video>
+  </body>
+</html>

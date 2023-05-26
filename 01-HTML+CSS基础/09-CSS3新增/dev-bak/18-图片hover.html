@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .card {
+        position: relative;
+        width: 320px;
+        height: 210px;
+        margin: 100px auto;
+        color: #fff;
+        text-align: center;
+        overflow: hidden;
+      }
+      .card img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        transition: 0.4s;
+      }
+      .card .title {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        transform: translateY(-50%);
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .card .desc {
+        position: absolute;
+        bottom: 45px;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        transition: 0.4s;
+        transform: scale(1.5);
+      }
+
+      .card:hover img {
+        transform: scale(1.2);
+      }
+      .card:hover {
+        /* 滤镜 */
+        filter: grayscale(100%);
+      }
+      .card:hover .desc {
+        opacity: 1;
+        transform: scale(1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <img src="4.jpg" alt="" />
+      <p class="title">Postcards From Italy</p>
+      <p class="desc">And I will love to see that day</p>
+    </div>
+  </body>
+</html>

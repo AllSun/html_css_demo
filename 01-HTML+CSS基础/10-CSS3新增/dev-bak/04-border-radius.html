@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .d1 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        margin: 50px;
+        /* 支持 一个值/两个值/三个值/四个值 类似 margin  padding */
+        /* border-radius: 8px; */
+        /* 左上和右下  /  右上和左下 */
+        /* border-radius: 4px 10px; */
+        /* 左上/ 右上和左下/ 右下 */
+        /* border-radius: 4px 10px 20px; */
+        /* 左上/右上/右下/左下 */
+        border-radius: 4px 10px 20px 30px;
+      }
+      /* https://jingyan.baidu.com/article/1876c852549b2a890b1376bf.html */
+      .d2 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        margin: 50px;
+        /* 斜杠前 表示的是水平半径 */
+        /* 斜杠后 表示的 是 垂直半径 */
+        border-radius: 6px/20px;
+      }
+      .d3 {
+        width: 200px;
+        height: 100px;
+        background-color: red;
+        margin: 50px;
+        /* 百分数的写法  */
+        /* 指定 水平半径:  宽度的 百分之几 */
+        /* 指定垂直半径:  高度的百分之几 */
+        border-radius: 10%;
+      }
+
+      .box {
+        width: 400px;
+        height: 400px;
+        transition: 0.8s;
+      }
+      .item {
+        float: left;
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+      }
+      .item:nth-child(1),
+      .item:nth-child(4) {
+        border-radius: 0 50%;
+      }
+      .item:nth-child(2),
+      .item:nth-child(3) {
+        border-radius: 50% 0;
+      }
+      .box:hover {
+        transform: rotate(270deg);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 圆角属性  -->
+    <!-- 指定 盒子  四个角的  圆角程度 -->
+    <div class="d1">1</div>
+    <div class="d2">1</div>
+    <div class="d3">1</div>
+
+    <div class="box">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+  </body>
+</html>

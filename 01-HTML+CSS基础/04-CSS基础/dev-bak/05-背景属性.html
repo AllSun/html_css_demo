@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      height: 3000px;
+    }
+    .logo{
+      width: 400px;
+      height: 200px;
+      /* 背景颜色  盒子的底色 */
+      background-color: pink;
+
+      /* 背景图片 实现在盒子当中放入图片  地板上的 画*/
+      /* 填写图片路径 */
+      background-image: url(images/logo.png);
+
+      /* 平铺方式 */
+      /* no-repeat 取消平铺 */
+      background-repeat: no-repeat;
+
+      /* 背景图片位置 */
+      /* 支持一些方位词  left  right center  top  bottom  */
+      /* 第一个值: 表示水平方向 */
+      /* 第二:  上下方向 */
+      /* background-position: left bottom; */
+      /* background-position: right center; */
+      /* background-position: center bottom; */
+      /* 第二个值 不写 ,默认 是 center  */
+      /* background-position: right; */
+      /* background-position: center; */
+
+      /* 也支持具体的像素  */
+      /* 第一个值: 表示 图片 距离盒子左边 多远 */
+      /* 第二个值表示图片距离盒子 顶部 多远 */
+      background-position: 40px 30px;
+      /* background-position: -10px -20px; */
+
+      /* 背景滚动 */
+      /* scroll  默认  会随着盒子 滚动 */
+      /* fixed  不随着盒子滚动 */
+      /* background-attachment: fixed; */
+      /* 开启fixed 之后 ,bgp 参照有改变()body  */
+      /* 距离body 左边 40px */
+
+
+    }
+
+    /* 背景缩写   */
+    .box{
+      width: 400px;
+      height: 200px;
+      /* 缩写属性:  背景色 背景图 平铺 位置;  */
+      background: orange url(images/logo.png) no-repeat 40px 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">
+
+  </div>
+
+  <div class="box">
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .card {
+        position: relative;
+        width: 234px;
+        height: 143px;
+        background-color: pink;
+        overflow: hidden;
+      }
+      .card .more {
+        margin-left: 30px;
+        margin-top: 50px;
+      }
+      .card .more .title {
+        font-size: 18px;
+        color: #333;
+      }
+      .card .more span {
+        font-size: 12px;
+        color: #757575;
+      }
+      .card .icon {
+        position: absolute;
+        right: 35px;
+        top: 48px;
+        width: 48px;
+        height: 48px;
+        background-color: orange;
+        border-radius: 50%;
+      }
+
+      .box {
+        position: relative;
+        width: 234px;
+        height: 143px;
+        overflow: hidden;
+        background-color: green;
+      }
+      .box .title {
+        width: 94px;
+        font-size: 14px;
+        line-height: 21px;
+        margin-top: 40px;
+        margin-left: 30px;
+        margin-bottom: 5px;
+      }
+      .box .price {
+        width: 94px;
+        margin-left: 30px;
+        font-size: 12px;
+        line-height: 21px;
+        color: orange;
+      }
+      .box img {
+        position: absolute;
+        right: 20px;
+        top: 32px;
+        width: 80px;
+        height: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="more">
+        <span class="title">浏览更多</span> <br />
+        <span class="hot">热门</span>
+      </div>
+      <div class="icon"></div>
+    </div>
+
+    <div class="box">
+      <div class="title">米家空气净化器</div>
+      <div class="price">1299元起</div>
+
+      <img
+        src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f10b003b4ff46c59f5736e8f324af034.jpg?thumb=1&w=100&h=100&f=webp&q=90"
+        alt=""
+      />
+    </div>
+  </body>
+</html>

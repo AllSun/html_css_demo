@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        position: fixed;
+        left: 110px;
+        top: 222px;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <script>
+      // 拖拽元素到另外一个位置
+      // 使用 onmousedown  onmousemove  onmouseup
+
+      // 鼠标松开时,要固定在 新位置 (如何得到)
+      // 新位置的left = 开始的位置 + 元素移动的距离(鼠标移动的距离);
+
+      var box = document.querySelector(".box");
+      box.onmousedown = function () {
+        // 获取元素当前位置(最初位置)
+        var startX = box.offsetLeft;
+        var startY = box.offsetTop;
+        console.log(startX, startY);
+        // 获取鼠标此时按下的位置
+        // event 在这里是可以直接用的
+        var mouseX = event.pageX;
+        var mouseY = event.pageY;
+        console.log(mouseX, mouseY);
+
+        box.style.cursor = "move";
+
+        // 监听 鼠标移动
+        // 将鼠标移动的事件 添加给 window
+        window.onmousemove = function () {
+          // 实时获取鼠标移动的距离  (也就是元素要移动的距离)
+          var disX = event.pageX - mouseX;
+          var disY = event.pageY - mouseY;
+          // 元素要跟随者移动,所以实时修改元素的位置
+
+          box.style.left = startX + disX + "px";
+          box.style.top = startY + disY + "px";
+        };
+
+        box.onmouseup = function () {
+          window.onmousemove = null;
+          box.style.cursor = "";
+        };
+      };
+    </script>
+  </body>
+</html>
