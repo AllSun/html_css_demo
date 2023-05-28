@@ -12,7 +12,7 @@
       /* overflow: hidden; */
       padding-top: 0.1px;
       
-    }
+    }    
     .inner{
       width: 100px;
       height: 50px;
@@ -22,11 +22,14 @@
       
     }
 
+    /* margin的嵌套崩塌 */
     /* 给子元素设置的 margin-top  作用到了 父元素身上 */
     /* 1. 给父元素设置 overflow:hidden; */
     /* 2. 给父元素添加一个 极小的padding-top  */
+    /* margin垂直方向会重叠，取最大值 */
+    /* margin水平方向会叠加 */
   </style>
-</head>
+</head>   
 <body>
   <div class="main">
     <div class="inner">

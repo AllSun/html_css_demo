@@ -1,6 +1,11 @@
 div {
   color: pink;
 }
+
 p {
   font-size: 32px;
+}
+
+a {
+  font-size: 60px;
 }

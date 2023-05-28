@@ -1,31 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
-      div {
-        background-color: orange;
-      }
-      span {
-        background-color: pink;
-        /* margin: 50px; */
-        padding: 50px;
-      }
 
-      /* 行内元素   上下margin  不起作用 */
-      /* 行内元素  上下的 padding  也是 不起 实质性作用 */
-    </style>
-  </head>
-  <body>
-    <div class="d1">hello</div>
-    <span>不凡</span>
-    <span>学院</span>
-    <div class="d2">world</div>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>默认样式清楚办法</title>
+  <style>
+    /* 一些标签自带 padding 和 margin，以下用于清楚默认自带样式   */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    div {
+      background-color: orange;
+    }
+
+    span {
+      background-color: pink;
+      /* margin: 50px; */
+      padding: 50px;
+    }
+
+    a{
+      text-decoration: none;
+      /* a标签不会继承父元素的字体颜色 */
+      color: #333;
+    }
+    /* 行内元素   上下margin  不起作用 */
+    /* 行内元素  上下的 padding  也是 不起 实质性作用 */
+    ul,li{
+      /* 会存在项目符号，清除::marker */
+      list-style-type: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="d1">hello</div>
+  <span>不凡</span>
+  <span>学院</span>
+  <div class="d2">world</div>
+  <hr>
+  <a href="">百度</a>
+
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+</body>
+
 </html>

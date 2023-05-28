@@ -1,105 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      label {
-        display: inline-block;
-        width: 100px;
-        text-align: right;
-      }
-      .info {
-        vertical-align: top;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- 标签  -->
-    <!-- 文本标签  -->
-    <strong></strong>
-    <em></em>
-    <b></b>
-    <i></i>
-    <ins></ins>
-    <del></del>
-    <sup></sup>
-    <sub></sub>
-    <q></q>
-    <blockquote></blockquote>
 
-    <!-- 转义字符 -->
-    &lt; &gt; &nbsp;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    label {
+      display: inline-block;
+      width: 100px;
+      text-align: right;
+    }
 
-    <!-- 表格  -->
-    <table>
-      <tr>
-        <td></td>
-      </tr>
-    </table>
-    <!-- 表格的属性 -->
-    <!-- 合并单元格  colspan  rowspan  -->
+    .info {
+      vertical-align: top;
+    }
+  </style>
+</head>
 
-    <!-- 表单  -->
+<body>
+  <!-- 标签  -->
+  <!-- 文本标签  -->
+  <strong></strong>
+  <em></em>
+  <b></b>
+  <i></i>
+  <ins></ins>
+  <del></del>
+  <sup></sup>
+  <sub></sub>
+  <q></q>
+  <blockquote></blockquote>
 
-    <form action="">
-      <div>
-        <label for="">用户名: </label>
+  <!-- 转义字符 -->
+  &lt; &gt; &nbsp;
 
-        <input type="text" name="user" />
-      </div>
-      <div>
-        <label for="">密码:</label>
+  <!-- 表格  -->
+  <table>
+    <tr>
+      <td></td>
+    </tr>
+  </table>
+  <!-- 表格的属性 -->
+  <!-- 合并单元格  colspan  rowspan  -->
 
-        <input type="password" name="pwd" />
-      </div>
-      <div>
-        <label for=""> 密码提示问题: </label>
-        <select name="" id="">
-          <option value="">问题1</option>
-        </select>
-      </div>
-      <div>
-        <label for="">性别:</label>
-        男: <input type="radio" name="sex" /> 女:
-        <input type="radio" name="sex" />
-      </div>
-      <div>
-        <label for="">爱好:</label>
-        篮球: <input type="checkbox" name="like" /> 足球:
-        <input type="checkbox" name="like" />
-      </div>
+  <!-- 表单  -->
 
-      <div>
-        <label for="" class="info">个人简介</label>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
-      </div>
-      <div>
-        <label for="">上传头像</label>
-        <input type="text" />
-        <input type="file" />
-      </div>
-    </form>
-    <!-- css -->
-    <!-- 书写位置 -->
-    <!-- 1. 行内样式 -->
-    <!-- 2. 内部样式 -->
-    <!-- 3. 外部样式  -->
-    <!-- 语法 格式  -->
-    <!-- 选择器 {
+  <form action="">
+    <div>
+      <label for="">用户名: </label>
+
+      <input type="text" name="user" />
+    </div>
+    <div>
+      <label for="">密码:</label>
+
+      <input type="password" name="pwd" />
+    </div>
+    <div>
+      <label for=""> 密码提示问题: </label>
+      <select name="" id="">
+        <option value="">问题1</option>
+      </select>
+    </div>
+    <div>
+      <label for="">性别:</label>
+      男: <input type="radio" name="sex" /> 女:
+      <input type="radio" name="sex" />
+    </div>
+    <div>
+      <label for="">爱好:</label>
+      篮球: <input type="checkbox" name="like" /> 足球:
+      <input type="checkbox" name="like" />
+    </div>
+
+    <div>
+      <label for="" class="info">个人简介</label>
+      <textarea name="" id="" cols="30" rows="10"></textarea>
+    </div>
+    <div>
+      <label for="">上传头像</label>
+      <input type="text" />
+      <input type="file" />
+    </div>
+
+    <!-- 快速生成结构的快捷键 -->
+    <!-- .nav  -->
+    <!-- p.text  按回车 -->
+    <!-- .box{hello}   -->
+    <!-- ul>li*3  -->
+    <!-- ul>li{$}*3 -->
+
+  </form>
+  <!-- css -->
+  <!-- 书写位置 -->
+  <!-- 1. 行内样式 -->
+  <!-- 2. 内部样式 -->
+  <!-- 3. 外部样式  -->
+  <!-- 语法 格式  -->
+  <!-- 选择器 {
       声明块
     } -->
 
-    <!-- 选择器: -->
-    <!-- 简单选择器 : 标签  id  class(最常用) -->
-    <!-- 伪类选择器:   :hover(鼠标进入时) -->
+  <!-- 选择器: -->
+  <!-- 简单选择器 : 标签  id  class(最常用) -->
+  <!-- 伪类选择器:   :hover(鼠标进入时) -->
 
-    <!-- 样式:  字体  文本样式 -->
-    color font-size font-weight font-style font-family font width height
-    background-color text-align line-height
-    <!-- 实现单行文本 的 水平垂直居中 -->
+  <!-- 样式:  字体  文本样式 -->
+  color font-size font-weight font-style font-family font width height
+  background-color text-align line-height
+  <!-- 实现单行文本 的 水平垂直居中 -->
 
-    text-decoration letter-spacing word-spacing
-  </body>
+  text-decoration letter-spacing word-spacing
+</body>
+
 </html>

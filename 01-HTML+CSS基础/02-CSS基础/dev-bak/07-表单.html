@@ -1,81 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <!-- 表单域 ,提示文本  表单元素(控件) -->
-    <!-- action 就是 表单 提交的地址/服务器地址 -->
-    <!-- 主要学习 表单元素 有哪些  ,每个 功能是什么 -->
-    <!-- 对于 input 标签,根绝 type 属性值的不同 ,具备的功能 也不同 -->
 
-    <!-- name属性: 每一个表单元素都有一个name 属性,,,作用:用于区分数据 -->
-    <!-- user=张三&pwd=1223345 -->
-    <!-- name=value&name=value -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
 
-    <!-- 对于 选框   需要理解  checked 和 selected 属性  (选中)  -->
-    <form action="">
-      <fieldset>
-        <legend>基本信息</legend>
-        <!-- 单行文本输入框  -->
-        用户名: <input placeholder="手机/邮箱" name="user" type="text" /> <br />
-        <!-- 密码输入框 -->
-        密码: <input disabled name="pwd" type="password" /> <br />
-        <!-- 单选框 必须有相同的 name属性-->
-        <!-- value 属性 :  表单元素的值 -->
-        性别: 男:<input type="radio" name="sex" checked value="men" /> 女:<input
-          type="radio"
-          name="sex"
-          value="women"
-        />
-        <br />
-        <!-- 多选 -->
+<body>
+  <!-- 表单域 ,提示文本  表单元素(控件) -->
+  <!-- action 就是 表单 提交的地址/服务器地址 -->
+  <!-- 主要学习 表单元素 有哪些  ,每个 功能是什么 -->
+  <!-- 对于 input 标签,根绝 type 属性值的不同 ,具备的功能 也不同 -->
 
-        爱好: 篮球:<input checked name="like" type="checkbox" value="0" />
-        足球:<input name="like" type="checkbox" value="1" /> 乒乓球:<input
-          name="like"
-          type="checkbox"
-          value="2"
-        />
-        <br />
-      </fieldset>
+  <!-- name属性: 每一个表单元素都有一个name 属性,,,作用:用于区分数据 -->
 
-      <fieldset>
-        <legend>补充信息</legend>
-        城市:
-        <select name="city" id="">
-          <!-- 指定选项 -->
-          <option value="-1">请选择</option>
-          <option value="0">北京</option>
-          <option value="1" selected>上海</option>
-          <option value="2">广州</option>
-          <option value="3">深圳</option>
-        </select>
-        <br />
-        照片: <input type="file" name="file" /> <br />
-        <!-- 多行文本输入框 -->
-        个人简介:
-        <textarea autofocus name="desc" id="" cols="30" rows="10"></textarea>
-        <br />
-      </fieldset>
+  <!-- 表单中的 method get和post的区别 -->
+  <!-- get方式提交，提交信息会在地址栏后面 -->
+  <!-- user=张三&pwd=1223345 -->
+  <!-- name=value&name=value -->
 
-      <!-- 按钮 -->
-      <!-- 提交 -->
-      <!-- value : 按钮里边的文字 -->
-      <input type="submit" value="提交" />
-      <input type="reset" value="重置清空" />
-      <input type="button" value="普通按钮" />
-      <!-- 图片形式的提交按钮 -->
-      <input type="image" src="reg.jpg" />
+  <!-- post方式提交 -->
+  <!-- 提交信息在请求体，相对安全  -->
 
+  <!-- 对于 选框   需要理解  checked 和 selected 属性  (选中)  -->
+  <!-- 后期开发中一般不使用表单自带的提交功能，会进行页面的刷新，定制型差，一般使用JS -->
+  <!-- 学习目的：学习网页结构 -->
+
+
+  <!-- 练习区域 -->
+  <form action="" method="get">
+    <div>
+      姓名：<input type="text" name="username"><br>
+      密码：<input type="password" name="pwd"> <br>
+      <input type="submit">
+    </div>
+  </form>
+
+
+  <form action="">
+    <fieldset>
+      <legend>基本信息</legend>
+      <!-- 单行文本输入框 ，每个表单空间都要提示信息 placeholder占位符提示信息-->
+      用户名: <input placeholder="手机/邮箱" name="user" type="text" /> <br />
+      <!-- 密码输入框 disabled 禁用-->
+      密码: <input disabled name="pwd" type="password" /> <br />
+      <!-- 单选框 radio 必须有相同的 name属性-->
+      <!-- value 属性 :   表单元素的值 -->
+      性别: 男:<input type="radio" name="sex" checked value="men" /> 女:<input type="radio" name="sex" value="women" />
       <br />
-      <!-- label的使用 -->
-      <!-- 通过 id 实现label 和 input 元素 绑定 -->
+      <!-- 多选 checkbox  value值可以和后端约定-->
+      <!-- checked 默认选中 -->
+      爱好: 篮球:<input checked name="like" type="checkbox" value="0" />
+      足球:<input name="like" type="checkbox" value="1" /> 乒乓球:<input name="like" type="checkbox" value="2" />
+      <br />
+    </fieldset>
 
-      <label for="t1">iphone:</label
-      ><input id="t1" type="checkbox" name="tel" />
+    <fieldset>
+      <legend>补充信息</legend>
+      城市:
+      <select name="city" id="">
+        <!-- 下拉选择框 select 指定选项 -->
+        <!-- selected 默认选中 -->
+        <option value="-1">请选择</option>
+        <option value="0">北京</option>
+        <option value="1" selected>上海</option>
+        <option value="2">广州</option>
+        <option value="3">深圳</option>
+      </select>
+      <br />
+
+      <!-- 文件选择框 file  -->
+      照片: <input type="file" name="file" /> <br />
+      <!-- 多行文本输入框 textarea-->
+      个人简介:
+      <!-- readonly 只读属性   autofocus自动获得焦点属性 -->
+      <textarea autofocus name="desc" readonly id="" cols="30" rows="10"></textarea>
+      <br />
+    </fieldset>
+
+    <!-- 按钮 -->
+    <!-- 提交 -->
+    <!-- value : 按钮里边的文字 -->
+    <input type="submit" value="提交" />
+    <input type="reset" value="重置清空" />
+    <input type="button" value="普通按钮" />
+    <!-- 图片形式的提交按钮 image-->
+    <input type="image" src="reg.jpg" />
+
+    <br />
+    <!-- label的使用 通常用于描述提示信息 -->
+
+    <form action="">
+      <label for="">用户名：</label><input type="text" name="username">
     </form>
-  </body>
+    <!--label 通过 id 实现label 和 input 元素 绑定 -->
+    <label for="t1">iphone:</label><input id="t1" type="checkbox" name="tel" />
+  </form>
+</body>
+
 </html>

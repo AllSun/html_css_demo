@@ -10,6 +10,7 @@
   <!-- tr  表示表格的行  -->
   <!-- th 表头 -->
   <!-- td 表示单元格 -->
+  <!-- 浏览器默认添加tbody  -->
   <table>
     <caption>板块行情</caption>
     <thead>
@@ -38,6 +39,31 @@
       
     </tfoot>
     
+  </table>
+<hr>
+  <table border="2" align="center" width="200" height="300" cellspacing="10" cellpadding="10" bgcolor="red">
+    <caption>工作计划表</caption>
+    <tr>
+      <th>周一</th>
+      <th>周二</th>
+      <th>周三</th>
+      <th>周四</th>
+      <th>周五</th>
+    </tr>
+    <tr>
+      <td colspan="2">读书</td>
+      <td>看报</td>
+      <td>喝茶</td>
+      <td rowspan="2">摸鱼</td>
+      <!-- <td>学习</td> -->
+    </tr>
+    <tr>
+      <td>看报</td>
+      <td>读书</td>
+      <td>学习</td>
+      <!-- <td>摸鱼</td> -->
+      <td>喝茶</td>
+    </tr>
   </table>
 </body>
 </html>
