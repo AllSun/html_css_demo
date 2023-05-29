@@ -14,7 +14,7 @@
 
 
   css的继承性 和  权重(优先级)
-  字体属性  和 文本属性 line-height  text-align 
+  字体属性 color font-size 和 文本属性 line-height  text-align 
 
   样式冲突  行内样式>id > class >标签> 继承属性(*) 
   复杂选择器权重 累加
@@ -34,6 +34,13 @@
   1. 设置宽高有效
   2. 同行展示
   3. 不写宽度时,宽度有内容撑开
+  
+  display:block inline-block inline
+  转换为行内块的时候
+  1.行内块和行内块会有间隙问题；
+  2.行内块和文字基线对齐
+
+  img标签不考虑同行的时候，都转换为display:block   避免间隙问题
 
   图文对齐
   vertical-align   解决行内块元素 和文字同行展示时候的额  对齐方式
@@ -50,5 +57,9 @@
   1. 给父元素 添加 overflow:hidden
   2.  给父元素 添加  padding-top:0.1px;
 
+  margin
+  垂直方向会重叠
+
+  margin:0 auto;   块元素水平居中  上下居中无法使用auto不好处理
 </body>
 </html>

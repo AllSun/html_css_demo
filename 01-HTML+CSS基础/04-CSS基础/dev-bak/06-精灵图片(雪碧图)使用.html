@@ -12,7 +12,7 @@
       background: url('images/qq-wx.png') no-repeat;
       /* 展示微信图标  */
       background-position: -20px 0;
-
+      
       /* 通过调整 bgp 的位置 ,使 不同的图标出现在视口范围内 */
     }
 
@@ -28,7 +28,10 @@
   </style>
 </head>
 <body>
-  <!-- 雪碧图: 是我们前端 整合图片的技术 (配合 bgp  使用) -->
+  <!-- 雪碧图: 是我们前端 整合多张图片为一张图片的技术 (配合 bgp  使用) -->
+  <!-- 可以减少网络请求次数 -->
+  <!-- 容器视口之外的背景图片是看不到的 -->
+  <!-- 将需要展示的图标通过background-positon 移动到视口之内 -->
 
   <!-- qq-wx  -->
   <span class="icon"></span>

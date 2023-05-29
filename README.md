@@ -89,10 +89,54 @@ margin 是设置四周的边距
 margin的嵌套崩塌  overflow:hidden    padding-top:极小值
 
 小米卡片练习、联系我们卡片、不凡学院两张卡片，5.29明天整理前面所学知识点，独立手动实践前面4个练习
-12
-13
-14
-15
+
+12✅
+
+背景属性：background、background-color  backgound-image:url()
+
+backgound-position:0px  0px; auto auto ; cover ;contain
+
+backgound-repeat: repeat-x  repeat-y  no-repeat   repeat
+
+13✅
+
+背景属性：background、background-color  backgound-image:url()
+
+backgound-position:0px  0px; auto auto ; cover ;contain
+
+backgound-repeat: repeat-x  repeat-y  no-repeat   repeat
+
+补充：opacity 0 1   display:none/block    visibility:hidden/visible  white-space:nowrap  overflow:scroll/hidden/auto
+
+单行溢出,样式组合
+
+overflow:hidden
+
+white-space:nowrap
+
+text-overflow:ellipsis
+
+14✅
+
+文档流规则，文档流满足不了的时候用浮动，再满足不了用定位
+
+弹性盒子布局，不支持IE
+
+用于解决块元素同行展示  float: none/left/right
+
+15✅
+
+浮动的5个特点
+
+块元素浮动之后,,如果不给宽度,宽度会由内容撑开
+
+行内元素浮动之后,,可以设置宽高了,上下方向的margin也可以生效了
+
+浮动元素 由于脱离文档流,所以无法撑起父元素的高度,,所以如果父元素没有指定搞得时候,高度就会（塌陷）丢失,对布局造成影响
+
+还是要多敲才会发现问题！今天晚上补一补前面落下的实操
+
+
 16
 17
 18

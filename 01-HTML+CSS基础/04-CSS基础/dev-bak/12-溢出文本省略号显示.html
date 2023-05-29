@@ -12,6 +12,7 @@
       font-size: 16px;
       background-color: orange;
 
+      /* 单行溢出 */
       /* 不换行 */
       white-space: nowrap;
       /* 吵不分隐藏 */
@@ -19,11 +20,29 @@
       /* 溢出省略 */
       text-overflow: ellipsis;
     }
+    .box{
+      width: 200px;
+      line-height: 24px;
+      height: 24px;
+      font-size: 16px;
+      background-color: orange;
+
+      /* 多行溢出 */
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
   </style>
 </head>
 <body>
   <div class="desc">
     一亿像素夜景相机，120Hz六档变速高刷屏
+  </div>
+
+  <div class="box">
+    一亿像素夜景相机，120Hz六档变速高刷屏a哈哈哈哈哈哈哈，120Hz六档变速高刷屏一亿像素夜景相机，120Hz六档变速高刷屏
   </div>
 </body>
 </html>
