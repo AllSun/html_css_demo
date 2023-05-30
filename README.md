@@ -136,9 +136,22 @@ text-overflow:ellipsis
 
 还是要多敲才会发现问题！今天晚上补一补前面落下的实操
 
+16✅
 
-16
-17
+position:static/ relative/fixed/absolute      absolute最常用、relative打辅助、fixed用于侧边栏或顶部栏
+
+absolute 、fixed丢失文档流    relative 占据原有位置
+
+17✅
+
+小米工具栏、卡片的定位实现
+
+总结前面的知识点，5月30日完成
+
+继续实践前面的知识点，尤其注意看字体、大小这块怎么确定的 ，尽量在这周5完成
+
+后续的11节课，都要实践，暂定目标6月10日前完成整个css+html，能够仿写主要界面
+
 18
 19
 20
