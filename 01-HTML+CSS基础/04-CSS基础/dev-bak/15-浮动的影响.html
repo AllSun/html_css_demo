@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
@@ -12,12 +13,14 @@
       border: 1px solid;
       /* overflow: hidden; */
     }
+
     .box {
-    width: 100px;
-    height: 100px;
-    background: red;
+      width: 100px;
+      height: 100px;
+      background: red;
       color: #fff;
     }
+
     /* 3.  浮动元素 由于脱离文档流,所以无法撑起父元素的高度,,所以如果父元素没有指定搞得时候,高度就会（塌陷）丢失,对布局造成影响 */
 
     /* 解决/避免  高度丢失 */
@@ -28,28 +31,32 @@
     /* 其实就是 浮动时 ,如何防止 父元素的高度 丢失 */
     .box1 {
       float: left;
-    background: blue;
-    opacity: 0.6;
+      background: blue;
+      opacity: 0.6;
     }
-    .clr{
+
+    .clr {
       clear: both;
     }
+
     .box2 {
-    width: 110px;
-    height: 110px;
+      width: 110px;
+      height: 110px;
       background: pink;
     }
   </style>
 </head>
+
 <body>
   <div class="ct">
     <div class="box box1">1</div>
     <div class="clr"></div>
-    
+
     <!-- /* 3. 在容器所有浮动元素的末尾 ,追加一个 空的 块元素,对其设置 clear:both; */ -->
-    <div style="clear: both; "class="clr"></div>
+    <div style="clear: both; " class="clr"></div>
   </div>
   <div class="box2">2</div>
 
 </body>
+
 </html>
