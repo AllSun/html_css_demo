@@ -39,6 +39,11 @@
   height: 100%;
   margin: 0 auto;
 }
+/* 指定最小宽度，应用场景：版心大于视口的时候,防止图片展示不全 */
+.head,.banner,.show,.about,.topic,.join,.foot{
+  min-width:1440px;
+}
+
 
 /* 头部样式 */
 .logo {
@@ -96,6 +101,7 @@
 }
 .dot {
   position: absolute;
+  /* 定位水平居中 */
   left: 50%;
   bottom: 50px;
   margin-left: -120px;
@@ -273,6 +279,8 @@
   text-align: center;
   margin: 0 auto;
   margin-top: 39px;
+  /* 输入框轮廓线 */
+  outline:none;
 }
 .join .desc {
   font-size: 14px;
