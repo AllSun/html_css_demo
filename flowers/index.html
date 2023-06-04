@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLOWERS</title>
+    <style>
+        /* 初始化样式 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            font-size: 16px;
+            color: #161616;
+        }
+
+        /* 定义头部 */
+        .head {
+            width: 100%;
+            height: 60px;
+            background-color: white;
+        }
+
+        .head .logo {
+            float: left;
+            width: 22px;
+            height: 29px;
+            background: url(images/logo.png) no-repeat;
+            margin-top: 15px;
+            margin-left: 320px;
+        }
+
+        .head .nav {
+            float: left;
+            width: 800px;
+            margin-left: 674px;
+            margin-top: 19px;
+        }
+
+        .head .item {
+            display: inline-block;
+            line-height: 22px;
+            margin-right: 78px;
+            text-transform: uppercase;
+        }
+
+        .head .item .cl {
+            margin-right: 0px;
+        }
+
+        /* 定义广告 */
+
+        .banner {
+            width: 100%;
+            height: 800px;
+            /* background-color: antiquewhite; */
+            background: url(images/banner2.png) no-repeat;
+            background-size: cover;
+        }
+
+        .banner .dot{
+
+            position: absolute;
+            left: 50%;
+            bottom: 150px;
+            margin-left: -90px;
+            width: 180px;
+            height: 20px;
+        }
+
+        .banner .dot span{
+            float: left;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #D9D9D9;
+            margin-right: 60px;
+        }
+
+        .banner .dot .cl{
+            margin-right: 0px;
+        }
+
+        .banner .dot span:hover{
+            background-color: #535353;
+        }
+
+        /* 定义展示商品 */
+
+        .show {
+            width: 1440px;
+            height: 1054px;
+            background-color: aqua;
+            margin: 0 auto;
+        }
+
+        /* 定义关于 */
+
+        .about {
+            width: 100%;
+            height: 510px;
+            background-color: pink;
+        }
+
+        /* 定义主题活动 */
+        .topic {
+            width: 1440px;
+            height: 600px;
+        }
+
+        /* 定义加入 */
+
+        .join {
+            width: 100%;
+            height: 474px;
+            background-color: purple;
+        }
+
+        /* 定义底部 */
+        .foot {
+            width: 100%;
+            height: 269px;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div class="head">
+        <div class="logo">
+
+        </div>
+
+        <ul class="nav">
+            <li class="item">
+                <span class="line">home</span>
+            </li>
+            <li class="item">
+                <span class="line">flowers</span>
+
+            </li>
+            <li class="item">
+                <span class="line">plants</span>
+
+            </li>
+            <li class="item">
+                <span class="line">order</span>
+
+            </li>
+            <li class="item cl">
+
+                <img src="images/搜索.png" alt="">
+            </li>
+        </ul>
+    </div>
+
+    <!-- 广告 -->
+    <div class="banner">
+        <div class="dot">
+            <span></span>
+            <span></span>
+            <span class="cl"></span>
+        </div>
+    </div>
+
+    <!-- 展示商品 -->
+    <div class="show">
+        <ul class="col-list">
+            <li class="col-item"></li>
+            <li class="col-item"></li>
+            <li class="col-item"></li>
+        </ul>
+    </div>
+
+    <!-- 关于 -->
+    <div class="about">
+
+    </div>
+
+    <!-- 主题活动 -->
+    <div class="topic">
+
+    </div>
+
+    <!-- 加入我们 -->
+    <div class="join">
+
+    </div>
+
+    <!-- 底部 -->
+    <div class="foot">
+
+    </div>
+</body>
+
+</html>
