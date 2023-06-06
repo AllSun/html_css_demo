@@ -72,7 +72,7 @@
             background-size: cover;
         }
 
-        .banner .dot{
+        .banner .dot {
 
             position: absolute;
             left: 50%;
@@ -82,7 +82,7 @@
             height: 20px;
         }
 
-        .banner .dot span{
+        .banner .dot span {
             float: left;
             width: 20px;
             height: 20px;
@@ -91,11 +91,11 @@
             margin-right: 60px;
         }
 
-        .banner .dot .cl{
+        .banner .dot .cl {
             margin-right: 0px;
         }
 
-        .banner .dot span:hover{
+        .banner .dot span:hover {
             background-color: #535353;
         }
 
@@ -104,38 +104,40 @@
         .show {
             width: 1440px;
             height: 1054px;
-            background-color: aqua;
+            /* background-color: aqua; */
             margin: 0 auto;
         }
 
-        .show .col-list{
+        .show .col-list {
             height: 480px;
         }
+
         /* 量尺寸一定要认真啊，464 看成466  导致效果没生效 */
-        .show .col-item{
+        .show .col-item {
             position: relative;
             float: left;
             width: 464px;
             height: 270px;
             background-color: orange;
             margin-right: 24px;
-            margin-top:60px;
+            margin-top: 60px;
         }
 
-        .show .col-item.mr0{
+
+        .show .col-item.mr0 {
             margin-right: 0px;
         }
 
-        .show .info{
+        .show .info {
             position: absolute;
             line-height: 30px;
             font-size: 22px;
-            color: #161616 ;
-            top:82px;
+            color: #161616;
+            top: 82px;
             left: 60px;
         }
 
-        .show .col-item a{
+        .show .col-item a {
             display: block;
             /* 放到公共样式 */
             color: #373737;
@@ -144,57 +146,145 @@
             height: 18px;
             margin-top: 20px;
         }
-        
-        .show .col-item.bk1{
+
+        .show .col-item.bk1 {
             background: url(images/图2.png) no-repeat;
             background-size: 100% auto;
         }
 
-        .show .col-item.bk2{
+        .show .col-item.bk2 {
             background: url(images/图4.png) no-repeat;
             background-size: 100% auto;
         }
-        .show .col-item.bk3{
+
+        .show .col-item.bk3 {
             background: url(images/图3.png) no-repeat;
             background-size: 100% auto;
         }
 
-        .show .product .nav{
-            
+        .show .product .nav {
+
             height: 25px;
             /* background-color: white; */
 
             /* 水平居中 */
             float: none;
-            width:fit-content;
+            width: fit-content;
             margin: 0 auto;
         }
 
-        .show .product .nav-item{
+        .show .nav .line {
+            display: block;
+            width: 30px;
+            height: 2px;
+            background: #161616;
+            border-radius: 1px;
+            border-radius: 1px;
+            margin: 0 auto;
+            opacity: 0;
+        }
+
+
+
+        .show .nav-item:hover .line {
+            opacity: 1;
+        }
+
+        .show .product .nav-item {
             font-size: 18px;
             line-height: 25px;
             float: left;
-            margin-bottom: 60px;
+
             margin-right: 80px;
         }
 
-        .show .product .pro-list{
+        .show .product .pro-list {
+            overflow: hidden;
+            margin-top: 60px;
+
+        }
+
+        .show .product .pro-item {
+            position: relative;
+            width: 315px;
+            height: 489px;
+            margin-right: 60px;
+            /* background-color: orange; */
             float: left;
         }
 
-        .show .product .pro-item{
-            width: 315px;
-            height: 489px;
-            background-color: #161616;
-            
+        .show .product .pro-item.mr0 {
+            margin-right: 0px;
         }
+
+        .show .product .p1 {
+            font-size: 20px;
+            line-height: 28px;
+            margin-top: 15px;
+            color: #161616;
+        }
+
+        .show .product .p2,
+        .p3 {
+            font-size: 16px;
+            line-height: 22px;
+            color: #161616;
+
+        }
+
+        .show .product .p2 {
+            position: absolute;
+            right: 0px;
+            top: 445px;
+        }
+
 
         /* 定义关于 */
 
         .about {
+            position: relative;
             width: 100%;
             height: 510px;
-            background-color: pink;
+            /* background-color: pink; */
+            background: url(images/未标题-1.png) no-repeat 0 150px;
+            /* background-size: 100% auto; */
+        }
+
+        .about .title {
+            position: absolute;
+            left: 339px;
+            top: 224px;
+            font-family: PingFangSC-Semibold;
+            font-size: 24px;
+            color: #161616;
+            letter-spacing: -0.58px;
+        }
+
+        .about .desc {
+            position: absolute;
+            left: 339px;
+            top: 277px;
+            font-family: PingFangSC-Regular;
+            font-size: 14px;
+            color: #505050;
+            letter-spacing: -0.34px;
+        }
+
+        /* line-height 和 height一致时，文字可以水平居中 */
+        .about .more {
+            position: absolute;
+            left: 330px;
+            top: 397px;
+            display: block;
+            width: 120px;
+            height: 40px;
+            background-color: #161616;
+            font-family: PingFangSC-Regular;
+            font-size: 14px;
+            color: #FFFFFF;
+            letter-spacing: -0.34px;
+            line-height: 40px;
+            text-align: center;
         }
 
         /* 定义主题活动 */
@@ -275,7 +365,7 @@
                     In The Desert
                     <a href="">see all collection</a>
                 </div>
-                
+
             </li>
             <li class="col-item mr0 bk3">
                 <div class="info">
@@ -283,7 +373,7 @@
                     in China
                     <a href="">see all collection</a>
                 </div>
-                
+
             </li>
         </ul>
 
@@ -291,44 +381,49 @@
             <ul class="nav">
                 <li class="nav-item">
                     <a href="">ALL</a>
+                    <span class="line"></span>
                 </li>
                 <li class="nav-item">
                     <a href="">FRESH</a>
+                    <span class="line"></span>
                 </li>
                 <li class="nav-item">
                     <a href="">DRIED</a>
+                    <span class="line"></span>
                 </li>
                 <li class="nav-item">
                     <a href="">POTTED</a>
+                    <span class="line"></span>
                 </li>
                 <li class="nav-item">
                     <a href="">DECORATION</a>
+                    <span class="line"></span>
                 </li>
             </ul>
             <ul class="pro-list">
                 <li class="pro-item">
-                    <img src="" alt="">
-                    <p></p>
-                    <p></p>
-                    <p></p>
+                    <img src="images/图2.png" alt="">
+                    <p class="p1">Myrtle Cactus</p>
+                    <p class="p2">$20.45</p>
+                    <p class="p3">Potted</p>
                 </li>
                 <li class="pro-item">
-                    <img src="" alt="">
-                    <p></p>
-                    <p></p>
-                    <p></p>
+                    <img src="images/图3.png" alt="">
+                    <p class="p1">Sunflower</p>
+                    <p class="p2">$45.30</p>
+                    <p class="p3">Bouquet</p>
                 </li>
                 <li class="pro-item">
-                    <img src="" alt="">
-                    <p></p>
-                    <p></p>
-                    <p></p>
+                    <img src="images/图2.png" alt="">
+                    <p class="p1">Vetiver</p>
+                    <p class="p2">$12.56</p>
+                    <p class="p3">Potted</p>
                 </li>
-                <li class="pro-item">
-                    <img src="" alt="">
-                    <p></p>
-                    <p></p>
-                    <p></p>
+                <li class="pro-item mr0">
+                    <img src="images/图4.png" alt="">
+                    <p class="p1">Viloet Roses</p>
+                    <p class="p2">$18.97</p>
+                    <p class="p3">Bouquet</p>
                 </li>
             </ul>
         </div>
@@ -337,7 +432,13 @@
 
     <!-- 关于 -->
     <div class="about">
+        <p class="title">About Us</p>
+        <p class="desc">We publish announcement about us here, this shop so far has been about <br>
+            what we likeand why we like it. In this brief final chapter, I turn to some implications of the essent. <br>
+            If you would like to know more about us I would <br>
+            be happy to have short call with you.</p>
 
+        <a href="" class="more">MORE</a>
 
     </div>
 
