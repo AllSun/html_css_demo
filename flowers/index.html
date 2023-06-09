@@ -245,7 +245,7 @@
             position: relative;
             width: 100%;
             height: 510px;
-            /* background-color: pink; */
+            background-color: pink;
             background: url(images/未标题-1.png) no-repeat 0 150px;
             /* background-size: 100% auto; */
         }
@@ -290,22 +290,155 @@
         /* 定义主题活动 */
         .topic {
             width: 1440px;
-            height: 600px;
+            height: 774px;
+            /* background-color: aliceblue; */
+            margin: 0 auto;
+        }
+
+        .topic .top {
+            width: 450px;
+            height: 450px;
+            background-color: #535353;
+            float: left;
+            margin-top: 150px;
+            margin-right: 45px;
+            position: relative;
+        }
+
+
+        .topic .topic_3 {
+            margin-right: 0px;
+        }
+
+        .topic .topic_1 {
+            background-image: url(images/图2.png);
+            background-size: 100% auto;
+        }
+
+        .topic .topic_2 {
+            background-image: url(images/图3.png);
+            background-size: 100% auto;
+        }
+
+        .topic .topic_3 {
+            background-image: url(images/图4.png);
+            background-size: 100% auto;
+        }
+
+        .topic .card {
+            width: 450px;
+            height: 100px;
+            opacity: 0.8;
+            background: #FFFFFF;
+            position: absolute;
+            top: 260px;
+            text-align: center;
+        }
+
+        .topic .title {
+            font-family: PingFangSC-Medium;
+            font-size: 24px;
+            color: #4B5751;
+            margin-top: 23px;
+
+        }
+
+        .topic .desc {
+            font-family: PingFangSC-Regular;
+            font-size: 14px;
+            color: #777777;
+            letter-spacing: -0.34px;
         }
 
         /* 定义加入 */
 
         .join {
             width: 100%;
-            height: 474px;
-            background-color: purple;
+            height: 300px;
+            background-color: #FBF1EC;
+            text-align: center;
+            /* margin-top嵌套崩塌的问题 */
+            padding-top: 0.1px;
+        }
+
+        .join .title {
+            font-family: PingFangSC-Semibold;
+            font-size: 35px;
+            line-height: 49px;
+            color: #161616;
+            letter-spacing: -0.84px;
+            margin-top: -25px;
+        }
+
+        .join .email {
+            font-family: PingFangSC-Semibold;
+            font-size: 14px;
+            line-height: 20px;
+            color: #9E9E9E;
+            letter-spacing: -0.34px;
+            margin-top: 43px;
+        }
+
+        .join .line {
+            width: 750px;
+            height: 2px;
+            background-color: #D5D5D5;
+            margin: 0 auto;
+            margin-top: 3px;
+        }
+
+        .join a {
+            display: block;
+            width: 120px;
+            height: 40px;
+            background-color: #161616;
+            line-height: 40px;
+            font-size: 14px;
+            color: #FFFFFF;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 39px;
+        }
+
+        .join .desc {
+            font-family: PingFangSC-Regular;
+            font-size: 14px;
+            color: #777777;
+            letter-spacing: -0.34px;
+            /* text-align: center; */
+            margin-top: 30px;
+            line-height: 20px;
         }
 
         /* 定义底部 */
         .foot {
             width: 100%;
             height: 269px;
-            background-color: black;
+            background-color: #161616;
+            margin: 0 auto;
+        }
+
+
+        .foot dl {
+            float: left;
+       
+        }
+
+        .foot dt {
+            font-family: PingFangSC-Medium;
+            font-size: 16px;
+            line-height: 22px;
+            color: #FFFFFF;
+            margin-top: 30px;
+            margin-left: 137px;
+        }
+
+        .foot dd {
+            opacity: 0.8;
+            font-family: PingFangSC-Regular;
+            font-size: 12px;
+            color: #FFFFFF;
+            line-height: 17px;
         }
     </style>
 </head>
@@ -444,17 +577,64 @@
 
     <!-- 主题活动 -->
     <div class="topic">
-
+        <div class="top topic_1">
+            <div class="card">
+                <p class="title">Decoration</p>
+                <p class="desc">design your house</p>
+            </div>
+        </div>
+        <div class="top topic_2">
+            <div class="card">
+                <p class="title">Bouquet</p>
+                <p class="desc">bridal bouquet</p>
+            </div>
+        </div>
+        <div class="top topic_3">
+            <div class="card">
+                <p class="title">Ornaments</p>
+                <p class="desc">goods of funiture</p>
+            </div>
+        </div>
     </div>
 
     <!-- 加入我们 -->
     <div class="join">
-
+        <h3 class="title">Join Our Newsletter</h3>
+        <p class="email">Your Emails</p>
+        <p class="line"></p>
+        <a href="">SEND</a>
+        <p class="desc">In effect, we are saying thar if you want to join us, then you have to become one <br>
+            of us.We bless each of you and look forward to those of you choosing to join us ahead. <br>
+            Would you like to join us?</p>
     </div>
 
     <!-- 底部 -->
     <div class="foot">
 
+        <dl>
+            <dt>Locate us</dt>
+            <dd>Flowers</dd>
+            <dd>Flowers</dd>
+        </dl>
+        <dl>
+            <dt>Locate us</dt>
+            <dd>Flowers</dd>
+            <dd>Flowers</dd>
+            <dd>Flowers</dd>
+        </dl>
+        <dl>
+            <dt>Locate us</dt>
+            <dd>Flowers</dd>
+            <dd>Flowers</dd>
+            <dd>Flowers</dd>
+            <dd>Flowers</dd>
+        </dl>
+        <dl>
+            <dt>Locate us</dt>
+            <dd>Flowers</dd>
+            <dd>Flowers</dd>
+        </dl>
+   
     </div>
 </body>
 
