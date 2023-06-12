@@ -227,8 +227,8 @@ function string2int(s) {
     for (let i = 0; i < s.length; i++) {
         arr[i] = s[i];
     }
-    function to_int(x){
-        return x*1;
+    function to_int(x) {
+        return x * 1;
     }
     console.log(arr.map(to_int));
     return arr.map(to_int).reduce(function (x, y) {
@@ -240,5 +240,37 @@ console.log(string2int('123'));
 
 
 var reduce_arr = ['adam', 'LISA', 'barT'];
-console.log(reduce_arr[0].toUpperCase());
-console.log('sun'.toUpperCase());
+
+
+//有必要研读下 map的官方文档  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map  限时6月15日完成
+function normalize(arr) {
+    //return arr.map(function get_norm(x) { return x.slice(0, 1).toUpperCase() + x.slice(1).toLowerCase(); });
+    return arr.map((x) => { return x.substring(0, 1).toUpperCase() + x.substring(1).toLowerCase(); } );
+}
+console.log(normalize(reduce_arr));
+
+function get_primes(arr){
+    return arr.filter((x) =>{
+        if(x === 1){
+            return false;
+        }
+        if(x ===2 ){
+            return true;
+        }
+        var i= 2;
+        while(i<x){
+            if((x%i) !== 0){
+                i++;
+            }else{
+                return false;
+            }}
+            return true;
+        })
+}
+    
+if (Math.random() > 0.5) {
+    var x = 1;
+  } else {
+    var x = 2;
+  }
+  console.log(x);
