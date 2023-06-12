@@ -191,14 +191,54 @@ function area_of_circle(r, pi) {
 console.log('=======  函数作用域');
 // window.console.log('window全局对象');
 //let关键字，定义块级作用域
-for(let i =0;i<100;i++){
+for (let i = 0; i < 100; i++) {
 
 }
 //const 定义常量
-const PI=3.14;
+const PI = 3.14;
 //解构赋值
-let [q,[w,e]]=[1,[2,3]];
-console.log(q,w,e);
+let [q, [w, e]] = [1, [2, 3]];
+console.log(q, w, e);
 //this 关键字 非对象中非stict模式，指向window；非对象stict模式，指向undefined
 //apply()、call()
 //使用apply完成装饰器模式
+
+
+console.log('=======语法糖  map /reduce函数');
+function pow(x) {
+    return x * x;
+}
+
+var arr1 = [1, 2, 3];
+var results = arr1.map(pow);
+console.log(results);
+var results = arr1.map(String);
+console.log(results);
+
+function product(arr) {
+    return arr.reduce(function (x, y) {
+        return x * y;
+    });
+}
+
+
+function string2int(s) {
+    var arr = [];
+    for (let i = 0; i < s.length; i++) {
+        arr[i] = s[i];
+    }
+    function to_int(x){
+        return x*1;
+    }
+    console.log(arr.map(to_int));
+    return arr.map(to_int).reduce(function (x, y) {
+        return 10 * x + y;
+    });
+}
+
+console.log(string2int('123'));
+
+
+var reduce_arr = ['adam', 'LISA', 'barT'];
+console.log(reduce_arr[0].toUpperCase());
+console.log('sun'.toUpperCase());
