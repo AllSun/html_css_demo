@@ -245,29 +245,30 @@ var reduce_arr = ['adam', 'LISA', 'barT'];
 //有必要研读下 map的官方文档  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map  限时6月15日完成
 function normalize(arr) {
     //return arr.map(function get_norm(x) { return x.slice(0, 1).toUpperCase() + x.slice(1).toLowerCase(); });
-    return arr.map((x) => { return x.substring(0, 1).toUpperCase() + x.substring(1).toLowerCase(); } );
+    return arr.map((x) => { return x.substring(0, 1).toUpperCase() + x.substring(1).toLowerCase(); });
 }
 console.log(normalize(reduce_arr));
 
-function get_primes(arr){
-    return arr.filter((x) =>{
-        if(x === 1){
+function get_primes(arr) {
+    return arr.filter((x) => {
+        if (x === 1) {
             return false;
         }
-        if(x ===2 ){
+        if (x === 2) {
             return true;
         }
-        var i= 2;
-        while(i<x){
-            if((x%i) !== 0){
+        var i = 2;
+        while (i < x) {
+            if ((x % i) !== 0) {
                 i++;
-            }else{
+            } else {
                 return false;
-            }}
-            return true;
-        })
+            }
+        }
+        return true;
+    })
 }
-    
+
 function lazy_sum(arr) {
     var sum = function () {
         return arr.reduce(function (x, y) {
@@ -285,7 +286,7 @@ console.log(f());
 console.log('================闭包真是让人难以理解');
 function count() {
     var arr = [];
-    for (var i=1; i<=3; i++) {
+    for (var i = 1; i <= 3; i++) {
         arr.push(function () {
             return i * i;
         });
@@ -307,3 +308,44 @@ console.log(f3());
 3.var results = count(); 这句的时候，count()函数内部的变量i完成3次自增后，又自增一次i=4，不满足条件循环条件后退出；这时候函数还是抽象化的没有赋值，可以理解为还是return i*i;
 4.var f1 = results[0];  这句的时候执行函数，return i*i 带入变量i=4 ，所以数组每个元素都变成了16
 */
+
+arr.sort((x, y) => {
+    if (x > y) {
+        return 1;
+    } else {
+        return -1;
+    }
+    return 0;
+});
+
+
+
+console.log('================generator');
+function* fib(max) {
+    var
+        t,
+        a = 0,
+        b = 1,
+        n = 0;
+    while (n < max) {
+        yield a;
+        [a, b] = [b, a + b];
+        n++;
+    }
+    return;
+}
+
+var f = fib(5);
+
+
+console.log(f.next());
+console.log(f.next());
+console.log(f.next());
+console.log(f.next());
+console.log(f.next());
+console.log(f.next());
+
+for (var x of fib(10)) {
+    console.log(x); // 依次输出0, 1, 1, 2, 3, ...
+}
+
