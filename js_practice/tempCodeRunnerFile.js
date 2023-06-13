@@ -1,3 +1,2 @@
-   // arr.map(function(x){
-    //     return x*1;
-    // });
+var f2 = results[1];
+// var f3 = results[2];

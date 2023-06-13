@@ -268,9 +268,42 @@ function get_primes(arr){
         })
 }
     
-if (Math.random() > 0.5) {
-    var x = 1;
-  } else {
-    var x = 2;
-  }
-  console.log(x);
+function lazy_sum(arr) {
+    var sum = function () {
+        return arr.reduce(function (x, y) {
+            return x + y;
+        });
+    }
+    return sum;
+}
+var f = lazy_sum([1, 2, 3, 4, 5]); // function sum()
+
+console.log(f);
+console.log(f());
+console.log(f());
+
+console.log('================闭包真是让人难以理解');
+function count() {
+    var arr = [];
+    for (var i=1; i<=3; i++) {
+        arr.push(function () {
+            return i * i;
+        });
+    }
+    return arr;
+}
+var results = count();
+console.log(results);
+var f1 = results[0];
+var f2 = results[1];
+var f3 = results[2];
+console.log(f1());
+console.log(f2());
+console.log(f3());
+
+/*
+1.results指向数组的三个匿名函数，再上面的例子也同样提醒过，变量都是指向内部函数；
+2.因为形成闭包，可以把for循环中的var i这个变量的作用域引申到count函数外；
+3.var results = count(); 这句的时候，count()函数内部的变量i完成3次自增后，又自增一次i=4，不满足条件循环条件后退出；这时候函数还是抽象化的没有赋值，可以理解为还是return i*i;
+4.var f1 = results[0];  这句的时候执行函数，return i*i 带入变量i=4 ，所以数组每个元素都变成了16
+*/
