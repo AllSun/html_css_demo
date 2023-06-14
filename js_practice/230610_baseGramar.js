@@ -309,43 +309,19 @@ console.log(f3());
 4.var f1 = results[0];  这句的时候执行函数，return i*i 带入变量i=4 ，所以数组每个元素都变成了16
 */
 
+
 arr.sort((x, y) => {
     if (x > y) {
         return 1;
     } else {
         return -1;
     }
+
     return 0;
 });
 
 
+console.log('a b   c'.split(/\s+/));
 
-console.log('================generator');
-function* fib(max) {
-    var
-        t,
-        a = 0,
-        b = 1,
-        n = 0;
-    while (n < max) {
-        yield a;
-        [a, b] = [b, a + b];
-        n++;
-    }
-    return;
-}
-
-var f = fib(5);
-
-
-console.log(f.next());
-console.log(f.next());
-console.log(f.next());
-console.log(f.next());
-console.log(f.next());
-console.log(f.next());
-
-for (var x of fib(10)) {
-    console.log(x); // 依次输出0, 1, 1, 2, 3, ...
-}
-
+var re = /^[\w]+[\.]*[\w\d]*@\w+\.\w+/;
+console.log(re.test('bill%gates@ms.com'));
