@@ -321,7 +321,72 @@ arr.sort((x, y) => {
 });
 
 
+console.log('================generator测试题');
+function* next_id() {
+    var current_id = 1;
+    for (; current_id < 100; current_id++) {
+        yield current_id;
+    }
+    return;
+}
+
+// 测试:
+var
+    x,
+    pass = true,
+    g = next_id();
+for (x = 1; x < 100; x++) {
+    if (g.next().value !== x) {
+        pass = false;
+        console.log('测试失败!');
+        break;
+    }
+}
+if (pass) {
+    console.log('测试通过!');
+}
+
 console.log('a b   c'.split(/\s+/));
 
-var re = /^[\w]+[\.]*[\w\d]*@\w+\.\w+/;
-console.log(re.test('bill%gates@ms.com'));
+
+console.log('================正则表达式1');
+var re1 = /^[\w]+[\.]*[\w\d]*@\w+\.\w+/;
+console.log(re1.test('bill%gates@ms.com'));
+
+
+console.log('================正则表达式2');
+
+var re = /^<([A-Z][a-z]+?\s[A-Z][a-z]+?)>\s(\w+@\w+\.\w+)$/;
+
+// 测试:
+var r = re.exec('<Tom Paris> tom@voyager.org');
+
+console.log(r);
+if (r === null || r.toString() !== ['<Tom Paris> tom@voyager.org', 'Tom Paris', 'tom@voyager.org'].toString()) {
+    console.log('测试失败!');
+}
+else {
+    console.log('测试成功!');
+}
+
+
+/* JSON  序列化对象中可添加toJSON()函数 JSON.stringify()   反序列化  JSON.parse()可传入修饰函数解析对象属性 */
+
+console.log('================面向对象编程');
+
+function Cat(name) {
+    this.name = name;
+}
+Cat.prototype.say = function() {
+    return ("Hello," + this.name + "!");
+};
+
+var kitty = new Cat("kitty");
+var doraemon = new Cat('哆啦A梦')
+console.log(kitty.say());
+console.log(kitty.name);
+console.log(typeof kitty.say);
+console.log(kitty.say === doraemon.say);
+console.log(kitty.say)
+
+console.log(kitty.constructor === Cat);
