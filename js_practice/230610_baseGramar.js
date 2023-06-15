@@ -390,3 +390,39 @@ console.log(kitty.say === doraemon.say);
 console.log(kitty.say)
 
 console.log(kitty.constructor === Cat);
+
+
+
+
+console.log('================原型链');
+function Fn(){}
+
+Fn.prototype.name = "孙金榜";
+Fn.prototype.age = 29;
+
+var fn = new Fn();
+console.log(fn.name+"今年"+fn.age+"岁！");
+console.log(Fn.prototype);
+console.log(fn.__proto__);
+//指向null
+console.log(Object.__proto__);
+console.log(Object().__proto__);
+
+console.log(Function.prototype);
+
+
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+}
+
+class Cat extends Animal{
+    constructor(name){
+        super(name);
+    }
+    say(){
+        return "Hello, "+this.name+"!";
+    }
+}
+
