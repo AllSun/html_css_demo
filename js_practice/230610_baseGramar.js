@@ -480,26 +480,46 @@ console.log(xiaohong.hello()); //{}
 
 
 
-console.log("================浏览器对象");
-//要在浏览器中使用
-console.log(window.innerWidth+"-----"+window.innerHeight);
+console.log("================浏览器对象  dom树操作");
+
+// //要在浏览器中使用
+// console.log(window.innerWidth+"-----"+window.innerHeight);
 
 /*
 window
 location
 screen
 navigator
-document  getElementsById()   getElementsByTagName()  getElementsByClassName()   cookie   服务器设置  httponly
+document  getElementsById()   getElementsByTagName()  getElementsByClassName()   cookie   服务器设置  httponly  creatElement()   inserBefore()
 */
 
 
-// 选择<p>JavaScript</p>:
-var js = document.getElementById('test-p');
+// // 选择<p>JavaScript</p>:
+// var js = document.getElementById('test-p');
 
-// 选择<p>Python</p>,<p>Ruby</p>,<p>Swift</p>:
-var arr = document.getElementsByClassName('c-red c-green')[0].getElementsByTagName('p');
-console.log(arr);
+// // 选择<p>Python</p>,<p>Ruby</p>,<p>Swift</p>:
+// var arr = document.getElementsByClassName('c-red c-green')[0].getElementsByTagName('p');
+// console.log(arr);
 
-// 选择<p>Haskell</p>:
-var haskell = document.getElementsByClassName('c-green')[1].lastElementChild;
+// // 选择<p>Haskell</p>:
+// var haskell = document.getElementsByClassName('c-green')[1].lastElementChild;
 
+
+// // 获取<p>javascript</p>节点:
+// var js = document.getElementById('test-js');
+
+// // 修改文本为JavaScript:
+// js.innerHTML='JavaScript';
+
+// // 修改CSS为: color: #ff0000, font-weight: bold
+// js.style.color= '#ff0000';
+// js.style.fontWeight = 'bold';
+
+
+
+
+var list = document.getElementById('test-list').childre.sort();
+var li = document.getElementsByClassName('lang');
+for(let i = 0;i < list.length ; i++){
+    li[i].innerHTML = list[i];
+}
