@@ -8,11 +8,37 @@
     <script>
         var list = document.getElementById('test-list');
         var li = document.getElementsByClassName('lang');
-        for(let i = 0;i < list.length ; i++){ li[i].innerHTML=list[i]; }
-     </script>
+        for (let i = 0; i < list.length; i++) { li[i].innerHTML = list[i]; }
+
+
+
+
+        var checkRegisterForm = function () {
+            var username = document.getElementById('username');
+            var password = document.getElementById('password');
+            var password_2 = document.getElementById('password-2');
+            var reg_name = /\d{3,10}/;
+            var reg_pwd = /\d{6,20}/;
+            if (!reg_name.test(username.value)) {
+                alert('用户名错误');
+                return false;
+            }
+            if (!reg_pwd.test(password.value)) {
+                alert('密码长度不符合要求');
+                return false;
+            }
+            if (password.value !== password_2.value) {
+                alert('两次密码不一样');
+                return false;
+            }
+            return true;
+        }
+    </script>
+
 </head>
 
 <body>
+    <!-- js  获取表单值    设置表单值  提交表单值 -->
     <ol id="test-list">
         <li class="lang">Scheme</li>
         <li class="lang">JavaScript</li>
@@ -20,6 +46,23 @@
         <li class="lang">Ruby</li>
         <li class="lang">Haskell</li>
     </ol>
+
+    <!-- HTML结构 -->
+    <form id="test-register" action="#" target="_blank" onsubmit="return checkRegisterForm()">
+        <p id="test-error" style="color:red"></p>
+        <p>
+            用户名: <input type="text" id="username" name="username">
+        </p>
+        <p>
+            口令: <input type="password" id="password" name="password">
+        </p>
+        <p>
+            重复口令: <input type="password" id="password-2">
+        </p>
+        <p>
+            <button type="submit">提交</button> <button type="reset">重置</button>
+        </p>
+    </form>
 </body>
 
 </html>
