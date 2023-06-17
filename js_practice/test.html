@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #myDiv {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(14, 231, 46);
+            
+        }
+    </style>
     <script>
-        var list = document.getElementById('test-list');
-        var li = document.getElementsByClassName('lang');
-        for (let i = 0; i < list.length; i++) { li[i].innerHTML = list[i]; }
-
-
-
 
         var checkRegisterForm = function () {
             var username = document.getElementById('username');
@@ -33,6 +35,9 @@
             }
             return true;
         }
+
+
+
     </script>
 
 </head>
@@ -63,6 +68,22 @@
             <button type="submit">提交</button> <button type="reset">重置</button>
         </p>
     </form>
+
+
+
+    <div id="myDiv">学习事件监听</div>
+    <script>var myDiv = document.getElementById('myDiv');
+        myDiv.addEventListener('click', function () {
+            console.log(event.clientX + ',' + event.clientY);
+        });
+    </script>
+
+    <!-- 这就是Web的运作原理：一次HTTP请求对应一个页面。 -->
+    <!-- 默认情况下，JavaScript在发送AJAX请求时，URL的域名必须和当前页面完全一致。 -->
+
+    <canvas id="test-canvas" width="200" heigth="100" background-color="black">
+        <p>你的浏览器不支持Canvas</p>
+    </canvas>
 </body>
 
 </html>
