@@ -518,8 +518,35 @@ document  getElementsById()   getElementsByTagName()  getElementsByClassName()  
 
 
 
-var list = document.getElementById('test-list').childre.sort();
-var li = document.getElementsByClassName('lang');
-for(let i = 0;i < list.length ; i++){
-    li[i].innerHTML = list[i];
-}
+// var list = document.getElementById('test-list').childre.sort();
+// var li = document.getElementsByClassName('lang');
+// for(let i = 0;i < list.length ; i++){
+//     li[i].innerHTML = list[i];
+// }
+
+
+// function getAge() {
+//     var y = new Date().getFullYear();
+//     return y - this.birth;
+// }
+
+// var xiaoming = {
+//     name: '小明',
+//     birth: 1990,
+//     age: getAge
+// };
+
+// console.log(xiaoming.age());
+
+
+
+var count = 0;
+var oldParseInt = parseInt; // 保存原函数
+
+window.parseInt = function () {
+    count += 1;
+    return parseInt.apply(null, arguments); // 调用原函数
+};
+
+console.log(parseInt(1.1));
+console.log(count);
