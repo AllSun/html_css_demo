@@ -1,5 +1,3 @@
-//要在浏览器中使用
-// console.log(window.innerWidth+"-----"+window.innerHeight);
 var random_num,
     front_lucky = [],
     end_lucky = [];
@@ -20,9 +18,3 @@ while(end_lucky.length !== 2){
 
 console.log("前区号码为"+front_lucky);
 console.log("后区号码为"+end_lucky);
-
-
-// let i = 1;
-// function test_closure(){
-//     console.log(i);
-// }

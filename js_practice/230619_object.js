@@ -3,8 +3,9 @@ var Father ={
     name : 'sunjinbang',
     age : 29,
     school : 'bupt',
+    //不要用箭头函数做为方法，会导致this指向有问题
     hello : function(){
-        console.log("hello， "+this.name)
+        console.log("hello, "+this.name)
     }
 };
 
@@ -22,3 +23,22 @@ function test(){
 
 test(1,2,3);
 console.log(test.prototype.constructor);
+
+
+console.log('=======================')
+
+function Student(name){
+    this.name = name || 'unnamed';
+    this.hello = function(){
+        console.log('hello , '+this.name);
+    }
+}
+
+var  sunmy = new Student('sunmoyan');
+
+sunmy.hello();
+
+console.log(sunmy.__proto__.constructor);
+console.log(sunmy.constructor);
+console.log(sunmy.__proto__.constructor === sunmy.constructor);
+console.log(Student.prototype.constructor);
