@@ -13,6 +13,8 @@ var moyan = {
     name : 'sunmoyan'
 }
 
+
+
 moyan.__proto__ = Father;
 console.log(moyan.name);
 moyan.hello();
@@ -42,3 +44,15 @@ console.log(sunmy.__proto__.constructor);
 console.log(sunmy.constructor);
 console.log(sunmy.__proto__.constructor === sunmy.constructor);
 console.log(Student.prototype.constructor);
+
+
+
+console.log('==============620');
+
+
+var zhangweili = {
+    name : 'zhangweili',
+    age : 30
+}
+
+console.log(zhangweili.prototype);
