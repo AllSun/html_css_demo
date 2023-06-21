@@ -47,7 +47,6 @@
 
 ![](https://images0.cnblogs.com/blog/138012/201409/181637013624694.png)
 
-
 # 继承
 
 ![1687254129500](image/js/1687254129500.png)
@@ -73,6 +72,25 @@
 ![](https://pic2.zhimg.com/80/v2-18409b149a59d93fcfb3722c0bf0d471_720w.webp)
 
 # 回调
+
+```
+回调是闭包的一种形式。
+JavaScript 是事件驱动的语言。这意味着，JavaScript 不会因为要等待一个响应而停止当前运行，而是在监听其他事件时继续执行，回调正是确保一段代码执行完毕之后再执行另一段代码的方式。
+ 异步编程：JS代码的执行顺序
+
+回调就是为了保证顺序执行，是业务上的一种逻辑要求在js中代码实现
+```
+```
+    <div id="myDiv">学习事件监听</div>
+    <script>
+        var myDiv = document.getElementById('myDiv');
+        myDiv.addEventListener('click', function () {
+            console.log(event.clientX + ',' + event.clientY);
+        });
+    </script>
+```
+这边监听函数一定要注意要在div渲染完成之后加载，不然会报错，这个点后续也要记住，一开始js函数写 `<head></head>`标签里，浏览器报错找不到属性，原因html解析，是从上到下，先调用了函数，结果dom树下面部分还没生产就执行函数，导致函数找不到对象
+
 
 # DOM树
 

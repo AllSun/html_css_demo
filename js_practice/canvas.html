@@ -8,6 +8,8 @@
 
     <script>
         window.loadStockData = function (r) {
+            console.log('我在执行啊啊啊'+r);
+            console.log('我在执行啊啊啊'+r.data);
             var
                 NUMS = 30,
                 data = r.data;
@@ -29,6 +31,7 @@
         }
 
         window.drawStock = function (data) {
+            console.log('我在执行啊222222');
             var
                 canvas = document.getElementById('stock-canvas'),
                 width = canvas.width,
@@ -55,8 +58,8 @@
                         ctx.fillStyle = "rgb(14, 231, 46)";
                         ctx.fillRect(x, y, stock_width, Math.abs(stock_hight));
                     }
-                }else{
-                    y = y +(data[i-1].open-data[i-1].close);
+                } else {
+                    y = y + (data[i - 1].open - data[i - 1].close);
                     stock_hight = data[i].open - data[i].close;
                     if (stock_hight > 0) {
                         ctx.fillStyle = "#FF0000";
@@ -76,7 +79,15 @@
         var js = document.createElement('script');
         js.src = 'http://img1.money.126.net/data/hs/kline/day/history/2023/0000001.json?callback=loadStockData&t=' + Date.now();
         document.getElementsByTagName('head')[0].appendChild(js);
-        console.log(document.getElementsByTagName('head').length);
+        console.log(document.getElementsByTagName('head').length+'我在第81行');
+    </script>
+
+    <div id="myDiv">学习事件监听</div>
+    <script>
+        var myDiv = document.getElementById('myDiv');
+        myDiv.addEventListener('click', function () {
+            console.log(event.clientX + ',' + event.clientY);
+        });
     </script>
 </head>
 
