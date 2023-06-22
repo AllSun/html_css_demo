@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- HTML结构 -->
+    <div id="test-div">
+        <ul>
+            <li><span>JavaScript</span></li>
+            <li><span>Python</span></li>
+            <li><span>Swift</span></li>
+        </ul>
+    </div>
+
+    <script>
+        var arr = ['Pascal', 'Lua', 'Ruby'];
+        var arr_before = $('#test-div>ul>li>span').map(function () {
+            return this.innerHTML;
+        }).get();
+        var final = arr.concat(arr_before).sort();
+        var ul = $('#test-div>ul');
+
+        for (var x of final) {
+            ul.append('<li><span>' + x + '</span></li>');
+        }
+        for (var x of final) {
+            console.log(x);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,1 +1,2 @@
-console.log(moyan.prototype);
+var arr = [];
+arr.concat()
