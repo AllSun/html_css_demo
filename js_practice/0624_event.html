@@ -48,6 +48,11 @@
                 selectAllLabel.hide();
                 deselectAllLabel.show();
             });
+            selectAll.click(function () {
+                form.find('input[name= lang]').prop('checked', true);
+                selectAllLabel.hide();
+                deselectAllLabel.show();
+            });
 
             // 当用户去掉“全不选”时，自动不选中所有语言；
 
