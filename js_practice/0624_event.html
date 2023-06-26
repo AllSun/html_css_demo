@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <title>Jquery事件</title>
 </head>
 
@@ -41,13 +42,11 @@
             });
 
             //当用户勾上“全选”时，自动选中所有语言，并把“全选”变成“全不选”；
-            deselectAll.hide();
-            selectAllLabel.click(function () {
-                console.log('有监听啊');
-            }
-            );
-            selectAll.on("click", function () {
-                console.log('在监听');
+            deselectAllLabel.hide();
+            selectAll.click(function () {
+                form.find('input[name= lang]').prop('checked', true);
+                selectAllLabel.hide();
+                deselectAllLabel.show();
             });
 
             // 当用户去掉“全不选”时，自动不选中所有语言；
