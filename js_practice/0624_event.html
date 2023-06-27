@@ -44,25 +44,58 @@
             //当用户勾上“全选”时，自动选中所有语言，并把“全选”变成“全不选”；
             // 当用户去掉“全不选”时，自动不选中所有语言；
             selectAll.change(function () {
-                if(form.find('label.selectAll :checkbox').prop('checked')){
+                if (form.find('label.selectAll :checkbox').prop('checked')) {
                     deselectAllLabel.show();
                     selectAllLabel.hide();
                     form.find('input[name= lang]').prop('checked', true);
-                }else{
+                    form.find('input[name= lang]').change(); 
+                } else {
                     deselectAllLabel.hide();
                     selectAllLabel.show();
                     form.find('input[name= lang]').prop('checked', false);
+                    form.find('input[name= lang]').change(); 
                 }
             });
-          
-            invertSelect.click(function(){
-                
-            });
+
+
             // 当用户点击“反选”时，自动把所有语言状态反转（选中的变为未选，未选的变为选中）；
-
+            invertSelect.click(function(){
+                form.find('input[name= lang]').each(function(){
+                    if($(this).prop('checked')){
+                        $(this).prop('checked', false);
+                        form.find('input[name= lang]').change(); 
+                    }else{
+                        $(this).prop('checked', true);
+                        form.find('input[name= lang]').change(); 
+                    }
+                })
+            }
+            );
+            
             // 当用户把所有语言都手动勾上时，“全选”被自动勾上，并变为“全不选”；
-
             // 当用户手动去掉选中至少一种语言时，“全不选”自动被去掉选中，并变为“全选”。
+            form.find('input[name= lang]').change(function(){
+              
+                var status_set = new Set();
+                form.find('input[name= lang]').each(function(){
+                    status_set.add($(this).prop('checked'));
+                    //console.log($(this).prop('checked'));
+                });
+                console.log(status_set);
+                if(status_set.size === 1 && status_set.has(true)){
+                    deselectAllLabel.show();
+                    selectAllLabel.hide();
+                    form.find('label.selectAll :checkbox').prop('checked',true);
+                }
+                if(status_set.size === 2){
+                    deselectAllLabel.hide();
+                    selectAllLabel.show();
+                    form.find('label.selectAll :checkbox').prop('checked',false);
+                }
+            });
+
+
+            
         </script>
     </form>
 </body>
